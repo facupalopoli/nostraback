@@ -1,0 +1,27 @@
+<%- include('../../views/partials/head.ejs')%>
+
+<%- include('../../views/partials/header.ejs')%>
+
+<!-- <h1>Hola CART</h1> -->
+
+<% if (cart.length !== 0){ %>
+    <% cart.forEach(producto=>{ %>
+        <div class="">
+            <div>
+                <h3><%= producto.titulo %></h3>
+                <h3><%= producto.id %></h3>
+                <h3 id="priceCart<%= producto.id %>">$ <%= producto.precio %></h3>    
+            </div>
+            <button id="btnResta<%= producto.id %>" disabled>-</button><span id="stockCart<%= producto.id %>">1</span><button id="btnSuma<%= producto.id %>">+</button>
+            <form class="deleteToCartForm" action="/products/eliminar-carro/<%= producto.id %>" method="POST">
+                <button type="submit">ELIMINAR</button>
+            </form>
+        </div>
+    <% }) %>
+    <h1 id="totalCompra"></h1>
+    <a href="/products/cart/comprar">COMPRAR PRODUCTOS</a>
+    <% }else{ %>
+        <h1>NO HAY PRODUCTOS EN EL CARRO</h1>
+    <% } %>
+
+<%- include('../../views/partials/footer.ejs')%>

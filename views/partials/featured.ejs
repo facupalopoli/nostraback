@@ -1,0 +1,25 @@
+<section class="products">
+    <div class="titleProducts">
+        <h2>Productos destacados</h2>    
+        <div class="botonesHero">
+            <button class="btnIzq"><i class="bi bi-chevron-left"></i></button>
+            <button class="btnDer"><i class="bi bi-chevron-right"></i></button>
+        </div>
+    </div>
+    <div class="divProducts">
+        <% productos.forEach(producto=>{ %>
+        <div class="cardProduct">
+            <img src="./images/pexels-anders-kristensen-447570.jpg" alt="">
+            <div class="cardFooter">
+                <div>
+                    <h3><%= producto.titulo %></h3>
+                    <h3 class="price">$ <%= producto.precio %></h3>    
+                </div>
+                <form class="addToCartForm" action="/products/agregar-carro/<%= producto.id %>" method="POST">
+                    <button type="submit" class="bi bi-cart-plus"></button>
+                </form>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</section>

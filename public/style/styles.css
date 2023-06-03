@@ -1,0 +1,664 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@500;600;700&family=Libre+Franklin:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --negro: rgb(29, 36, 45);
+    --grisInput: rgb(249, 251, 252);
+    --grisFooter: rgb(234, 238, 242);
+    --grisIcon: rgb(242, 243, 247);
+    --grisPlace: rgb(161, 168, 175);
+    --grisOscuro: rgb(66, 75, 86);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--negro);
+    font-weight: 500;
+    /* font-family: 'Heebo', sans-serif; */
+    /* font-family: 'Libre Franklin', sans-serif; */
+}
+
+/* -----------------BARRA SUPERIOR----------------------- */
+
+.signUp{
+    display: flex;
+    background-color: var(--negro);
+    padding: 0.8rem 18vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signUp *{
+   color: white;
+   font-size: 0.8rem;
+}
+
+.signUp span{
+    font-weight: 600;
+}
+
+.signUp a{
+    font-weight: 500;
+}
+
+.signUp i{
+    cursor: pointer;
+}
+
+/* ---------------HEADER Y NAVBAR------------------------- */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 18vw;
+}
+
+.header h2{
+    font-weight: 700;
+}
+
+.header nav{
+    display: flex;
+    gap: 35px;
+}
+
+.header a{
+    text-decoration: none;
+}
+
+.navDer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.divInput{
+    background-color: var(--grisInput);
+    border: var(--grisIcon) 2px solid;
+    border-radius: 10px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.inputSearch{
+    background-color: var(--grisInput);
+    color: var(--grisPlace);
+    border: 0;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+}
+
+.inputSearch::placeholder{
+    color: var(--grisPlace);
+}
+
+.iconSearch{
+    color: var(--grisPlace);
+}
+
+.navDer i{
+    color: var(--negro);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* ----------------HERO------------------------ */
+
+.hero{
+    display: flex;
+    justify-content: center;
+}
+
+.divHero{
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+    padding: 2rem;
+    background: linear-gradient(rgba(243, 241, 239, 0.4), rgba(47, 80, 63, 0.5)), url(../images/pexels-anders-kristensen-447570.jpg);
+    width: 65%;
+    border-radius: 10px;
+    align-items: center;
+    gap: 40px;
+}
+
+.botonesHero{
+    display: flex;
+    align-self: flex-end;
+}
+
+.botonesHero button{
+    padding: 0.9rem;
+    background-color: white;
+    border: var(--grisIcon) 1px solid;
+    cursor: pointer;
+}
+
+.btnIzq{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.btnDer{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.botonesHero i{
+    font-size: 1.3rem;
+    color: var(--negro);
+}
+
+.hero h1{
+    color: white;
+    font-size: 5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btnShop{
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.5rem 1.2rem;
+    border: 0;
+    font-size: 1.1rem;
+    color: var(--grisOscuro);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.flechaDer{
+    font-size: 2rem;
+    color: var(--grisOscuro);
+}
+
+.puntos{
+    font-size: 2.5rem;
+    color: var(--grisFooter);
+}
+
+/* ---------------SECCION DE MARCAS------------------------- */
+
+.brands{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divBrands{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.divBrands h2{
+    font-size: 2rem;
+    font-weight: 600;    
+}
+
+.logotipos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.logotipos img{
+    width: 3%;
+    cursor: pointer;
+    object-fit: cover;
+    overflow: visible;
+}
+
+/* --------------SECCION DE EXPERIENCIA-------------------------- */
+
+.experience{
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.titleExp{
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.titleExp h2{
+    max-width: 30%;
+    width: 57%;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.titleExp > div{
+    border-left: 3px solid var(--negro);
+    width: 43%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.titleExp h3{
+    color: var(--grisPlace);
+    font-size: 1rem;
+    height: max-content;
+    text-align: end;
+}
+
+.divExp{
+    display: flex;
+    width: 65%;
+}
+
+.infoExp{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.iconExp{
+    font-size: 1.3rem;
+    padding: 0.8rem 1rem;
+    background-color: var(--grisIcon);
+    border-radius: 8px;
+    border: 1px solid var(--grisFooter);
+}
+
+.infoExp h3{
+    font-weight: 600;
+}
+
+.infoExp p{
+    color: var(--grisPlace);
+    font-size: 0.9rem;
+    max-width: 95%;
+}
+
+/* ----------------SECCION DE PICKS------------------------ */
+
+.picks{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.picks h2{
+    width: 65%;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.divPicks{
+    width: 65%;
+    display: flex;
+    gap: 25px;
+}
+
+.cardPicks{
+    width: 25%;
+    background-image: url(../images/pexels-anders-kristensen-447570.jpg);
+    background-position: center;
+    height: 280px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.cardPicks button{
+    margin-bottom: 35px;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardPicks i{
+    color: var(--grisOscuro);
+}
+
+/* --------------SECCION DE PRODUCTOS-------------------------- */
+
+.products{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.titleProducts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.titleProducts h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.divProducts{
+    display: flex;
+    width: 65%;
+    gap: 25px;
+}
+
+.cardProduct{
+    width: 33,33%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cardProduct img{
+    width: 100%;
+    border-radius: 10px;
+    height: 420px;
+    object-fit: cover;
+    object-position: left;
+}
+
+.cardFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardFooter div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardFooter button{
+    color: white;
+    font-size: 1.3rem;
+    padding: 0.8rem 1rem;
+    background-color: var(--negro);
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.price{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--negro);
+}
+
+/* ---------------SECCION DE OFERTAS------------------------- */
+
+.offer{
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.divOffer{
+    display: flex;
+    width: 65%;
+}
+
+.divOffer img{
+    width: 45%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.infoOffer{
+    background-color: var(--negro);
+    width: 55%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 3rem;
+}
+
+.infoOffer h3{
+    color: var(--grisPlace);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.infoOffer h2{
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/* ----------------SECCION DE SUSCRIPCION------------------------ */
+
+.suscribe{
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.suscribe h2{
+    font-size: 1.9rem;
+    font-weight: 700;
+    max-width: 40%;
+    text-align: center;
+    color: var(--negro);
+}
+
+.suscribe h4{
+    color: var(--grisOscuro);
+}
+
+.susForm{
+    display: flex;
+    gap: 10px;
+}
+
+.susForm > div{
+    width: 400px;
+}
+
+.iconMail{
+    color: var(--grisPlace);
+    font-size: 1.2rem;
+}
+
+.susForm button{
+    font-weight: 400;
+    background-color: var(--negro);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    border: 0;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+}
+
+.policy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.policy p{
+    font-size: 0.9rem;
+    color: var(--grisPlace);
+}
+
+.policy a{
+    font-weight: 600;
+}
+
+/* -----------------FOOTER----------------------- */
+
+footer{
+    margin-top: 80px;
+    background-color: var(--grisFooter);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divFooter{
+    width: 65%;
+    display: flex;
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--grisPlace);
+}
+
+.nostraFooter{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 40%;
+}
+
+.nostraFooter p{
+    color: var(--grisPlace);
+    max-width: 70%;
+    line-height: 1.5rem;
+}
+
+.nostraFooter h2{
+    color: var(--grisOscuro);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.footerCard{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+    width: 15%;
+}
+
+.footerCard h3{
+    color: var(--grisOscuro);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.footerCard a{
+    text-decoration: none;
+    color: var(--grisPlace);
+}
+
+.cardPagos{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 15%;
+}
+
+.cardPagos h3{
+    color: var(--grisOscuro);
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: end;
+}
+
+.divPagos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.divPagos img{
+    width: 45px;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.copyright{
+    color: var(--grisPlace);
+    padding: 2rem 0;
+}
+
+/* ---------------------------------------- */
+/* -------RESPONSIVE----------------------- */
+/* ---------------------------------------- */
+
+@media (max-width: 1280px){
+    .signUp{
+        padding: 0.8rem 8vw;
+    }
+    /* ---------------HEADER Y NAVBAR------------------------- */
+    .header{
+        padding: 2.5rem 8vw;
+    }
+    .navDer > i{
+        font-size: 1.1rem;
+    }
+    /* ----------------HERO------------------------ */
+    .divHero{
+        width: 85%;
+    }
+    .hero h1{
+        font-size: 4rem;
+    }
+    /* ---------------SECCION DE MARCAS------------------------- */
+    .divBrands{
+        width: 85%;
+    }
+    /* --------------SECCION DE EXPERIENCIA-------------------------- */
+    .titleExp{
+        width: 85%;
+    }
+    .titleExp h2{
+        max-width: 50%;
+    }
+    .divExp{
+        width: 85%;
+    }
+    /* ----------------SECCION DE PICKS------------------------ */
+    .picks h2{
+        width: 85%;
+     }
+    .divPicks{
+        width: 85%;
+    }
+    /* --------------SECCION DE PRODUCTOS-------------------------- */
+    .titleProducts{
+        width: 85%;
+    }
+    
+    .divProducts{
+        width: 85%;
+    }
+    /* ---------------SECCION DE OFERTAS------------------------- */
+    .divOffer{
+        width: 85%;
+    }
+    /* ----------------SECCION DE SUSCRIPCION------------------------ */
+    .suscribe h2{
+        max-width: 60%;
+    }
+    /* -----------------FOOTER----------------------- */
+    .divFooter{
+        width: 85%;
+    }
+}
