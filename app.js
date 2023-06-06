@@ -18,7 +18,7 @@ app.use(express.json())
 
 app.get('/', async (req,res)=>{
     try{
-        const productos = await Products.find()
+        const productos = await Products.aggregate([{ $sample: { size: 4 } }])
         res.render('pages/index', {productos:productos})    
     }
     catch(error){

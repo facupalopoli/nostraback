@@ -3,6 +3,8 @@ const router=express.Router()
 
 import Products from '../models/Products.js'
 
+let cart = []
+
 //---------------------GET
 
 //router de /productos
@@ -32,11 +34,13 @@ router.get('/cart', async (req,res)=>{
     }
 })
 
-//busca por ID
+//trae el producto por ID
 router.get('/:id', async (req,res)=>{
     try{
         const producto = await Products.findById(req.params.id)
-        res.status(200).json(producto)
+        //me busca tambien productos relacionados utilizando la propiedad categoria y me excluye el id del producto en cuestion
+        const productosRelacionados = await Products.find({categoria: producto.categoria, _id: {$ne: producto._id}}).limit(8)
+        res.render('pages/product', {producto:producto, productosRelacionados:productosRelacionados})
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
@@ -46,8 +50,8 @@ router.get('/:id', async (req,res)=>{
 //pagina de compra realizada
 router.get('/cart/comprar', async (req,res)=>{
     try{
+        res.render('partials/success', {cart:cart})
         cart = []
-        res.render('partials/success')
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
@@ -69,9 +73,6 @@ router.post('/agregar-producto', async (req,res)=>{
 })
 
 //agrega producto al carro
-
-let cart = []
-
 router.post('/agregar-carro/:id', async (req,res)=>{
     try{
         let idProduct = req.params.id
@@ -100,7 +101,6 @@ router.post('/eliminar-carro/:id', async (req,res)=>{
     try{
         let idProduct = req.params.id
         cart = cart.filter(producto=>producto.id !== idProduct)
-        /* res.sendStatus(200) */
         res.render('pages/cart', {cart:cart})
     }catch(error){
         console.log(error)
