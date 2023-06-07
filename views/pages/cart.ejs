@@ -22,6 +22,8 @@
     <a href="/products/cart/comprar">COMPRAR PRODUCTOS</a>
 <% }else{ %>
     <h1>NO HAY PRODUCTOS EN EL CARRO</h1>
+    <!-- muestro productos destacados por si no hay nada en el carro -->
+    <%- include('../../views/partials/featured.ejs')%>
 <% } %>
 
 <script src="/js/cart.js" type="module"></script>

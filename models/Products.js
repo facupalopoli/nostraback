@@ -29,6 +29,10 @@ const productSchema = new Schema({
         type: Number,
         required: true,
     },
+    rating:{
+        type: Number,
+        required: true,
+    },
     url_imagen:{
         type: Array,
         required: true,

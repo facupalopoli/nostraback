@@ -136,6 +136,10 @@ html{
     gap: 40px;
 }
 
+.divHero a{
+    text-decoration: none;
+}
+
 .botonesHero{
     display: flex;
     align-self: flex-end;
@@ -452,6 +456,10 @@ html{
     color: white;
     font-size: 3rem;
     font-weight: 600;
+}
+
+.infoOffer a{
+    text-decoration: none;
 }
 
 /* ----------------SECCION DE SUSCRIPCION------------------------ */

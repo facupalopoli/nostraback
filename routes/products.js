@@ -12,11 +12,11 @@ router.get('/',(req,res)=>{
     res.send('hola desde el router de productos')
 }) 
 
-//trae todos los documentos de la base
+//trae todos los documentos de la base hacia el catalogo
 router.get('/catalog', async (req,res)=>{
     try{
         const productos = await Products.find()
-        res.status(200).json(productos)
+        res.render('pages/catalog', {productos:productos})
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
@@ -26,8 +26,9 @@ router.get('/catalog', async (req,res)=>{
 //trae los documentos guardados en mi carro
 router.get('/cart', async (req,res)=>{
     try{
-        //res.status(200).json(cart)
-        res.render('pages/cart', {cart:cart})
+        //me llevo 8 productos de la base a cart por si no hay productos en el carrito
+        const productos = await Products.aggregate([{ $sample: { size: 4 } }])
+        res.render('pages/cart', {cart:cart, productos:productos})
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
@@ -88,6 +89,7 @@ router.post('/agregar-carro/:id', async (req,res)=>{
         }else{
             cart.push(producto)
         }
+        //le manda el estado al cliente y luego lo tomo desde el front
         res.sendStatus(200)
     }catch(error){
         console.log(error)
@@ -101,7 +103,7 @@ router.post('/eliminar-carro/:id', async (req,res)=>{
     try{
         let idProduct = req.params.id
         cart = cart.filter(producto=>producto.id !== idProduct)
-        res.render('pages/cart', {cart:cart})
+        res.redirect('/products/cart')
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})

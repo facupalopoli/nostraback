@@ -1,7 +1,5 @@
 "use strict"
 
-import { prueba } from './app.js'
-
 //manejo de los botones de sumar y restar stock del carrito
 const btnSuma = document.querySelectorAll('[id^="btnSuma"]')
 const btnResta = document.querySelectorAll('[id^="btnResta"]')

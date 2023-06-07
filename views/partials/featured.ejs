@@ -6,20 +6,22 @@
             <button class="btnDer"><i class="bi bi-chevron-right"></i></button>
         </div>
     </div>
-    <div class="divProducts">
-        <% productos.forEach(producto=>{ %>
-        <div class="cardProduct">
-            <a href="/products/<%= producto._id %>"><img src="<%= producto.url_imagen[0] %>" alt="imagen del producto"></a>
-            <div class="cardFooter">
-                <div>
-                    <h3><%= producto.titulo %></h3>
-                    <h3 class="price">$ <%= producto.precio %></h3>    
+        <div class="divProducts">
+            <% productos.forEach(producto=>{ %>
+            <div class="cardProduct">
+                <a href="/products/<%= producto._id %>"><img src="<%= producto.url_imagen[0] %>" alt="imagen del producto"></a>
+                <div class="cardFooter">
+                    <div>
+                        <h3><%= producto.titulo %></h3>
+                        <h3 class="price">$ <%= producto.precio %></h3>    
+                    </div>
+                    <form class="addToCartForm" action="/products/agregar-carro/<%= producto._id %>" method="POST">
+                        <button type="submit" class="bi bi-cart-plus"></button>
+                    </form>
                 </div>
-                <form class="addToCartForm" action="/products/agregar-carro/<%= producto._id %>" method="POST">
-                    <button type="submit" class="bi bi-cart-plus"></button>
-                </form>
             </div>
+            <% }) %>
         </div>
-        <% }) %>
-    </div>
 </section>
+
+<script src="/js/featured.js" type="module"></script>
