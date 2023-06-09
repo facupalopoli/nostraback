@@ -7,7 +7,7 @@ let cart = []
 
 //---------------------GET
 
-//router de /productos
+//router de /products
 router.get('/',(req,res)=>{
     res.send('hola desde el router de productos')
 }) 
@@ -23,12 +23,100 @@ router.get('/catalog', async (req,res)=>{
     }
 })
 
+//trae los documentos de la base categoria hombres hacia el catalogo
+router.get('/catalog/hombres', async (req,res)=>{
+    try{
+        const productos = await Products.find({ categoria: { $regex: 'hombre', $options: 'i' } })
+        if (productos.length !==0){
+            res.render('pages/hombres', {productos:productos})    
+        }else{
+            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+            res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
+        }
+    }catch(error){
+        console.log(error)
+        res.status(404).json({mensaje:'error interno del sistema'})
+    }
+})
+
+//trae los documentos de la base categoria mujeres hacia el catalogo
+router.get('/catalog/mujeres', async (req,res)=>{
+    try{
+        const productos = await Products.find({ categoria: { $regex: 'mujer', $options: 'i' } })
+        if (productos.length !==0){
+            res.render('pages/mujeres', {productos:productos})    
+        }else{
+            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+            res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
+        }
+    }catch(error){
+        console.log(error)
+        res.status(404).json({mensaje:'error interno del sistema'})
+    }
+})
+
+//trae los documentos de la base categoria niños hacia el catalogo
+router.get('/catalog/ninos', async (req,res)=>{
+    try{
+        const productos = await Products.find({ categoria: { $regex: 'niños', $options: 'i' } })
+        if (productos.length !==0){
+            res.render('pages/ninos', {productos:productos})    
+        }else{
+            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+            res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
+        }
+    }catch(error){
+        console.log(error)
+        res.status(404).json({mensaje:'error interno del sistema'})
+    }
+})
+
+//trae todos los documentos de la base que tengan rating mayor a 4
+router.get('/catalog/wanted', async (req,res)=>{
+    try{
+        const productos = await Products.find({ rating: { $gte: 4 } })
+        console.log(productos)
+        if (productos.length !==0){
+            res.render('pages/catalog', {productos:productos})    
+        }else{
+            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+            res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
+        }
+    }catch(error){
+        console.log(error)
+        res.status(404).json({mensaje:'error interno del sistema'})
+    }
+})
+
+//me muestra los productos que coincidan con la busqueda por propiedad 'titulo'
+router.get('/search', async (req,res)=>{
+    try{
+        //guardo el valor del input search en la variable y busco en la base de datos sin discriminar mayusculas o minusculas
+        let productBusqueda = req.query.buscar
+        const productos = await Products.find({ titulo: { $regex: productBusqueda, $options: 'i' } })
+        if (productos.length !==0){
+            res.render('pages/catalog', {productos:productos, productBusqueda:productBusqueda})    
+        }else{
+            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+            res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
+        }
+    }catch(error){
+        console.log(error)
+        res.status(404).json({mensaje:'error interno del sistema'})
+    }
+})
+
 //trae los documentos guardados en mi carro
 router.get('/cart', async (req,res)=>{
     try{
         //me llevo 8 productos de la base a cart por si no hay productos en el carrito
-        const productos = await Products.aggregate([{ $sample: { size: 4 } }])
-        res.render('pages/cart', {cart:cart, productos:productos})
+        const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+        res.render('pages/cart', {cart:cart, productosDestacados:productosDestacados})
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
@@ -95,7 +183,7 @@ router.post('/agregar-carro/:id', async (req,res)=>{
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
     }
-    console.log(cart)
+
 })
 
 //borra un producto del carro
@@ -109,9 +197,5 @@ router.post('/eliminar-carro/:id', async (req,res)=>{
         res.status(404).json({mensaje:'error interno del sistema'})
     }
 })
-
-//---------------------PUT
-
-//---------------------DELETE
 
 export default router

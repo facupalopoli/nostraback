@@ -19,8 +19,8 @@ app.use(express.json())
 app.get('/', async (req,res)=>{
     try{
         const productsPerPage = 4
-        const productos = await Products.aggregate([{ $sample: { size: 4 } }])
-        res.render('pages/index', {productos:productos, productsPerPage: productsPerPage})    
+        const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+        res.render('pages/index', {productosDestacados:productosDestacados, productsPerPage: productsPerPage})    
     }
     catch(error){
         console.log(error)

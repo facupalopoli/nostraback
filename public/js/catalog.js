@@ -1,12 +1,6 @@
 "use strict"
 
 const productos = window.productos
-console.log(productos)
-const filtro = productos.filter((producto) => {
-  return producto.categoria.toLowerCase() === 'mujer'.toLowerCase();
-});
-
-console.log(filtro);
 
 // Función para actualizar los productos según los checkboxes seleccionados
 function actualizarProductos() {
@@ -23,7 +17,7 @@ function actualizarProductos() {
   const tallesSeleccionados = obtenerValoresSeleccionados('talle');
   
   // Filtrar los productos según los checkboxes seleccionados
-  console.log(categoriasSeleccionadas)
+ 
   const productosFiltrados = productos.filter(producto => {
     const cumpleCategorias = categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(producto.categoria.toLowerCase());
     const cumpleMarcas = marcasSeleccionadas.length === 0 || marcasSeleccionadas.includes(producto.marca.toLowerCase());
@@ -32,8 +26,7 @@ function actualizarProductos() {
 
     return cumpleCategorias && cumpleMarcas && cumplePrecios && cumpleTalles;
   });
-  console.log(productosFiltrados)
-  
+   
   // Actualizar la visualización de los productos en la página
   mostrarProductos(productosFiltrados);
 }

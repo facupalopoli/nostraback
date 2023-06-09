@@ -15,7 +15,6 @@ const actualizarTotal = () =>{
     acumCarro += Number(item.innerText.split('$').pop())
   })
   totalCompra.innerText= `Total compra: $ ${acumCarro}`
-  console.log(prueba)
 }
 
 //cuando termina de cargarse el DOM de la ruta products/cart entonces me ejecuta el IF y por consiguiente la funcion actualizarTotal

@@ -2,22 +2,10 @@
 
 <%- include('../../views/partials/header.ejs')%>
 
-<img src="../../images/bannerCatalogo.jpg" alt="imagen de prendas de ropa">
+<img src="../../images/bannerHombres.jpg" alt="imagen de hombres">
 
 <% if (productos.length !== 0){ %>
 
-    <% if (typeof(productBusqueda) !== 'undefined'){ %>
-        <h3>Se encontraron <span style="font-weight: 700"><%= productos.length %></span> resultado/os de <span style="font-weight: 700"><%= productBusqueda %></span></h3>
-    <% } %>
-
-    <h2>Categoria</h2>
-    <ul>
-        <li><input type="checkbox" id="categoria-mujer"> Mujer</li>
-        <li><input type="checkbox" id="categoria-hombre"> Hombre</li>
-        <li><input type="checkbox" id="categoria-niños"> Niños</li>
-        <li><input type="checkbox" id="categoria-sport"> Sport</li>
-        <li><input type="checkbox" id="categoria-casual"> Casual</li>
-    </ul>
     <h2>Marca</h2>
     <ul>
         <li><input type="checkbox" id="marca-adidas"> Adidas</li>
@@ -61,7 +49,7 @@
     </section>
 
 <% }else{ %>
-        <h1>NO HAY PRODUCTOS QUE COINCIDAN CON LA BUSQUEDA</h1>
+        <h1>NO HAY PRODUCTOS DE HOMBRES EN ESTE MOMENTO</h1>
         <!-- muestro productos destacados por si no coincide -->
         <%- include('../../views/partials/featured.ejs')%>
 <% } %>
