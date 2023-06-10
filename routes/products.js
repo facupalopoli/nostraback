@@ -60,7 +60,7 @@ router.get('/catalog/mujeres', async (req,res)=>{
 //trae los documentos de la base categoria niños hacia el catalogo
 router.get('/catalog/ninos', async (req,res)=>{
     try{
-        const productos = await Products.find({ categoria: { $regex: 'niños', $options: 'i' } })
+        const productos = await Products.find({ categoria: { $regex: 'kids', $options: 'i' } })
         if (productos.length !==0){
             res.render('pages/ninos', {productos:productos})    
         }else{

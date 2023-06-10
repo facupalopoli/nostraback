@@ -42,11 +42,9 @@ function cumpleRangoPrecio(precio, preciosSeleccionados) {
  
   // Define los rangos y sus límites superiores e inferiores
   const rangos = {
-    '0-500': { min: 0, max: 500 },
-    '500-1000': { min: 500, max: 1000 },
-    '1000-5000': { min: 1000, max: 5000 },
-    '5000-10000': { min: 5000, max: 10000 },
-    '10000-mas': { min: 10000, max: Infinity }, // Infinity representa un valor infinito
+    '0-20000': { min: 0, max: 20000 },
+    '20000-30000': { min: 20000, max: 30000 },
+    '30000-mas': { min: 30000, max: Infinity }, // Infinity representa un valor infinito
   };
 
   // Verifica si el precio cumple con al menos uno de los rangos seleccionados
@@ -83,3 +81,4 @@ function mostrarProductos(productos) {
 document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
   checkbox.addEventListener('change', actualizarProductos);
 });
+
