@@ -1,0 +1,21 @@
+<%- include('../../views/partials/head.ejs')%>
+
+<div>
+    <div>
+        <h1>Registrar</h1>
+        <form action="/users/register" method="post">
+            <div>
+                <input type="text" name="nombre" placeholder="ingrese su nombre" required>
+            </div>
+            <div>
+                <input type="email" name="email" placeholder="ingrese su email" required>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="ingrese su password" required>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</div>
+
+<%- include('../../views/partials/footer.ejs')%>

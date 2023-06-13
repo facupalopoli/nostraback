@@ -1,11 +1,14 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 import productsRouter from './routes/products.js'
-import './mongodb.js'
+import usersRouter from './routes/users.js'
 import Products from './models/Products.js'
+import passport from 'passport'
+import session from 'express-session'
+import LocalStrategy from 'passport-local'
+import './mongodb.js'
 
 
 const app = express()
@@ -29,6 +32,16 @@ app.get('/', async (req,res)=>{
 })
 
 app.use('/products', productsRouter)
+app.use('/users', usersRouter)
+
+app.use(session({
+    secret:'se logeo en mi aplicacion ',
+    resave:true,
+    saveUninitialized:true
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.all('/*',(req,res)=>{
     res.status(404).json({mensaje:'no se reconoce la direccion web'})
