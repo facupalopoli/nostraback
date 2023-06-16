@@ -1,10 +1,16 @@
-<div id="signUp" class="signUp">
-    <i></i>
-    <div>
-        <p>Suscribite y <span class="discount">OBTENE 20% OFF</span> para tu primera orden. <a href="/users/register">Hacelo aquí</a></p>
-    </div>
-    <i id="closeSignUp" class="bi bi-x-lg"></i>
-</div>
+<% if(!currentUser) { %>
+    <div id="signUp" class="signUp">
+        <i></i>
+        <div>
+            <p>Suscribite y <span class="discount">OBTENE 20% OFF</span> para tu primera orden. <a href="/users/register">Hacelo aquí</a></p>
+        </div>
+        <i id="closeSignUp" class="bi bi-x-lg"></i>
+    </div>    
+<% }else{ %>
+    <h2>Hola, <%= currentUser.nombre %></h2>
+    <a href="/users/logout">Cerrar sesion</a>
+<% } %>
+
 <header class="header">
     <a href="/"><h2>NOSTRA</h2></a>
     <nav>

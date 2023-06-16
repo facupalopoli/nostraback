@@ -78,7 +78,6 @@ router.get('/catalog/ninos', async (req,res)=>{
 router.get('/catalog/wanted', async (req,res)=>{
     try{
         const productos = await Products.find({ rating: { $gte: 4 } })
-        console.log(productos)
         if (productos.length !==0){
             res.render('pages/catalog', {productos:productos})    
         }else{
@@ -183,11 +182,10 @@ router.post('/agregar-carro/:id', async (req,res)=>{
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
     }
-
 })
 
 //borra un producto del carro
-router.post('/eliminar-carro/:id', async (req,res)=>{
+router.post('/eliminar-carro/:id', (req,res)=>{
     try{
         let idProduct = req.params.id
         cart = cart.filter(producto=>producto.id !== idProduct)

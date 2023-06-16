@@ -1,0 +1,19 @@
+<%- include('../../views/partials/head.ejs')%>
+
+<div>
+    <div>
+        <h1>Iniciar sesion</h1>
+        <form action="/users/login" method="post">
+            <div>
+                <input type="email" name="email" placeholder="ingrese su email" required>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="ingrese su password" required>
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+</div>
+<h2>Todavia no tenes usuario?<a href="/users/register">Registrate aquí</a></p></h2>
+
+<%- include('../../views/partials/footer.ejs')%>

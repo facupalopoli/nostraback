@@ -1,8 +1,8 @@
-/* import {Schema, model} from 'mongoose' */
-import mongoose from 'mongoose'
+import {Schema, model} from 'mongoose'
+
 import passportLocalMongoose from 'passport-local-mongoose'
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     email:{
         type: String,
         required: true,
@@ -13,7 +13,6 @@ const userSchema = new mongoose.Schema({
     },
     password:{
         type: String,
-        required: true,
         select:false,
     },
     resetPasswordToken: String,
@@ -21,4 +20,5 @@ const userSchema = new mongoose.Schema({
 })
 
 userSchema.plugin(passportLocalMongoose,{usernameField:'email'})
-export default mongoose.model('Users', userSchema)
+ 
+export default model('Users', userSchema)
