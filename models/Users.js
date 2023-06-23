@@ -13,7 +13,11 @@ const userSchema = new Schema({
     },
     password:{
         type: String,
-        select:false,
+        select: false,
+    },
+    esAdmin:{
+        type: Boolean,
+        default :false,
     },
     resetPasswordToken: String,
     resetPasswordExpires: Date

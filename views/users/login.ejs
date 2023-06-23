@@ -3,6 +3,7 @@
 <div>
     <div>
         <h1>Iniciar sesion</h1>
+        <%- include('../partials/messages') -%>
         <form action="/users/login" method="post">
             <div>
                 <input type="email" name="email" placeholder="ingrese su email" required>

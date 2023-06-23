@@ -138,8 +138,13 @@ router.get('/:id', async (req,res)=>{
 //pagina de compra realizada
 router.get('/cart/comprar', async (req,res)=>{
     try{
-        res.render('partials/success', {cart:cart})
-        cart = []
+        if (req.isAuthenticated()){
+            res.render('partials/success', {cart:cart})
+            cart = []
+        }else{
+            req.flash('error_msg', 'Primero debe inicar sesion para comprar.')
+            res.redirect('/users/login')       
+        }             
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})

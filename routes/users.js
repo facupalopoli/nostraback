@@ -22,6 +22,13 @@ router.get('/register', async (req,res)=>{
 
 router.get('/login', async (req,res)=>{
     try{
+        if(req.user && req.user.esAdmin){
+            /* req.flash('error_msg', 'Cierre su sesion primero') */
+            return res.redirect('/admin/dashboard')
+        }else if(req.isAuthenticated()){
+            req.flash('success_msg', `${req.user.nombre} ya podes hacer tu compra!`)
+            return res.redirect('/products/cart')
+        }
         res.render('users/login')
     }catch(error){
         console.log(error)
@@ -31,7 +38,8 @@ router.get('/login', async (req,res)=>{
 
 router.get('/logout', (req,res)=>{
     req.logout(()=>{
-        res.redirect('/')
+        req.flash('success_msg', 'Sesion cerrada correctamente')
+        res.redirect('/users/login')
     })
 })
 
@@ -60,19 +68,18 @@ router.post('/register',(req,res)=>{//AGREGAR TRY CATCH?
     }
     Users.register(userData,password,(error,user)=>{
     if(error){
-        console.log(error)
+        req.flash('error_msg', 'ERROR: ' + error);
         return res.redirect('/users/register')
     }
     req.flash('success_msg', 'Usuario registrado correctamente.')
-    res.redirect('/')
+    res.redirect('/users/login')
     })    
 })
 
 router.post('/login', passport.authenticate('local',{
     successRedirect: '/', // Redireccionar en caso de autenticación exitosa
     failureRedirect: '/users/login', // Redireccionar en caso de autenticación fallida
-    }), (req,res)=>{
-        console.log(req.user)
-})
+    })
+)
   
 export default router

@@ -1,27 +1,28 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import dotenv from 'dotenv';
-import morgan from 'morgan';
+import express from 'express'
+import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
+import morgan from 'morgan'
 import flash from 'connect-flash'
 import methodOverride from 'method-override'
-import session from 'express-session';
-import passport from 'passport';
-import LocalStrategy from 'passport-local';
-import './mongodb.js';
+import session from 'express-session'
+import passport from 'passport'
+import LocalStrategy from 'passport-local'
+import './mongodb.js'
 
-import productsRouter from './routes/products.js';
-import usersRouter from './routes/users.js';
-import Products from './models/Products.js';
-import Users from './models/Users.js';
+import productsRouter from './routes/products.js'
+import usersRouter from './routes/users.js'
+import adminRouter from './routes/admin.js'
+import Products from './models/Products.js'
+import Users from './models/Users.js'
 
 // Creación de la aplicación Express
 const app = express()
 
 // Seteo del motor de plantillas
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs')
 
 // Configuracion del dotenv para almacenar variables sensibles
-dotenv.config({path : './config.env'});
+dotenv.config({path : './config.env'})
 
 // -------------------Middlewares varios
 app.use(morgan('dev'))
@@ -74,6 +75,7 @@ app.get('/', async (req,res)=>{
 
 app.use('/products', productsRouter)
 app.use('/users', usersRouter)
+app.use('/admin', adminRouter)
 
 app.all('/*',(req,res)=>{
     /* res.status(404).json({mensaje:'no se reconoce la direccion web'}) */
