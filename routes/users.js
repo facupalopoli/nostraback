@@ -76,10 +76,14 @@ router.post('/register',(req,res)=>{//AGREGAR TRY CATCH?
     })    
 })
 
-router.post('/login', passport.authenticate('local',{
-    successRedirect: '/', // Redireccionar en caso de autenticación exitosa
-    failureRedirect: '/users/login', // Redireccionar en caso de autenticación fallida
-    })
-)
+router.post('/login', passport.authenticate('local', {failureRedirect:'/users/login'}),(req, res)=>{
+    // Verificar el tipo de usuario y redirigir según corresponda
+    if (req.user.esAdmin) {
+        res.redirect('/admin/dashboard')
+    }else{
+        res.redirect('/')
+    }
+    }
+);
   
 export default router

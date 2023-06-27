@@ -1,0 +1,87 @@
+<%- include('../../views/partials/head.ejs')%>
+
+<!-- BORRAR ESTE LINKEO DESPUES DE ESTILAR -->
+<head>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<!-- ------------ -->
+
+<%- include('../../views/admin/navbaradmin.ejs')%>
+
+<h2>MODIFICAR PRODUCTO</h2>
+
+<form action="/admin/editproduct/<%= producto._id %>" method="POST">
+
+    <div class="form-group px-0">
+        <label for="titulo">Titulo: </label>
+        <input type="text" name="titulo" placeholder="Titulo del producto" value="<%= producto.titulo %>">
+    </div>
+
+    <div class="form-group px-0">
+        <label for="descripcion">Descripcion: </label>
+        <textarea name="descripcion" placeholder="Descripcion del producto"><%= producto.descripcion %></textarea>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="marca">Marca: </label>
+        <select name="marca">
+            <option value="nike" <%= producto.marca === 'nike' ? 'selected' : '' %> >Nike</option>
+            <option value="adidas" <%= producto.marca === 'adidas' ? 'selected' : '' %> >Adidas</option>
+            <option value="reebok" <%= producto.marca === 'reebok' ? 'selected' : '' %> >Reebok</option>
+            <option value="puma" <%= producto.marca === 'puma' ? 'selected' : '' %> >Puma</option>
+            <option value="generica" <%= producto.marca === 'generica' ? 'selected' : '' %> >Generica</option>
+        </select>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="categoria">Categoria: </label>
+        <select name="categoria">
+            <option value="hombre" <%= producto.categoria === 'hombre' ? 'selected' : '' %> >Hombre</option>
+            <option value="mujer" <%= producto.categoria === 'mujer' ? 'selected' : '' %> >Mujer</option>
+            <option value="kids" <%= producto.categoria === 'kids' ? 'selected' : '' %> >Niño</option>
+        </select>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="talle">Talle: </label>
+        <select name="talle">
+            <option value="m" <%= producto.talle === 'm' ? 'selected' : '' %> >M</option>
+            <option value="x" <%= producto.talle === 'x' ? 'selected' : '' %> >X</option>
+            <option value="xl" <%= producto.talle === 'xl' ? 'selected' : '' %> >XL</option>
+        </select>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="stock">Stock: </label>
+        <input type="number" name="stock" placeholder="Stock a ingresar" value="<%= producto.stock %>">
+    </div>
+
+    <div class="form-group px-0">
+        <label for="precio">Precio: $</label>
+        <input type="number" name="precio" placeholder="Precio" value="<%= producto.precio %>">
+    </div>
+
+    <div class="form-group px-0">
+        <label for="urlImagen">URL de imagen: </label>
+        <input type="text" id="urlInput" placeholder="URL de imagen">
+        <button type="button" id="agregarUrlBtn">Agregar URL</button>
+      </div>
+    
+      <ul id="imageUrlList">
+        <% producto.url_imagen.forEach((imagen)=> { %>
+            <li>
+                <a href="<%= imagen %>">Imagen</a>
+                <input type="hidden" name="url_imagen[]" value="<%= imagen %>">
+                <i class="bi bi-trash3 eliminarIcono" style="cursor:pointer"></i>
+            </li>
+        <% }) %>
+      </ul>
+
+    <button type="submit" class="btn btn-danger btn-block">Modificar producto</button>
+</form>
+
+<%- include('../partials/messages') -%>
+
+<script src="/js/addproduct.js" type="module"></script>
+
+<%- include('../../views/partials/footer.ejs')%>

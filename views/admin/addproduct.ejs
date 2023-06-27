@@ -1,0 +1,79 @@
+<%- include('../../views/partials/head.ejs')%>
+
+<!-- BORRAR ESTE LINKEO DESPUES DE ESTILAR -->
+<head>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<!-- ------------ -->
+
+<%- include('../../views/admin/navbaradmin.ejs')%>
+
+<h2>AGREGAR</h2>
+
+<form action="/admin/addproduct" method="POST">
+
+    <div class="form-group px-0">
+        <label for="titulo">Titulo: </label>
+        <input type="text" name="titulo" placeholder="Titulo del producto">
+    </div>
+
+    <div class="form-group px-0">
+        <label for="descripcion">Descripcion: </label>
+        <textarea name="descripcion" placeholder="Descripcion del producto"></textarea>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="marca">Marca: </label>
+        <select name="marca">
+            <option value="nike">Nike</option>
+            <option value="adidas">Adidas</option>
+            <option value="reebok">Reebok</option>
+            <option value="puma">Puma</option>
+            <option value="generica">Generica</option>
+        </select>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="categoria">Categoria: </label>
+        <select name="categoria">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="kids">Niño</option>
+        </select>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="talle">Talle: </label>
+        <select name="talle">
+            <option value="m">M</option>
+            <option value="x">X</option>
+            <option value="xl">XL</option>
+        </select>
+    </div>
+
+    <div class="form-group px-0">
+        <label for="stock">Stock: </label>
+        <input type="number" name="stock" placeholder="Stock a ingresar">
+    </div>
+
+    <div class="form-group px-0">
+        <label for="precio">Precio: $</label>
+        <input type="number" name="precio" placeholder="Precio">
+    </div>
+
+    <div class="form-group px-0">
+        <label for="urlImagen">URL de imagen: </label>
+        <input type="text" id="urlInput" placeholder="URL de imagen">
+        <button type="button" id="agregarUrlBtn">Agregar URL</button>
+      </div>
+    
+      <ul id="imageUrlList"></ul>
+
+    <button type="submit" class="btn btn-danger btn-block">Agregar producto</button>
+</form>
+
+<%- include('../partials/messages') -%>
+
+<script src="/js/addproduct.js" type="module"></script>
+
+<%- include('../../views/partials/footer.ejs')%>
