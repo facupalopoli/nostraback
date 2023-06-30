@@ -30,8 +30,8 @@ router.get('/catalog/hombres', async (req,res)=>{
         if (productos.length !==0){
             res.render('pages/hombres', {productos:productos})    
         }else{
-            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
-            const productosDestacados = await Products.aggregate([{ $sample: { size: 8 } }])
+            //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
             res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
         }
     }catch(error){
@@ -47,8 +47,8 @@ router.get('/catalog/mujeres', async (req,res)=>{
         if (productos.length !==0){
             res.render('pages/mujeres', {productos:productos})    
         }else{
-            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
-            const productosDestacados = await Products.aggregate([{ $sample: { size: 8 } }])
+            //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
             res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
         }
     }catch(error){
@@ -64,8 +64,8 @@ router.get('/catalog/ninos', async (req,res)=>{
         if (productos.length !==0){
             res.render('pages/ninos', {productos:productos})    
         }else{
-            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
-            const productosDestacados = await Products.aggregate([{ $sample: { size: 8 } }])
+            //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
             res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
         }
     }catch(error){
@@ -81,8 +81,8 @@ router.get('/catalog/wanted', async (req,res)=>{
         if (productos.length !==0){
             res.render('pages/catalog', {productos:productos})    
         }else{
-            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
-            const productosDestacados = await Products.aggregate([{ $sample: { size: 8 } }])
+            //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
             res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
         }
     }catch(error){
@@ -100,8 +100,8 @@ router.get('/search', async (req,res)=>{
         if (productos.length !==0){
             res.render('pages/catalog', {productos:productos, productBusqueda:productBusqueda})    
         }else{
-            //me llevo 8 documentos de la base de datos por si no encontro nada para mostrar productos destacados
-            const productosDestacados = await Products.aggregate([{ $sample: { size: 8 } }])
+            //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
+            const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
             res.render('pages/catalog', {productos:productos, productosDestacados:productosDestacados})
         }
     }catch(error){
@@ -113,8 +113,8 @@ router.get('/search', async (req,res)=>{
 //trae los documentos guardados en mi carro
 router.get('/cart', async (req,res)=>{
     try{
-        //me llevo 8 productos de la base a cart por si no hay productos en el carrito
-        const productosDestacados = await Products.aggregate([{ $sample: { size: 8 } }])
+        //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
+        const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
         res.render('pages/cart', {cart:cart, productosDestacados:productosDestacados})
     }catch(error){
         console.log(error)
@@ -126,7 +126,7 @@ router.get('/cart', async (req,res)=>{
 router.get('/:id', async (req,res)=>{
     try{
         const producto = await Products.findById(req.params.id)
-        //me busca tambien productos relacionados utilizando la propiedad categoria y me excluye el id del producto en cuestion
+        //me busca tambien productos relacionados (solo 8 productos de la base) utilizando la propiedad categoria y me excluye el id del producto en cuestion
         const productosRelacionados = await Products.find({categoria: producto.categoria, _id: {$ne: producto._id}}).limit(8)
         res.render('pages/product', {producto:producto, productosRelacionados:productosRelacionados})
     }catch(error){
