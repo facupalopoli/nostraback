@@ -1,5 +1,5 @@
-"use strict"
+"use strict";
 
-const btnDer = document.querySelector('.btnDer')
-const btnIzq = document.querySelector('.btnIzq')
-let currentSlide = 0
+const btnDer = document.querySelector(".btnDer");
+const btnIzq = document.querySelector(".btnIzq");
+let currentSlide = 0;

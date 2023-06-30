@@ -2,7 +2,7 @@
 
 <!-- BORRAR ESTE LINKEO DESPUES DE ESTILAR -->
 <head>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <!-- ------------ -->
 
@@ -39,13 +39,30 @@
                         <td>$ <%= producto.precio %></td>
                         <td>
                             <a class="btn btn-primary" href="/admin/edit/<%= producto._id %>">Editar</a>
-                            <form style="display: inline;" action="/delete/user/<%= producto._id %>?_method=DELETE" method="POST">
-                                <input type="hidden" name="_method" value="DELETE">
+                            <button type="button" class="btn btn-danger ml-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= producto._id %>">Eliminar</button>
+                        </td>
+                        
+                    </tr>
+                    
+                    <div class="modal fade" id="staticBackdrop<%= producto._id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel<%= producto._id %>" aria-hidden="true">
+                        <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Esta seguro de eliminar este producto?</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            Esta acción no podrá deshacerse
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar ventana</button>
+                            <form action="/admin/delete/<%= producto._id %>" method="POST">
                                 <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Eliminar</button>
                             </form>
-                        </td>
-                    </tr>
-
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 <% }) %>
                 
             </tbody>
@@ -54,5 +71,9 @@
 </div>
 </div>
 
+ 
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 <%- include('../../views/partials/footer.ejs')%>

@@ -82,4 +82,19 @@ router.post('/editproduct/:id', async (req,res)=>{
     }
 })
 
+router.post('/delete/:id', async (req,res)=>{
+    try{
+        const product = await Products.findByIdAndDelete(req.params.id)
+        if(product===null){
+            throw new Error('Producto no encontrado')
+        }
+        req.flash('success_msg', 'Producto eliminado')
+        res.redirect('/admin/editdelete')
+    }catch(error){
+        console.log(error)
+        res.status(404).json({mensaje:'error interno del sistema'})
+    }
+})
+
+
 export default router
