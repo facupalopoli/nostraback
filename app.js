@@ -64,7 +64,7 @@ app.use(methodOverride('_method')) //La función app.use(methodOverride('_method
 app.get('/', async (req,res)=>{
     try{
         const productsPerPage = 4
-        const productosDestacados = await Products.aggregate([{ $sample: { size: 4 } }])
+        const productosDestacados = await Products.aggregate([{ $sample: { size: 8 } }])
         res.render('pages/index', {productosDestacados:productosDestacados, productsPerPage: productsPerPage})    
     }
     catch(error){
