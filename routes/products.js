@@ -5,12 +5,9 @@ import Products from '../models/Products.js'
 
 let cart = []
 
-//---------------------GET
-
 //router de /products
-router.get('/',(req,res)=>{
-    res.send('hola desde el router de productos')
-}) 
+
+//---------------------GET
 
 //trae todos los documentos de la base hacia el catalogo
 router.get('/catalog', async (req,res)=>{

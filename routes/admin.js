@@ -14,6 +14,8 @@ function isAuthenticatedUser(req, res, next) {
     }
 }
 
+//router de /admin
+
 //----------- RUTAS GET
 
 router.get('/dashboard', isAuthenticatedUser, (req, res) => {
@@ -25,7 +27,7 @@ router.get('/dashboard', isAuthenticatedUser, (req, res) => {
 
 });
 
-router.get('/addproduct', async (req,res)=>{
+router.get('/addproduct', isAuthenticatedUser, async (req,res)=>{
     try{
         res.render('admin/addproduct')
     }catch(error){
@@ -34,7 +36,7 @@ router.get('/addproduct', async (req,res)=>{
     }
 })
 
-router.get('/editdelete', async (req,res)=>{
+router.get('/editdelete', isAuthenticatedUser, async (req,res)=>{
     try{
         const productos = await Products.find()
         res.render('admin/editdelete', {productos:productos})
@@ -44,7 +46,7 @@ router.get('/editdelete', async (req,res)=>{
     }
 })
 
-router.get('/edit/:id', async (req,res)=>{
+router.get('/edit/:id', isAuthenticatedUser, async (req,res)=>{
     try{
         const producto = await Products.findById(req.params.id)
         res.render('admin/editproduct', {producto:producto})
@@ -56,7 +58,8 @@ router.get('/edit/:id', async (req,res)=>{
 
 //----------- RUTAS POST
 
-router.post('/addproduct', async (req,res)=>{
+//agrega un producto a la base
+router.post('/addproduct', isAuthenticatedUser, async (req,res)=>{
     try{
         const products = new Products(req.body)
         await products.save()
@@ -68,7 +71,8 @@ router.post('/addproduct', async (req,res)=>{
     }
 })
 
-router.post('/editproduct/:id', async (req,res)=>{
+//edita un documento de la base
+router.post('/editproduct/:id', isAuthenticatedUser, async (req,res)=>{
     try{
         const product = await Products.findByIdAndUpdate(req.params.id, req.body)
         if(product===null){
@@ -82,7 +86,8 @@ router.post('/editproduct/:id', async (req,res)=>{
     }
 })
 
-router.post('/delete/:id', async (req,res)=>{
+//borra un documento de la base utilizando el parametro id
+router.post('/delete/:id', isAuthenticatedUser, async (req,res)=>{
     try{
         const product = await Products.findByIdAndDelete(req.params.id)
         if(product===null){
@@ -95,6 +100,5 @@ router.post('/delete/:id', async (req,res)=>{
         res.status(404).json({mensaje:'error interno del sistema'})
     }
 })
-
 
 export default router

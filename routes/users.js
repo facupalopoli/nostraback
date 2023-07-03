@@ -4,12 +4,9 @@ import passport from 'passport'
 
 import Users from '../models/Users.js'
 
-//---------------------GET
-
 //router de /users
-router.get('/',(req,res)=>{
-    res.send('hola desde el router de users')
-}) 
+
+//---------------------GET
 
 router.get('/register', async (req,res)=>{
     try{
@@ -26,8 +23,7 @@ router.get('/login', async (req,res)=>{
             /* req.flash('error_msg', 'Cierre su sesion primero') */
             return res.redirect('/admin/dashboard')
         }else if(req.isAuthenticated()){
-            req.flash('success_msg', `${req.user.nombre} ya podes hacer tu compra!`)
-            return res.redirect('/products/cart')
+            return res.redirect('/')
         }
         res.render('users/login')
     }catch(error){
@@ -45,38 +41,31 @@ router.get('/logout', (req,res)=>{
 
 /*obtener rutas POST */
 
-/* router.post('/register', async (req,res)=>{
-    try{
-        let { nombre, email, password } = req.body
-        let userData={
-            nombre: nombre,
-            email: email
-        }
-        await Users.register(userData, password)
-        res.redirect('/')
-    }catch(error){
-        console.log(error)
-        res.redirect('/users/register')
-    }
-}) */
-
-router.post('/register',(req,res)=>{//AGREGAR TRY CATCH?
-    let {nombre , email, password}=  req.body 
+//registro de usuario
+router.post('/register', async (req,res)=>{
+    let {nombre , email, password, passwordConfirm} = req.body 
     let userData={
         nombre:nombre,
         email:email
     }
-    Users.register(userData,password,(error,user)=>{
-    if(error){
-        req.flash('error_msg', 'ERROR: ' + error);
-        return res.redirect('/users/register')
+    //compara que sean iguales los campos de password y passwordConfirm que llegan del body
+    if (password === passwordConfirm){
+        await Users.register(userData,password,(error,user)=>{
+        if(error){
+            req.flash('error_msg', 'ERROR: Esta operación no puede realizarse, probablemente el usuario ya existe en la base de datos.')
+            return res.redirect('/users/register')
+        }
+        req.flash('success_msg', 'Usuario registrado correctamente.')
+        res.redirect('/users/login')
+        })        
+    }else{
+        req.flash('error_msg', 'La contraseña no coincide')
+        res.redirect('/users/register')
     }
-    req.flash('success_msg', 'Usuario registrado correctamente.')
-    res.redirect('/users/login')
-    })    
 })
 
-router.post('/login', passport.authenticate('local', {failureRedirect:'/users/login'}),(req, res)=>{
+//logueo de usuario
+router.post('/login', passport.authenticate('local', {failureRedirect:'/users/login', failureFlash: 'Error al iniciar sesión. Verifica tus credenciales.'}),(req, res)=>{
     // Verificar el tipo de usuario y redirigir según corresponda
     if (req.user.esAdmin) {
         res.redirect('/admin/dashboard')
