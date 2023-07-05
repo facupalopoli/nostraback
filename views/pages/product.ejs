@@ -1,18 +1,158 @@
-<%- include('../../views/partials/head.ejs')%>
+<%- include('../../views/partials/products/headProducts.ejs')%>
 
-<%- include('../../views/partials/header.ejs')%>
 
-<h1><%= producto.titulo %></h1>
-<h2><%= producto.precio %></h2>
-<% producto.url_imagen.forEach(producto=>{ %>
-    <img src="<%= producto %>" alt="" style="width: 300px">
-<% }) %>
-<form class="addToCartForm" action="/products/agregar-carro/<%= producto.id %>" method="POST">
-    <button type="submit" class="bi bi-cart-plus"></button>
-</form>
-<p><%= producto.descripcion %></p>
+<%- include('../../views/partials/products/headerProducts.ejs')%>
+
+<section class="Product1 d-flex my-2 pt-3"><!--cambiar a espaniol y ponerlo generico-->
+    <div class="ubicacion d-flex col-lg-10 col-md-10 col-10">Browse product <i class="bi bi-chevron-right"></i> Women <i class="bi bi-chevron-right"></i><span>Jackets</span> 
+    </div>
+</section>
+
+<section class="Product d-flex my-2 pt-4" id="hero">
+            
+    <div class="mainHero position-sticky mt-10 col-lg-10 col-md-11 col-11">
+        <div class="col-lg-6 col-md-12 col-12" id="contenedorFotos">
+            <!-- Swiper -->
+
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+                <% producto.url_imagen.forEach(producto=>{ %>
+            <div class="swiper-slide">
+                
+                
+                    <img src="<%= producto %>" alt=""  height="10px" class="small-img">
+            </div>
+                <% }) %>
+                
+                
+            
+            
+            
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <% producto.url_imagen.forEach(producto=>{ %>
+            <div class="swiper-slide">
+                <img src="<%= producto %>" width="100%" class="small-img" alt="">
+            </div>
+                <% }) %>
+            
+            </div>
+        </div>
+
+    </div>
+    
+
+    <div class=" mitadHero col-lg-6 col-md-12 col-12">
+        <h2 class="weight"><%= producto.titulo %></h2>
+        <div class="container-estrellas" id="rating">
+            <i class="bi bi-star-fill checked"></i>
+            <i class="bi bi-star-fill checked"></i>
+            <i class="bi bi-star-fill checked"></i>
+            <i class="bi bi-star-fill checked"></i>
+            <i class="bi bi-star-half checked"></i>
+            <p>(4.9)</p>
+            
+        </div>
+        <h3 class="weight">$<%= producto.precio %></h3>
+        <div class="line pt-4" id="lineaPrecio"></div>
+        <div class="size">
+            <h4>Available Size</h4>
+            <div class="size-buttons">
+                <button class="size-btn selected" onclick="selectSize(this)">S</button>
+                <button class="size-btn" onclick="selectSize(this)">M</button>
+                <button class="size-btn" onclick="selectSize(this)">L</button>
+            </div>
+              
+              
+        </div>
+        <div class="line"></div>
+        <div class="addToCart">
+            <h5>Last 1 left <span>- make it yours!</span></h5>
+            <div class="d-flex">
+                <div class="counter">
+                    <button class="minus-btn">-</button>
+                    <div class="counter-value">1</div>
+                    <button class="plus-btn">+</button>
+                </div> 
+                <form class="addToCartForm" action="/products/agregar-carro/<%= producto.id %>" method="POST">
+                    <button class="buy-btn">Add To Cart</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+
+
+
+<section class="losDetalles">
+    <div class="col-lg-10 col-md-11 col-11">
+        <h4 class="tituloDetalles">Los Detalles</h4>
+        <div class="line2" id="lineaDetalles"></div>
+        <p class="pt-3"><%= producto.descripcion %></p>
+        
+    </div>
+</section>
+
+
+
+
+
 
 
 <%- include('../../views/partials/related.ejs')%>
 
-<%- include('../../views/partials/footer.ejs')%>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+        
+        });
+        
+
+        var swiper2 = new Swiper(".mySwiper2", {
+        loop: true,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: swiper,
+        },
+        grabCursor: true,
+        effect: "creative",
+        creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+        
+        }
+    });
+    </script>
+    <script src="/js/product.js"></script>
+
+<%- include('../../views/partials/products/footerProducts.ejs')%>
