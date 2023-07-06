@@ -91,7 +91,7 @@ function mostrarProductos(productos) {
       <div class="texto_producto">
       <div>
         <span>$${productos.precio}</span>
-        <form class="addToCartForm" action="/products/agregar-carro/<%= producto._id %>" method="POST">
+        <form class="addToCartForm" action="/products/agregar-carro/${productos._id}" method="POST">
          <button type="submit" class="bi bi-cart-plus"></button>
         </form>
        
