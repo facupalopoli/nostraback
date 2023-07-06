@@ -14,7 +14,7 @@ const actualizarTotal = () =>{
   priceCart.forEach(item => {
     acumCarro += Number(item.innerText.split('$').pop())
   })
-  totalCompra.innerText= `Total compra: $ ${acumCarro}`
+  totalCompra.innerText= ` $ ${acumCarro}`
 }
 
 //cuando termina de cargarse el DOM de la ruta products/cart entonces me ejecuta el IF y por consiguiente la funcion actualizarTotal
