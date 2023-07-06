@@ -627,7 +627,100 @@ footer{
     color: var(--grisPlace);
     padding: 2rem 0;
 }
+/* ------------LOGIN Y REGISTER------------ */
+.Login{
+    display: flex;
+    justify-content: center;
+   padding-top: 50px;
+}
+.register{
+    display: flex;
+    justify-content: center;
+   padding-top: 50px;
+}
+.register .divLogin h1{
+    width: 150px;
+}
 
+.divLogin{
+    width: 25%;
+    height: 500px;
+}
+.divLogin form{
+    margin-top: 20px;
+    width: 100%;
+}
+.divLogin h1{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 190px;
+    border-bottom:solid 1px black;
+    color: #000000;
+}
+.divLogin div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divLogin form div input{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 8px 5px;
+    margin-bottom: 20px;
+    border-radius:5px ;
+    width: 100%;
+    
+}
+.divLogin form div input::placeholder{
+    color: rgb(0, 0, 0); 
+
+}
+.divLogin form div label{
+    margin: 10px 0;
+    display: flex;
+    justify-content: start;
+    color: #000000;
+}
+.divLogin form button{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+    padding: 12px 23%;
+    border-radius: 5px;
+    width: 60%;
+    background-color: #fff;
+    color: black;
+}
+.divLogin form button:hover{
+    background-color: #000000;
+    color: #fff;
+    transition: all .6s ease;
+}
+.divLogin h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.divLogin h2 a{
+    margin-left: 5px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: 650;
+}
 /* ---------------------------------------- */
 /* -------RESPONSIVE----------------------- */
 /* ---------------------------------------- */

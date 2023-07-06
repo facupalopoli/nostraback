@@ -1,17 +1,20 @@
 <%- include('../../views/partials/head.ejs')%>
 
-<div>
-    <div>
+<section class="register">
+    <div class="divLogin">
         <h1>Registrar</h1>
         <%- include('../partials/messages') -%>
         <form action="/users/register" method="post">
             <div>
+                <label for="">Nombre</label>
                 <input type="text" name="nombre" placeholder="ingrese su nombre" required>
             </div>
             <div>
+                <label for="">Email</label>
                 <input type="email" name="email" placeholder="ingrese su email" required>
             </div>
             <div>
+                <label for="">Contraseña</label>
                 <input type="password" name="password" placeholder="ingrese su password" required>
             </div>
             <div>
@@ -19,8 +22,10 @@
             </div>
             <button type="submit">Registrar</button>
         </form>
+        <h2>Ya tenes usuario?<a href="/users/login">Inicia sesion aquí</a></p></h2><!-- holahola -->
     </div>
-</div>
-<h2>Ya tenes usuario?<a href="/users/login">Inicia sesion aquí</a></p></h2>
+</section>
+
+
 
 <%- include('../../views/partials/footer.ejs')%>
