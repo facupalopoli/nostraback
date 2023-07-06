@@ -636,7 +636,7 @@ footer{
 .register{
     display: flex;
     justify-content: center;
-   padding-top: 50px;
+   padding: 50px 0;
 }
 .register .divLogin h1{
     width: 150px;
