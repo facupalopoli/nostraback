@@ -66,4 +66,3 @@ if (closeSignUp !== null){
    signUp.classList.add('hidden')
   })
 }
-/* asdsada */
