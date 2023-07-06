@@ -3,8 +3,8 @@
 
 <%- include('../../views/partials/products/headerProducts.ejs')%>
 
-<section class="Product1 d-flex my-2 pt-3"><!--cambiar a espaniol y ponerlo generico-->
-    <div class="ubicacion d-flex col-lg-10 col-md-10 col-10">Browse product <i class="bi bi-chevron-right"></i> Women <i class="bi bi-chevron-right"></i><span>Jackets</span> 
+<section class="Product1 d-flex my-2"><!--cambiar a espaniol y ponerlo generico-->
+    <div class="ubicacion d-flex col-lg-9 col-md-10 col-10" id="ubicacionDonde">Browse product <i class="bi bi-chevron-right"></i> Women <i class="bi bi-chevron-right"></i><span>Jackets</span> 
     </div>
 </section>
 
@@ -92,7 +92,7 @@
 
 
 <section class="losDetalles">
-    <div class="col-lg-10 col-md-11 col-11">
+    <div class="col-lg-10 col-md-11 col-11 pt-5">
         <h4 class="tituloDetalles">Los Detalles</h4>
         <div class="line2" id="lineaDetalles"></div>
         <p class="pt-3"><%= producto.descripcion %></p>
