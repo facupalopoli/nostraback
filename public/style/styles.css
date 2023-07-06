@@ -878,6 +878,50 @@ margin-right: auto;
     display: block;
     margin-top: 50px;
 }
+/* ------------COMPRA FINALIZADA----------- */
+.sectionCompraFinalizada{
+    display: flex;
+    justify-content: center;
+    padding-top: 90px;
+    padding-bottom: 70px;
+}
+.sectionCompraFinalizada div{
+   display: flex;
+   width: 40%;
+   flex-direction: column;
+   margin-left: auto;
+   margin-right: auto;
+}
+.sectionCompraFinalizada div h1{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 70px;
+}
+.sectionCompraFinalizada div p{
+    font-size: 16px;
+   
+}
+.sectionCompraFinalizada div p a{
+    font-weight: 700;
+    text-decoration: none;
+}
+.sectionCompraFinalizada div >a{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+    text-decoration: none;
+    border-radius: 5px;
+    height: 35px;
+    background-color: #000000;
+    color: #ffffff;
+}
+.sectionCompraFinalizada div>a:hover{
+    transition: all .6s ease;
+    border: solid 1px black;
+    background-color: #ffffff;
+    color: #000000;
+}
 /* ---------------------------------------- */
 /* -------RESPONSIVE----------------------- */
 /* ---------------------------------------- */
