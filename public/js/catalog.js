@@ -83,19 +83,20 @@ function mostrarProductos(productos) {
     productosContainer.innerHTML += `
     <div class="caja_producto">
       <div class="caja_img">
-        <img src=${productos.url_imagen[0]} alt="">
+        <img class="img_producto"src=${productos.url_imagen[0]} alt="">
       </div>
       <div  class="detalle_producto">
         <span>${productos.titulo}</span>
       </div>
       <div class="texto_producto">
-      <div  >
+      <div>
         <span>$${productos.precio}</span>
-        <button type="submit" class="bi bi-cart-plus"></button>
+        <form class="addToCartForm" action="/products/agregar-carro/<%= producto._id %>" method="POST">
+         <button type="submit" class="bi bi-cart-plus"></button>
+        </form>
+       
       </div>
     </div>
-   
-     
       
     </div>`;
   });
@@ -112,6 +113,22 @@ document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
 
 // Obtén todos los elementos .opcion
 const menuItems = document.querySelectorAll('.opcion');
+/* -------------------------------------- */
+// Obtén todos los elementos .seleccion
+const seleccionItems = document.querySelectorAll('.seleccion');
+
+// Agrega un controlador de eventos a cada elemento .seleccion
+seleccionItems.forEach(function (seleccionItem) {
+  seleccionItem.addEventListener('click', function (event) {
+    const input = this.querySelector('input[type="checkbox"]'); // Obtén el input dentro del elemento .seleccion
+
+    // Verifica si el evento proviene del texto "Mujer"
+    if (event.target === this) {
+      input.checked = !input.checked; // Marcar/desmarcar el input al hacer clic en el texto "Mujer"
+    }
+  });
+});
+/* ---------------------------------- */
 
 // Agrega un controlador de eventos a cada elemento .opcion
 menuItems.forEach(function (menuItem) {

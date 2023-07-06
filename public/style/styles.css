@@ -706,6 +706,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+  
    
 }
 
@@ -715,7 +716,7 @@ footer{
 .contenedor_catalogo{
     display: flex;
     width: 85%;
-
+  
 }
 
 
@@ -734,16 +735,17 @@ footer{
 }
 
 .titulo_nav{
-
-     width: 65%;
     
+    width: 85%;
+   
+  
 }
 .titulo_nav h4{
     padding-bottom: 1rem;
     padding-top: 1rem;
-    width: 80%;
+  
     display: flex;
-    margin-left: 10%;
+ 
     
     
 }
@@ -824,7 +826,7 @@ footer{
 
 .contenedor_productos{
     
-    margin-top: 10px;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: 
         repeat(
@@ -833,7 +835,7 @@ footer{
         );
    
     align-content: flex-end;
-   
+ 
 }
 
 .caja_producto{
@@ -859,11 +861,12 @@ footer{
 
 }
 
-.caja_img img {
+.img_producto {
     max-width: 100%; /* La imagen se ajustará al ancho máximo permitido */
     max-height: 100%; /* La imagen se ajustará a la altura máxima permitida */
     object-fit: contain; /* Mantiene las proporciones y ajusta la imagen dentro del contenedor */
     border-radius: 5%;
+    
    
   }
 
