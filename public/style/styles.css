@@ -1103,11 +1103,376 @@ margin-right: auto;
         padding: 0.8rem 8vw;
     }
     /* ---------------HEADER Y NAVBAR------------------------- */
-    .header{
-        padding: 2.5rem 8vw;
+    @media (width<= 1560px){
+        .header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+        }
+        .menu-toggle{
+            display: block;
+        }
+        .dropdown a{
+            color: #ffffff;
+            background-color: black;
+            border-radius: 15px;
+            
+        }
+        .menu li{
+            color: #ffffff;
+            background-color: black;
+            border-radius: 15px;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+            background-color: transparent;
+            position: absolute;
+            left: 17%;
+            top: 10%;
+            height:12rem;
+            width: 14rem;
+            
+            
+          }
+        
+          .menu.active {
+            display: block;
+          }
+        
+          .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px 0;
+          }
+          .dropdown-menu {
+            display: none;
+            background-color: transparent;
+            margin-left: 13rem;
+            margin-top: -60px;
+            padding: 0px;
+          }
+          .dropdown-menu li{
+            background-color: #000000;
+            border-radius: 15px ;
+            height: 39px;
+            color: #ffffff;
+            
+          }
+          .dropdown-menu li a{
+            font-size: 16px;
+          }
+          .dropdown.active .dropdown-menu {
+            display: block;
+            width: 13rem;
+            
+          }
+        .navDer{
+            display: flex;
+    
+            width: 25%;
+            height: 30px;
+           
+            
+            justify-content: space-between;
+        }
+        
+     .divBtnLupa{
+        display: flex;
+        position: relative;
+        padding: 5px;
+        border: 0;
+        
+    
     }
-    .navDer > i{
-        font-size: 1.1rem;
+    .divBtnLupa input{
+        width: 0px;
+        height: 25px;
+        padding: 0 15px;
+        font-size: 12px;
+        color: black; 
+        outline: none;
+        border: 0px solid transparent;
+        border-radius:15px;
+        transition: all 0.5s ease;
+    }
+    .divLupa{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: #ffffff;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+        border-radius: 10px ;
+        cursor: pointer;
+        border:solid 1px var(--grisPlace);
+        transition: all 1.3s ease-in-out;
+    }
+    
+    .divBtnLupa:hover input{
+        
+        width: 180px;
+        margin-left: -80px;
+    }
+    .divBtnLupa input:focus{
+        border:solid 1px rgb(0, 0, 0);
+        width: 180px;
+        margin-left: -80px;
+    }
+        .divBtnLupa:hover input{
+            transition: all .8s ease-in-out;
+            border:solid 1px var(--grisPlace) ;
+        }
+        .divLupa:hover{
+             border: solid 1px var(--grisPlace);
+             transition: all .5s ease-in-out;
+        }
+        .divBtnLupa{
+            display:flex; 
+            
+          
+        }
+        .iconocarrito>i{
+            margin-top: 0;
+        }
+        .iconocarrito{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+    @media(width<=1100px){
+        .navDer{
+            width: 35%;
+        }
+        .menu{
+            width: 8rem;
+        }
+        .menu li a{
+            font-size: 12px;
+    
+        }
+        .dropdown a{
+            font-size: 12px;
+    
+        }
+        .dropdown-menu li{
+            height: 20px;
+            margin-top: 25px;
+        }
+        .dropdown-menu li a{
+            
+            font-size: 12px;
+        }
+        .dropdown.active .dropdown-menu {
+            display: block;
+            margin-top: -70px;
+            width: 8rem;
+            margin-left: 7rem;
+            
+          }
+    }
+    @media(width<= 1000) {
+        .navDer{
+            width: 25%;
+        }
+        .iconocarrito{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+    @media(width<=800px){
+       
+        
+        .menu{
+            margin-top: 90px;
+        }
+        
+         .header{
+             display: grid;
+             height: 150px;
+             grid-template-columns: auto auto auto;
+             grid-template-rows:auto auto auto auto auto;
+             width: 100%;
+             
+         }
+        
+         .navDer{
+            grid-row: 3/3;
+            grid-column: 3/5;
+            width: 120%;
+         }
+         .header h2{
+            margin-bottom: 20px;
+            grid-column: 1/ span 5;
+           
+        }
+        .menu-toggle{
+            display: grid;
+            grid-column: 1/2;
+        }
+        .iconocarrito{
+            display: flex;
+        }
+        .menu-toggle{
+            display: grid;
+            grid-column: 1/1 ;
+            grid-row:3/3 ;
+        } 
+       .divBtnLupa{
+          width: 150px;  
+        } 
+        .divBtnLupa:hover input{
+            margin-left: -80px;
+    
+        }
+        .divBtnLupa:focus input{
+            margin-left: -80px;
+    
+        }
+        .iconocarrito{
+            gap: 10px;
+        }
+    
+    }
+    
+    @media(width<=684px){
+        .menu{
+            margin-top: 100px;
+        }
+    }
+    @media (width<=600px){
+        .header{
+            display: grid;
+            height: 150px;
+            grid-template-columns: auto auto auto;
+            grid-template-rows:auto auto auto auto auto;
+            width: 100%;
+            
+        }
+       
+        .navDer{
+           grid-row: 3/3;
+           grid-column: 3/5;
+           width: 120%;
+        }
+        .header h2{
+           margin-bottom: 20px;
+           grid-column: 1/ span 5;
+          
+       }
+     /*   .list{
+           display: grid;
+           grid-column: 1/2;
+       } */
+       .iconocarrito >i{
+           font-size: 18px;
+       }
+       .hamburger{
+        font-size: 18px;
+       }
+       .menu-toggle{
+           display: grid;
+           grid-column: 1/1 ;
+           grid-row:3/3 ;
+           font-size: 18px;
+       } 
+       .divBtnLupa input{
+        height: 15px;
+        font-size: 10px;
+       }
+       .divBtnLupa:hover input{
+        width: 100px;
+       }
+       .divLupa{
+        width: 25px;
+        height: 25px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+       .divLupa button{
+        
+        margin: auto auto;
+        
+        font-size: 10px;
+       }
+       .divBtnLupa:hover input{
+        margin-left: -80px;
+    }
+    .divBtnLupa:focus input{
+        margin-left: -80px;
+    }
+    .divBtnLupa{
+        width: 50px;  
+      } 
+      .menu{
+        width: 5rem;
+    }
+    .menu li{
+        width: 5rem;
+    }
+    .menu li a{
+        font-size: 8px;
+    
+    }
+    .dropdown a{
+        font-size: 8px;
+    
+    }
+    .dropdown-menu li{
+        height: 20px;
+        margin-left: -30%;
+        margin-top: 15px;
+    }
+    .dropdown-menu li a{
+        
+        font-size: 8px;
+    }
+    .dropdown.active .dropdown-menu {
+        display: block;
+        
+        margin-top: -55px;
+        width: 5rem;
+        margin-left: 7rem;
+        
+      }
+    }
+    @media (width<=450px){
+        .navDer{
+            margin-left: 10%;
+            width: 90%;
+        }
+        
+    }
+    @media(width<=370px){
+        .iconocarrito >i{
+            font-size: 14px;
+        }
+        .hamburger{
+         font-size: 14px;
+        }
+        .divBtnLupa{
+            width: 40px;  
+          } 
+          .divBtnLupa:hover input{
+            width: 70px;
+            margin-left: -50px;
+        }
+        .divBtnLupa:focus input{
+            margin-left: -50px;
+            width: 70px;
+           }
     }
     /* ----------------HERO------------------------ */
     .divHero{
