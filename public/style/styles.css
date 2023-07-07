@@ -690,7 +690,7 @@ font-weight: 600;
 /* -----------------FOOTER----------------------- */
 
 footer{
-    margin-top: 80px;
+    margin-top: 60px;
     background-color: var(--grisFooter);
     display: flex;
     flex-direction: column;
@@ -708,7 +708,7 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 40%;
+    width: 30%;
 }
 
 .nostraFooter p{
@@ -735,6 +735,7 @@ footer{
     color: var(--grisOscuro);
     font-weight: 600;
     font-size: 1.1rem;
+    
 }
 
 .footerCard a{
@@ -746,14 +747,14 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 15%;
+    width: 25%;
 }
 
 .cardPagos h3{
     color: var(--grisOscuro);
     font-weight: 600;
     font-size: 1.1rem;
-    text-align: end;
+    text-align: center;
 }
 
 .divPagos{
@@ -763,14 +764,22 @@ footer{
 
 .divPagos img{
     width: 45px;
+    margin: 18px;
     cursor: pointer;
     object-fit: contain;
 }
-
 .copyright{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 65%;
+}
+.copyright p{
     color: var(--grisPlace);
     padding: 2rem 0;
+    
 }
+
 /* ------------LOGIN Y REGISTER------------ */
 .Login{
     display: flex;
@@ -1280,6 +1289,7 @@ margin-left: 10px;
     .signUp{
         padding: 0.8rem 8vw;
     }
+}
     /* ---------------HEADER Y NAVBAR------------------------- */
     @media (width<= 1560px){
         .header{
@@ -1652,33 +1662,194 @@ margin-left: 10px;
             width: 70px;
            }
     }
-    /* ----------------HERO------------------------ */
-    .divHero{
-        width: 85%;
-    }
-    .hero h1{
-        font-size: 4rem;
-    }
+    /* ----------------SLIDER------------------------ */
+    @media(width<=1900px){
+        .comprar-btn{
+           left: 44%;
+        }
+       }
+       @media(width<=1700px){
+           .slide h1{
+               font-size: 3rem;
+           width: 90%;   
+           left: 8%;
+           }
+       
+       }
+       @media(width<=1500px){
+           .comprar-btn{
+              left: 43%;
+           }
+          }
+          @media(width<=1300px){
+           .comprar-btn{
+              left: 42%;
+           }
+           .slide h1{
+               font-size: 2.5rem;
+           }
+          }
+          @media(width<=1200px){
+           .comprar-btn{
+              left: 41%;
+           }
+          }
+          @media(width<=1100px){
+           .comprar-btn{
+              left: 41%;
+           }
+          }
+          @media(width<=1000px){
+           .comprar-btn{
+              left: 40%;
+           }
+          }
+          @media(width<=900px){
+           .comprar-btn{
+              left: 39%;
+           }
+           .slide h1{
+               font-size: 2rem;
+           }
+          }
+          @media(width<=800px){
+           .comprar-btn{
+              left: 38%;
+           }
+          }
+          @media(width<=700px){
+           .comprar-btn{
+               left: 36%;
+           }
+          }
+            @media(width<=600px){
+           .slide h1{
+               font-size: 1.5rem;
+               line-height: 40px;
+               top:30%;
+           }
+           .comprar-btn{
+               left: 34%;
+           }
+          }
+          @media(width<=500px){
+           .slide h1{
+               font-size: 1.4rem;
+               line-height: 32px;
+               top:29%;
+           }
+           .comprar-btn{
+               left: 27%;
+           }
+          }
     /* ---------------SECCION DE MARCAS------------------------- */
-    .divBrands{
-        width: 85%;
+    @media (width<=1200px){
+        /* marcas */
+        .logotipos{
+            display: grid;
+            grid-template-rows: 80px 80px;
+            grid-template-columns: auto auto auto auto;
+        }
+        
+        .divBrands{
+            gap: 30px;
+        }
+    }
+    
+    @media(width<=500px){
+        .logotipos{
+            display: grid;
+            grid-template-rows: 100px 100px 100px 100px;
+            grid-template-columns: auto auto ;
+        }
+      
+     
+       
+        .divBrands{
+            gap: 30px;
+        }
     }
     /* --------------SECCION DE EXPERIENCIA-------------------------- */
-    .titleExp{
-        width: 85%;
+    @media (width<=1000px){
+        .titleExp{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .titleExp> h2{
+            max-width: 100%;
+            width: 100%;
+            padding-bottom: 50px;
+        }
+        .titleExp div{
+            border-top: 3px solid var(--negro);
+            border-left: 0;
+            justify-content: start;
+            padding-top: 50px;
+            width: 100%;
+        }
+        .titleExp h3{
+            text-align: start;
+        }
     }
-    .titleExp h2{
-        max-width: 50%;
+    @media(width<=1000px){
+        .divExp{
+            display: grid;
+            grid-template-columns: 300px 300px;
+    
+        }
+        .divExp div{
+            padding-top: 40px;
+            width: 100%;
+        }
+    
     }
-    .divExp{
-        width: 85%;
+    @media(width<=1000px){
+        .divExp{
+            display: grid;
+            grid-template-columns: 250px 250px;
+    
+        }
+    }
+    @media(width<=750px){
+        .divExp{
+            display: grid;
+            grid-template-columns: 230px 230px;
+    
+        }
+    }
+    @media(width<=650px){
+        .divExp{
+            display: grid;
+            grid-template-columns: 350px;
+    
+        }
+    }
+    @media(width<=500px){
+        .divExp{
+            display: grid;
+            grid-template-columns: 250px;
+    
+        }
     }
     /* ----------------SECCION DE PICKS------------------------ */
-    .picks h2{
-        width: 85%;
-     }
-    .divPicks{
-        width: 85%;
+    @media(width<=1100px){
+        .divPicks{
+            display: grid;
+            grid-template-columns: 45% 45%;
+        }
+        .cardPicks{
+            width: 100%;
+        }
+    }
+    @media(width<=650px){
+        .divPicks{
+            display: grid;
+            grid-template-columns: 95%;
+        }
+        .cardPicks{
+            width: 100%;
+        }
     }
     /* --------------SECCION DE PRODUCTOS-------------------------- */
     .titleProducts{
@@ -1689,15 +1860,152 @@ margin-left: 10px;
         width: 85%;
     }
     /* ---------------SECCION DE OFERTAS------------------------- */
-    .divOffer{
-        width: 85%;
+    @media(width<=1500px){
+        .infoOffer h2{
+            font-size: 2rem;
+        }
+    }
+    @media(width<=1100px){
+        .infoOffer h2{
+            font-size: 1.3rem;
+        }
+    }
+    @media(width<=850px){
+        .infoOffer h2{
+            font-size: 1rem;
+        }
+        .divOffer{
+            height: 200px;
+        }
+      
+    }
+    @media(width<=700px){
+        .infoOffer h2 h3{
+            font-size: 0.8rem;
+        }
+        .infoOffer button{
+            
+    
+            font-size: 0.8rem;
+            border-radius: 4px;
+            height: 20px;
+        }
+        .divOffer img{
+            width: 35%;
+        }
+    }
+    @media(width<=700px){
+        .infoOffer{
+            padding-left: 1rem;
+        }
     }
     /* ----------------SECCION DE SUSCRIPCION------------------------ */
     .suscribe h2{
         max-width: 60%;
     }
     /* -----------------FOOTER----------------------- */
-    .divFooter{
-        width: 85%;
+    @media (width <= 1150px) and (width >= 900px){
+        .divFooter{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: auto  ;
+        }
+        .nostraFooter{
+            grid-column: 1/5;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .nostraFooter p{
+            width: 100%;
+        }
+        .shop{
+            grid-column: 1/2;
+            width: 100%;
+            margin-bottom: 30px;
+    
+        }
+        .compania{
+            grid-column: 2/3;
+            width: 100%;
+            margin-bottom: 30px;
+    
+        }
+        .soporte{
+            width: 100%;
+            grid-column: 3/4;
+        }
+        .cardPagos{
+            width: 100%;
+            grid-column: 4/5;
+        }
     }
-}
+    @media (width <= 899px){
+        .divFooter{
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: auto auto auto;
+        }
+        .nostraFooter{
+            grid-column: 1/5;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .shop{
+            grid-column: 1/2;
+            width: 100%;
+        }
+        .compania{
+            grid-column: 4/5;
+            width: 100%;
+    
+        }
+        .soporte{
+            margin-top: 30px;
+    
+            width: 100%;
+            grid-column: 1/2;
+        }
+        .cardPagos{
+            display:grid;
+            text-align:start;
+            width: 100%;
+            margin-top: 30px;
+    
+            justify-content: flex-start;
+            grid-column: 4/5;
+        }
+        .cardPagos h3{
+            display: flex;
+            text-align: start;
+        }
+        .divPagos img{
+            margin: 8px;
+        }
+    }
+    @media(width<=450px){
+        .divFooter{
+            display: grid;
+           grid-template-columns: 0;
+            grid-template-rows: 200px 200px 200px 200px 200px ;
+        }
+        .shop {
+           
+            grid-row: 2;
+            grid-column: 1/2;
+        }
+        .compania{
+            
+            grid-row: 3/3;
+            grid-column: 1/2;
+           
+        }
+        .soporte{
+            grid-column: 1/2;
+            grid-row: 4;
+        }
+        .cardPagos{
+            grid-column: 1/2;
+            grid-row: 5;
+        }
+    
+    }
