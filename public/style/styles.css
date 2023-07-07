@@ -922,6 +922,68 @@ margin-right: auto;
     background-color: #ffffff;
     color: #000000;
 }
+/* ------------PAGINA 404------------------ */
+.rueda {
+    text-align: center;
+    user-select: none;
+    padding: 99px 0;
+  }
+  
+  .rueda h1 {
+    font-size: 6rem;
+  }
+  
+  .rueda h1 .fas {
+    animation: animate1 2s linear infinite alternate;
+  }
+  
+  .rueda h1 .ruedaNum {
+    animation: animate2 2s  linear infinite alternate;
+  }
+  .rueda button{
+    margin-top:20px;
+    padding:0.5rem 1.2rem;
+    background-color: #ffffff;
+    border-radius:10px;
+    
+  }
+
+  .rueda button:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transition: all 1s;
+  }
+  .rueda p {
+    margin-top: 20px;
+    word-spacing: 5px;
+  }
+  .rueda p span a{
+    color:rgb(0, 0, 0);
+    font-weight:700;
+    text-decoration:none;
+  }
+  
+  @keyframes animate1 {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate2 {
+    0% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 /* ---------------------------------------- */
 /* -------RESPONSIVE----------------------- */
 /* ---------------------------------------- */
