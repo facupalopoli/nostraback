@@ -66,3 +66,70 @@ if (closeSignUp !== null){
    signUp.classList.add('hidden')
   })
 }
+
+
+
+
+
+
+
+
+/* funcion menu hamburguesa */
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('active');
+    
+  });
+
+});
+/* funcion para abrir la seccion de shop */
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach(function(dropdown) {
+    const trigger = dropdown.querySelector('a');
+    const menu = dropdown.querySelector('.dropdown-menu');
+
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('active');
+        
+      });
+      dropdown.classList.add('active');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  });
+});
+/* funcionalidad del menu logueado */
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.dropdown-logueado');
+
+  dropdowns.forEach(function(dropdown) {
+    const trigger = dropdown.querySelector('a');
+    const menu = dropdown.querySelector('.dropdown-menu-logueado');
+
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('active');
+        
+      });
+      dropdown.classList.add('active');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  });
+});

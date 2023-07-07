@@ -58,46 +58,136 @@ html{
 /* ---------------HEADER Y NAVBAR------------------------- */
 
 .header{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2.5rem 18vw;
 }
-
-.header h2{
-    font-weight: 700;
-}
-
-.header nav{
-    display: flex;
-    gap: 35px;
-}
-
-.header a{
+header>a{
+    
     text-decoration: none;
 }
-
-.navDer{
+nav{
     display: flex;
-    align-items: center;
-    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+    gap: 35px;
+    
+}
+.navDer li{
+    list-style: none;
+}
+.navDer li{
+    list-style: none;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px;
+}
+  
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+}
+.dropdown-menu li{
+  background-color: #000000;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+.dropdown-menu li a{
+  font-size: 12px;
+  color: white;
+}
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
 }
 
-.divInput{
+.hamburger {
+  
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.menu-toggle.active .hamburger:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .hamburger:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .hamburger:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu {
+  display: flex;
+  height: 80px;
+  margin-top: 45px;
+  justify-content: center;
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px ;
+}
+
+.dropdown-menu {
+  display: none;
+  
+}
+  
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+.dropdown-menu-logueado {
+    display: none;
+    
+  }
+    
+  .dropdown-logueado.active .dropdown-menu-logueado {
+      display: block;
+  }
+  
+.navDer{
+width: 25%;
+display: flex;
+align-items: center; 
+}
+.divBtnLupa{
+    display: flex;
+}
+.divBtnLupa input::placeholder {
+    color: var(--grisPlace);
+}
+.divBtnLupa{
     background-color: var(--grisInput);
     border: var(--grisIcon) 2px solid;
     border-radius: 10px;
     padding-left: 15px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
-
-.divInput button{
-    background-color: transparent;
-    border: none;
+.divBtnLupa{
+    display: flex;
+    width: 100%;
 }
-
-.inputSearch{
+.divBtnLupa input{
     background-color: var(--grisInput);
     color: var(--grisPlace);
     border: 0;
@@ -105,21 +195,41 @@ html{
     border-radius: 10px;
     font-size: 1rem;
     outline: none;
-    width: 100%;
+    width: 200px;
+} 
+.divLupa button{
+    background-color: #fff;
+    border: 0;
+   
+}
+.navDer{
+    width: 33%;
+    gap: 35px;
+    justify-content: space-between;
+    display: flex;
+   align-items: center;
 }
 
-.inputSearch::placeholder{
-    color: var(--grisPlace);
+.navDer >a{
+    margin-top: 0px;
+    font-size: 25px;
+}
+.persona-logueada{
+    font-size: 25px;
+    position: relative;
+}
+.dropdown-menu-logueado>a{
+font-weight: 600;
+}
+.dropdown-logueado> ul>h2{
+    margin-top: 10px;
+    font-size: 1rem;
 }
 
-.iconSearch{
-    color: var(--grisPlace);
-}
-
-.navDer i{
-    color: var(--negro);
-    font-size: 1.3rem;
-    cursor: pointer;
+.dropdown-logueado> ul{
+    position: absolute;
+    
+   right:18%;
 }
 
 /* ----------------HERO------------------------ */
