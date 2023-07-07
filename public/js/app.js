@@ -70,7 +70,62 @@ if (closeSignUp !== null){
 
 
 
+/* manejo y funcionalidad del slider */
+document.addEventListener("DOMContentLoaded", function() {
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const slideGuide = document.querySelector(".slide-guide");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  let currentIndex = 0;
 
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add("active");
+      } else {
+        slide.classList.remove("active");
+      }
+    });
+
+    updateSlideGuide(index);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function updateSlideGuide(index) {
+    const dots = slideGuide.querySelectorAll(".slide-guide-dot");
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  }
+
+  prevBtn.addEventListener("click", prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
+
+  // Mostrar la primera imagen y guía al cargar la página
+  showSlide(currentIndex);
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("slide-guide-dot");
+    dot.addEventListener("click", () => {
+      showSlide(i);
+    });
+    slideGuide.appendChild(dot);
+  });
+});
 
 
 
