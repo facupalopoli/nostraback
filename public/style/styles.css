@@ -1094,6 +1094,150 @@ margin-right: auto;
       opacity: 1;
     }
   }
+  /* ---AGREGAR/EDITAR/ELIMINAR PRODUCTOS------------- */
+.form-div-agregar-product{
+    display: block;
+    margin: auto;
+    width: 30%;
+    padding: 30px 0;
+}
+.col-9{
+    margin: auto;
+}
+.col-9 h2{
+    display: flex;
+    justify-content: center;
+    border-bottom:solid 1px black ;
+    width: 300px;
+    margin: 40px  auto;
+}
+.form-div-agregar-product div{
+    padding-top: 20px;
+    display: flex;
+   justify-content: start;
+   align-items: center;
+}
+.form-div-agregar-product h2{
+    display: flex;
+    justify-content: center;
+    width: 340px;
+    margin: 20px auto;
+    border-bottom: solid 1px black;
+}
+
+
+.form-group>button{
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border:solid 1px #000000;
+    border-radius: 10px;
+    padding: 8px 8px;
+}
+.form-group>button:hover{
+    transition: all.6s ease;
+    background-color: #000000;
+    color: #fff;
+}
+.form-div-agregar-product>button{
+    
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color: #000000;
+    border:solid 1px #000000;
+    border-radius: 10px;
+    padding: 10px 10px;
+    
+}
+
+.form-div-agregar-product>ul{
+    
+    margin-bottom: 40px;
+}
+.form-div-agregar-product>button:hover{
+    transition: all .6s ease;
+    background-color: #000000;
+    color: #fff;
+}
+.form-div-agregar-product div label{
+    font-weight:600;
+}
+.label-description{
+    
+}
+.input-marca{
+    border: 0;
+    border-bottom: solid 1px black;
+    border-radius: 5px;
+margin-left: 10px;
+ width: 200px;
+}
+.input-categoria{
+    border: 0;
+    border-bottom: solid 1px black;
+    border-radius: 5px;
+margin-left: 10px;
+ width: 200px;
+}
+.input-talle{
+    border: 0;
+    border-bottom: solid 1px black;
+    border-radius: 5px;
+margin-left: 10px;
+ width: 200px;
+}
+.input-description-add{
+    margin-left: 10px;
+    display: flex;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    border-bottom: solid 1px black;
+    align-items: center;
+    resize: none;
+    width: 250px;
+    height: 30px;
+}
+.input-description-edit{
+    margin-left: 10px;
+    display: flex;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    border-bottom: solid 1px black;
+    align-items: center;
+    resize: none;
+    width: 250px;
+    height: 100px;
+}
+
+.form-div-agregar-product div input{
+    padding: 0px 10px;
+    margin-left: 10px;
+    border: 0;
+    border-radius: 5px;
+ border-bottom: solid 1px black;
+}
+.form-div-agregar-product>button{
+   
+    margin: auto;
+    
+}
+
+/* ----------NAVBAR ADMIN------------------ */
+.header-admin a h2{
+    color: #000000;
+    text-decoration: none;
+}
+.header-admin nav a{
+    color: #000000;text-decoration: none;
+}
+.header-admin div a{
+    color: #000000;
+    text-decoration: none;
+}
 /* ---------------------------------------- */
 /* -------RESPONSIVE----------------------- */
 /* ---------------------------------------- */

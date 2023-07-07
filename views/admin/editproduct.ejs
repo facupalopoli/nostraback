@@ -8,23 +8,22 @@
 
 <%- include('../../views/admin/navbaradmin.ejs')%>
 
-<h2>MODIFICAR PRODUCTO</h2>
-
-<form action="/admin/editproduct/<%= producto._id %>" method="POST">
-
+<form class="form-div-agregar-product" action="/admin/editproduct/<%= producto._id %>" method="POST">
+    <h2>Modificar Producto</h2>
+    
     <div class="form-group px-0">
         <label for="titulo">Titulo: </label>
         <input type="text" name="titulo" placeholder="Titulo del producto" value="<%= producto.titulo %>">
     </div>
 
     <div class="form-group px-0">
-        <label for="descripcion">Descripcion: </label>
-        <textarea name="descripcion" placeholder="Descripcion del producto"><%= producto.descripcion %></textarea>
+        <label class="label-description" for="descripcion">Descripcion: </label>
+        <textarea class="input-description-edit" name="descripcion" placeholder="Descripcion del producto"><%= producto.descripcion %></textarea>
     </div>
 
     <div class="form-group px-0">
-        <label for="marca">Marca: </label>
-        <select name="marca">
+        <label class="label-marca" for="marca">Marca: </label>
+        <select  class="input-marca" name="marca">
             <option value="nike" <%= producto.marca === 'nike' ? 'selected' : '' %> >Nike</option>
             <option value="adidas" <%= producto.marca === 'adidas' ? 'selected' : '' %> >Adidas</option>
             <option value="reebok" <%= producto.marca === 'reebok' ? 'selected' : '' %> >Reebok</option>
@@ -35,7 +34,7 @@
 
     <div class="form-group px-0">
         <label for="categoria">Categoria: </label>
-        <select name="categoria">
+        <select class="input-categoria" name="categoria">
             <option value="hombre" <%= producto.categoria === 'hombre' ? 'selected' : '' %> >Hombre</option>
             <option value="mujer" <%= producto.categoria === 'mujer' ? 'selected' : '' %> >Mujer</option>
             <option value="kids" <%= producto.categoria === 'kids' ? 'selected' : '' %> >Niño</option>
@@ -44,7 +43,7 @@
 
     <div class="form-group px-0">
         <label for="talle">Talle: </label>
-        <select name="talle">
+        <select class="input-talle" name="talle">
             <option value="m" <%= producto.talle === 'm' ? 'selected' : '' %> >M</option>
             <option value="x" <%= producto.talle === 'x' ? 'selected' : '' %> >X</option>
             <option value="xl" <%= producto.talle === 'xl' ? 'selected' : '' %> >XL</option>
