@@ -929,6 +929,7 @@ footer{
   #paginacion button {
     margin: 5px;
     padding: 5px 10px;
+    margin-right: 10px;
     cursor: pointer;
     border-radius: 5%;
     border: solid 0.5px var(--grisIcon);
@@ -983,3 +984,20 @@ footer{
 
 /* fin mostrar productos paginacion ------------------ */
 
+/* ------------- RESPONSIVE GUILLE ----------------- */
+@media (max-width: 500px) {
+    .contenedor_catalogo {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    #paginacion {
+      flex-wrap: wrap;
+    }
+  
+    #paginacion button {
+      flex-basis: 3%;
+      max-width: 3%;
+    }
+  }
