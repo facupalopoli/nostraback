@@ -949,5 +949,37 @@ footer{
     margin-top: 3rem;
     
   }
+
+
+/*   ------------ESTILO DEL CHECKBOX ---------------------- */
+
+  /* Estilo personalizado para el checkbox */
+  .seleccion input[type="checkbox"] {
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del checkbox */
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000; /* Color del borde del checkbox */
+    border-radius: 3px; /* Borde redondeado */
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  /* Estilo del tilde */
+  .seleccion input[type="checkbox"]:checked:before {
+    content: "\2714"; /* Código del símbolo de tilde (checkmark) */
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 0;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    color: #000; /* Color del tilde */
+    transition: color 0.3s ease-in-out;
+  }
+
+
 /* fin mostrar productos paginacion ------------------ */
 

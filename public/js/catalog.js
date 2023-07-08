@@ -117,25 +117,24 @@ const menuItems = document.querySelectorAll('.opcion');
 // Obtén todos los elementos .seleccion
 const seleccionItems = document.querySelectorAll('.seleccion');
 
+
+/* ---------------------------------- */
 // Agrega un controlador de eventos a cada elemento .seleccion
 seleccionItems.forEach(function (seleccionItem) {
   seleccionItem.addEventListener('click', function (event) {
     const input = this.querySelector('input[type="checkbox"]'); // Obtén el input dentro del elemento .seleccion
+    event.stopImmediatePropagation();
 
-    // Verifica si el evento proviene del texto "Mujer"
-    if (event.target === this) {
-      input.checked = !input.checked; // Marcar/desmarcar el input al hacer clic en el texto "Mujer"
-    }
   });
 });
-/* ---------------------------------- */
 
 // Agrega un controlador de eventos a cada elemento .opcion
 menuItems.forEach(function (menuItem) {
+  
   menuItem.addEventListener('click', function (event) {
     const submenu = this.children[1]; // Obtén el submenu del elemento .opcion
-  
-
+    
+    
     // Verifica si el evento proviene del input dentro de .seleccion
     if (event.target.closest('.seleccion input')) {
       event.stopPropagation(); // Evita que el evento se propague al elemento padre
@@ -145,6 +144,7 @@ menuItems.forEach(function (menuItem) {
     // Alternar la clase "activo" en el submenu y el elemento .opcion
     submenu.classList.toggle('activo');
     this.classList.toggle('activo');
+    event.stopImmediatePropagation();
 
     
   });
