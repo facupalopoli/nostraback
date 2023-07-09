@@ -4,7 +4,7 @@
 <%- include('../../views/partials/products/headerProducts.ejs')%>
 
 <section class="Product1 d-flex my-2"><!--cambiar a espaniol y ponerlo generico-->
-    <div class="ubicacion d-flex col-lg-9 col-md-10 col-10" id="ubicacionDonde">Browse product <i class="bi bi-chevron-right"></i> Women <i class="bi bi-chevron-right"></i><span>Jackets</span> 
+    <div class="ubicacion d-flex col-lg-9 col-md-10 col-10" id="ubicacionDonde">Buscar producto <i class="bi bi-chevron-right"></i> Genero <i class="bi bi-chevron-right"></i><span>Ropa</span> 
     </div>
 </section>
 
@@ -101,12 +101,49 @@
 </section>
 
 
+<section class="productosRelacionados my-5 pb-5">
+            
+    <div class="titleProducts col-lg-10 col-11">
+        <h2>Productos Relacionados</h2>    
+        <div class="botonesHero">
+            <button class="scroll-btn prev-btn"><i class="bi bi-chevron-left"></i></button>
+            <button class="scroll-btn next-btn"><i class="bi bi-chevron-right"></i></button>
+        </div>
+    </div>
+    <div class="card-container-wrapper col-lg-10 col-md-11 col-11">
+        <div class="divProducts">
+            <% productosRelacionados.forEach(producto=>{ %>
+            <div class="cardProduct">
+                <a href="/products/<%= producto.id %>"><img src="<%= producto.url_imagen[0] %>" alt="imagen del producto"></a>
+                <div class="cardFooter">
+                    <div>
+                        <h3><%= producto.titulo %></h3>
+                        <h3 class="price">$ <%= producto.precio %></h3>    
+                    </div>  
+                    <i class="bi bi-cart-plus"></i>   
+                </div>
+            </div>
+            <!--test_1_div-->
+            
+            <% }) %>
+            
+            
+
+        </div>
+
+</div>
+
+</section>
 
 
 
 
 
-<%- include('../../views/partials/related.ejs')%>
+
+
+
+
+<!-- <%- include('../../views/partials/related.ejs')%> -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

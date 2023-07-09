@@ -460,7 +460,7 @@ align-items: center;
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     body {
@@ -505,7 +505,7 @@ align-items: center;
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
 
@@ -605,7 +605,7 @@ align-items: center;
     
     
 }
-
+/* agregar un pequeño hover */
 .cardProduct{
     flex: 0 0 calc(25% - 16px);
     width: 25%;
@@ -622,7 +622,7 @@ align-items: center;
 .cardProduct img{
     width: 100%;
     border-radius: 10px;
-    max-height: 70%;
+    max-height: 20rem;
     object-fit: cover;
     object-position: left;
 }
