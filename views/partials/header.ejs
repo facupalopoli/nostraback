@@ -1,3 +1,6 @@
+<%- include('../../views/partials/head.ejs')%>
+
+
 <% if(!currentUser) { %>
     <div id="signUp" class="signUp">
         <i></i>
@@ -7,24 +10,59 @@
         <i id="closeSignUp" class="bi bi-x-lg"></i>
     </div>    
 <% }else{ %>
-    <h2>Hola, <%= currentUser.nombre %></h2>
-    <a href="/users/logout">Cerrar sesion</a>
-<% } %>
+    
+    <% } %>
 
 <header class="header">
+    <div class="menu-toggle">
+        <div ><i class="bi bi-list hamburger"></i></div>
+    </div>
     <a href="/"><h2>NOSTRA</h2></a>
-    <nav>
-        <a href="/products/catalog">Shop <i class="bi bi-chevron-down"></i></a>
-        <a href="/products/catalog/wanted">Más buscados</a>
-        <a href="/products/catalog">Nuevos productos</a>
-        <a href="#brands">Marcas</a>
-    </nav>
+
+
+
+
+    <nav class="nav" id="nav">
+        <ul class="menu">
+          <div>
+              <li class="dropdown">
+                <a href="/products/catalog">Shop <i class="bi bi-chevron-down"></i></a>
+                   <ul class="dropdown-menu">
+                     <li><a href="/products/catalog/hombres">Hombres</a></li>
+                     <li><a href="/products/catalog/mujeres">Mujeres</a></li>
+                     <li><a href="/products/catalog/niños">Niños</a></li>
+                   </ul>
+              </li>
+          </div> 
+          <li><a href="/products/catalog/wanted">Más buscados</a></li> 
+          <li><a href="/products/catalog">Nuevos productos</a></li>
+          <li><a href="#brands">Marcas</a></li>
+        </ul>
+      </nav>
+
+
+
+
     <div class="navDer">
-        <form class = divInput action="/products/search" method="get">
+        <form class = divBtnLupa action="/products/search" method="get">
+            <div class="divLupa">
             <button type="submit"><i class="bi bi-search iconSearch"></i></button>
+            </div>
             <input class="inputSearch" type="search" id="buscar" name="buscar" placeholder="Buscar producto" autocomplete="off">
         </form>
-        <a id="btnCart" href="/products/cart"><i class="bi bi-cart2"></i></a>
-        <a id="btnCart" href="/users/login"><i class="bi bi-person"></i></a>
+        <a id="btnCart" href="/products/cart"><i class="bi bi-cart2 carritocompra"></i></a>
+        <% if(!currentUser) { %>
+        <a id="btnCart" href="/users/login"><i class="bi bi-person persona"></i></a>
+        <% }else{ %>
+            
+            <li class="dropdown-logueado">
+                
+                <a id="btnCart" href="/users/login"><i class="bi bi-person-check persona-logueada"></i></a>
+                   <ul class="dropdown-menu-logueado">
+                    <h2>Hola, <%= currentUser.nombre %></h2>
+                    <a href="/users/logout">Cerrar sesion</a>
+                   </ul>
+              </li>
+            <% }%>
     </div>
 </header>

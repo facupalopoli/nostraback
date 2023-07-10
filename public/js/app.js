@@ -66,3 +66,125 @@ if (closeSignUp !== null){
    signUp.classList.add('hidden')
   })
 }
+
+
+
+
+/* manejo y funcionalidad del slider */
+document.addEventListener("DOMContentLoaded", function() {
+  const slider = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".slide");
+  const slideGuide = document.querySelector(".slide-guide");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  let currentIndex = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.add("active");
+      } else {
+        slide.classList.remove("active");
+      }
+    });
+
+    updateSlideGuide(index);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  function updateSlideGuide(index) {
+    const dots = slideGuide.querySelectorAll(".slide-guide-dot");
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+  }
+
+  prevBtn.addEventListener("click", prevSlide);
+  nextBtn.addEventListener("click", nextSlide);
+
+  // Mostrar la primera imagen y guía al cargar la página
+  showSlide(currentIndex);
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("slide-guide-dot");
+    dot.addEventListener("click", () => {
+      showSlide(i);
+    });
+    slideGuide.appendChild(dot);
+  });
+});
+
+
+
+/* funcion menu hamburguesa */
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.menu');
+
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('active');
+    
+  });
+
+});
+/* funcion para abrir la seccion de shop */
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach(function(dropdown) {
+    const trigger = dropdown.querySelector('a');
+    const menu = dropdown.querySelector('.dropdown-menu');
+
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('active');
+        
+      });
+      dropdown.classList.add('active');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  });
+});
+/* funcionalidad del menu logueado */
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdowns = document.querySelectorAll('.dropdown-logueado');
+
+  dropdowns.forEach(function(dropdown) {
+    const trigger = dropdown.querySelector('a');
+    const menu = dropdown.querySelector('.dropdown-menu-logueado');
+
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      dropdowns.forEach(function(dropdown) {
+        dropdown.classList.remove('active');
+        
+      });
+      dropdown.classList.add('active');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  });
+});

@@ -1,10 +1,12 @@
-<header class="header">
+<%- include('../../views/partials/head.ejs')%>
+
+<header class="header header-admin">
     <a href="/"><h2>NOSTRA</h2></a>
     <nav>
         <a href="/admin/addproduct">Agregar producto </a>
         <a href="/admin/editdelete">Editar/Eliminar</a>
     </nav>
-    <div class="navDer">
+    <div class="cerrar-sesion-admin">
         <a id="btnCart" href="/users/logout">Cerrar sesión</a>
     </div>
 </header>

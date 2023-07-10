@@ -1,20 +1,24 @@
 <%- include('../../views/partials/head.ejs')%>
-
-<div>
-    <div>
+<%- include('../../views/partials/header.ejs')%>
+<section class="Login">
+    <div class="divLogin">
+        
         <h1>Iniciar sesion</h1>
         <%- include('../partials/messages') -%>
         <form action="/users/login" method="post">
             <div>
+                <label for="">Email</label>
                 <input type="email" name="email" placeholder="ingrese su email" required>
             </div>
             <div>
-                <input type="password" name="password" placeholder="ingrese su password" required>
+                <label for="">Contraseña</label>
+                <input type="password" name="password" placeholder="ingrese su contraseña" required>
             </div>
             <button type="submit">Ingresar</button>
         </form>
+        <h2>Todavia no tenes usuario?<a href="/users/register">Registrate aquí</a></h2>
+        
     </div>
-</div>
-<h2>Todavia no tenes usuario?<a href="/users/register">Registrate aquí</a></p></h2>
+</section>
 
 <%- include('../../views/partials/footer.ejs')%>

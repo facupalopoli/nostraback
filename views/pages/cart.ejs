@@ -3,28 +3,70 @@
 <%- include('../../views/partials/header.ejs')%>
 
 <!-- <h1>Hola CART</h1> -->
+<section class="cart">
+    <div class="contenedorCart">
+        <% if (cart.length !== 0){ %>    
+        <div class="cart-divProductos">
+             <h1>Carrito</h1>
 
-<% if (cart.length !== 0){ %>
-    <% cart.forEach(producto=>{ %>
-        <div class="">
-            <div>
-                <h3><%= producto.titulo %></h3>
-                <h3><%= producto.id %></h3>
-                <h3 id="priceCart<%= producto.id %>">$ <%= producto.precio %></h3>    
+            <div class="clasificaciones-cart">
+                <div>
+                <p>PRODUCTOS</p>
+                </div>
+                <p>CANTIDADES</p>
+                <p class="parrafo-precio">PRECIO</p>
+                  
             </div>
-            <button id="btnResta<%= producto.id %>" disabled>-</button><span id="stockCart<%= producto.id %>">1</span><button id="btnSuma<%= producto.id %>">+</button>
-            <form class="deleteToCartForm" action="/products/eliminar-carro/<%= producto.id %>" method="POST">
-                <button type="submit">ELIMINAR</button>
-            </form>
+     
+    
+        <% cart.forEach(producto=>{ %>
+            <div class="cart-sombra">
+                <div class="cart-cartas">
+                    <div class="carta-izquierda">
+                  <img src="<%= producto.url_imagen[0] %>" alt="">  
+                    <div>
+                        <h3><%= producto.titulo %> <%= producto.marca %></h3>
+                        
+                        <h2><%= producto.talle %></h2>
+                    </div>
+                    </div>
+                    <div class="carta-derecha">
+                        <div>
+                        <button id="btnResta<%= producto.id %>" disabled>-</button><span id="stockCart<%= producto.id %>">1</span><button class="cart-btnSuma" id="btnSuma<%= producto.id %>">+</button>
+                        <form class="deleteToCartForm" action="/products/eliminar-carro/<%= producto.id %>" method="POST">
+                            <button type="submit"><a href=""><i class="bi bi-trash"></i></a>Remover</button>
+                        </form>
+                        </div>
+                        <h3 id="priceCart<%= producto.id %>">$ <%= producto.precio %></h3>    
+                    </div>
+
+                </div>
+            </div>
+        <% }) %>
         </div>
-    <% }) %>
-    <h1 id="totalCompra"></h1>
-    <a href="/products/cart/comprar">COMPRAR PRODUCTOS</a>
-<% }else{ %>
-    <h1>NO HAY PRODUCTOS EN EL CARRO</h1>
-    <!-- muestro productos destacados por si no hay nada en el carro -->
-    <%- include('../../views/partials/featured.ejs')%>
+        <div class="cart-comprar-productos">
+            <div>
+                <h2>Precio total</h2>
+                 <h1 id="totalCompra"></h1>
+            </div>
+            
+            
+        <a href="/products/cart/comprar">COMPRAR PRODUCTOS</a>
+        </div>
+    
+    <% }else{ %>
+        <div class="cart-productos-vacios">
+            <div>
+            <h1>NO HAY PRODUCTOS EN EL CARRO</h1>
+            <p>Lo siento! Parece que tu carrito está vacío en este momento. No te preocupes, estamos aquí para ayudarte a encontrar los productos perfectos para ti. Explora nuestra amplia selección y encuentra los artículos que deseas añadir a tu carrito. </p>
+            <a href="/">Volver al inicio</a>
+            </div>
+            <!-- muestro productos destacados por si no hay nada en el carro -->
+            <%- include('../../views/partials/featured.ejs')%>
+        </div>   
 <% } %>
+    
+</section>
 
 <%- include('../partials/messages') -%>
 

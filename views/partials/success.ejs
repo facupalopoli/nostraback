@@ -5,21 +5,12 @@
 
 <!-- REVISAR COMO PASARLE LA CANTIDAD DE PRODUCTOS COMPRADOS -->
 
-<% if (cart.length !== 0){ %>
-    <h1>COMPRA EXITOSA</h1>
-    <% cart.forEach(producto=>{ %>
-        <div class="">
-            <div>
-                <h3><%= producto.titulo %></h3>
-                <h3 id="priceCart<%= producto.id %>">$ <%= producto.precio %></h3>    
-            </div>
-        </div>
-    <% }) %>
-    <h1 id="totalCompra"></h1>
-    <% }else{ %>
-        <h1>No se ha realizado la compra ya que el carrito esta vacío</h1>
-    <% } %>
-
-<a href="/">VOLVER AL INICIO</a>
+<section class="sectionCompraFinalizada">
+    <div>
+        <h1>Muchas gracias por tu compra!</h1>
+        <p>recibiras tu pedido dentro de las proximas 48 horas habiles, puedes hacer el seguimiendo desde <a href=""> aqui </a> con el codigo que te ha llegado a tu correo. Esperamos que tu experiencia con nosotros haya sido de tu agrado! </p>
+        <a href="/">volver al inicio</a>
+    </div>
+</section>
 
 <%- include('../../views/partials/footer.ejs')%>
