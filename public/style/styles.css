@@ -262,10 +262,11 @@ font-weight: 600;
     width: 80%;
     left: 15%;
     position: absolute;
-    font-size: 3.5rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3rem;
     color: #ffffff;
     letter-spacing: 2px;
-    font-weight: 700;
+    font-weight: 800;
 
   }
   .slide-guide {
@@ -784,12 +785,12 @@ footer{
 .Login{
     display: flex;
     justify-content: center;
-   padding-top: 50px;
+   
 }
 .register{
     display: flex;
     justify-content: center;
-   padding: 50px 0;
+   padding-bottom: 70px;
 }
 .register .divLogin h1{
     width: 150px;
