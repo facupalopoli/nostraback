@@ -432,6 +432,119 @@ html{
     color: var(--negro);
 }
 
+
+
+
+
+/* test_juan */
+/*--------------Productos relacionados------------*/
+/* ---------------------------------------------------
+---------------------------------------------------
+--------------------------------------------------- */
+.productosRelacionados{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+.card-container-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.titleProducts{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.titleProducts h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.divProducts{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px; /*gap de 17px para que se vean bien los 8 divs*/
+    
+    max-width: fit-content;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    
+    
+}
+.product-container{
+    /* width: 65%; */
+    display: inline-flex;
+
+    
+    overflow: hidden;
+    white-space: nowrap;
+
+    gap: 15px;
+}
+
+.cardProduct{
+    flex: 0 0 calc(25% - 16px);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    
+}
+.cardProduct h3{
+    font-size: 1.4rem;
+}
+
+.cardProduct img{
+    width: 100%;
+    border-radius: 10px;
+    max-height: 20rem;
+    object-fit: contain;
+    object-position: center;
+}
+.cardFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardFooter div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardFooter i{
+    color: white;
+    font-size: 1.6rem;
+    padding: 0.8rem 1rem;
+    background-color: var(--negro);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 3.8rem;
+    
+    
+}
+
+/* test_juan */
+/*--------------Productos relacionados------------*/
+/* ---------------------------------------------------
+---------------------------------------------------
+--------------------------------------------------- */
+
+
+
+
+
+
+
 /* ---------------SECCION DE OFERTAS------------------------- */
 
 .offer{
