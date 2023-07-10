@@ -2010,3 +2010,310 @@ margin-left: 10px;
         }
     
     }
+
+
+
+/* ------------------------------------------------------------------ */
+/* GUILLE CSS ----------------------- */
+/* ------------------------------------------------------------------ */
+
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+   
+}
+
+/* PAGINA PRODUCTOS --------- */
+
+/* contenedor de toda la web  */
+.contenedor_catalogo{
+    display: flex;
+    width: 85%;
+  
+}
+
+
+/*  -------NAV MENU ----------- */
+
+
+/* menu seleccion productos */
+.menu{
+    border-radius: 3%;  
+    min-width: 14rem ;
+    border: solid 2px var(--grisIcon);
+    height: min-content;
+    margin-right: 1rem;
+    padding: 0.5rem;
+
+}
+
+.titulo_nav{
+    
+    width: 85%;
+   
+  
+}
+.titulo_nav h4{
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  
+    display: flex;
+ 
+    
+    
+}
+
+.titulo_nav h4 a{
+   
+    text-decoration: none;
+
+}
+
+.seleccion{
+    color:var(--negro);
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    display: block;    
+   
+}
+
+.menu ul{
+    list-style: none;     
+    cursor: pointer;
+    
+}
+.menu > ul > li {
+    
+    position: relative;
+    border-bottom: solid var(--grisIcon);
+    padding: 5px 0px;
+    
+}
+
+.seleccion:hover{
+    background-color: rgb(231, 231, 231);
+    transition: background-color .6s;
+    border-radius: 4%;
+
+}
+
+.seleccion i{
+    padding-right: 1rem;
+
+}
+
+.menu ul .submenu{
+    display: none;
+        
+}
+  
+.menu ul .activo ul{
+    padding-left:1rem;
+    display: block;
+    
+}
+
+.contenedor_facu{
+    width: 100%;
+
+}
+/*  -------FILTRO MENU ----------- */
+
+.filtros_busqueda{ 
+    display: flex;
+    justify-content: space-between;
+
+   
+}
+     .filtros_aplicados_menu p{
+       padding-bottom: 1rem;
+    
+    }
+
+    .ordenar_por{
+        padding-top: 1rem;
+       
+    }
+
+
+.contenedor_productos{
+    
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+   
+    align-content: flex-end;
+ 
+}
+
+.caja_producto{
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 200px;
+
+}
+.caja_img{
+   
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    box-shadow: 2px 2px 4px rgba(212, 212, 212, 0.5);
+    margin-bottom: 1rem;
+
+}
+
+.img_producto {
+    max-width: 100%; /* La imagen se ajustará al ancho máximo permitido */
+    max-height: 100%; /* La imagen se ajustará a la altura máxima permitida */
+    object-fit: contain; /* Mantiene las proporciones y ajusta la imagen dentro del contenedor */
+    border-radius: 5%;
+    
+   
+  }
+
+
+.detalle_producto {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+  
+}
+
+.texto_producto{
+    width: 100%;
+    height: 15%;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    flex-direction: column;
+    
+}
+.texto_producto div{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+   
+}
+
+.texto_producto button{
+    color: white;
+    padding: 0.3rem 0.3rem;
+    background-color: var(--negro);
+    border-radius: 15%;
+    cursor: pointer;
+    border: none;
+}
+
+.select_ordenarpor{
+    border: solid 1px var(--grisIcon);
+    border-radius: 5%;
+    
+}
+
+/* ------ ordenar por ------- */
+
+.select_ordenarpor{ 
+    border: solid var(--grisIcon);
+     
+ }
+
+/* mostrar productos paginacion ----------------- */
+  
+  #paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  #paginacion button {
+    margin: 5px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5%;
+    border: solid 0.5px var(--grisIcon);
+    background-color: transparent;
+
+  }
+  
+  #paginacion button:hover {
+    background-color: #ccc;
+  }
+  
+  #paginacion button.active {
+    background-color: #666;
+    color: #fff;
+  }
+
+  #paginacion{
+    margin-top: 3rem;
+    
+  }
+
+
+/*   ------------ESTILO DEL CHECKBOX ---------------------- */
+
+  /* Estilo personalizado para el checkbox */
+  .seleccion input[type="checkbox"] {
+    -webkit-appearance: none; /* Elimina el estilo predeterminado del checkbox */
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid #000; /* Color del borde del checkbox */
+    border-radius: 3px; /* Borde redondeado */
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  /* Estilo del tilde */
+  .seleccion input[type="checkbox"]:checked:before {
+    content: "\2714"; /* Código del símbolo de tilde (checkmark) */
+   /*  display: inline-block; */
+ /*    font-size: 15px;
+    font-weight: 300;
+    line-height: 0;
+    width: 18px;
+    height: 18px; */
+  /*   text-align: center; */
+    color: #000; /* Color del tilde */
+    transition: color 0.3s ease-in-out;
+  }
+
+
+/* fin mostrar productos paginacion ------------------ */
+
+/* ------------- RESPONSIVE GUILLE ----------------- */
+@media (max-width: 500px) {
+    .contenedor_catalogo {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    #paginacion {
+      flex-wrap: wrap;
+    }
+  
+    #paginacion button {
+      flex-basis: 3%;
+      max-width: 3%;
+    }
+  }
