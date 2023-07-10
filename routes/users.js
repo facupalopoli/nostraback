@@ -1,6 +1,10 @@
 import express from 'express'
 const router=express.Router()
+
 import passport from 'passport'
+import async from 'async'
+import crypto from 'crypto'
+import nodemailer from 'nodemailer'
 
 import Users from '../models/Users.js'
 
@@ -39,6 +43,26 @@ router.get('/logout', (req,res)=>{
     })
 })
 
+router.get('/forgot', (req, res) => {
+    res.render('users/forgot')
+})
+
+router.get('/reset/:token', (req, res) => {
+    Users.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } })
+        .then(user => {
+            if (!user) {
+                req.flash('error_msg', 'Password reset token in invalid or has been expired.');
+                res.redirect('/users/forgot');
+            }
+
+            res.render('users/newpassword', { token: req.params.token });
+        })
+        .catch(err => {
+            req.flash('error_msg', 'ERROR: ' + err);
+            res.redirect('/users/forgot');
+        });
+});
+
 /*obtener rutas POST */
 
 //registro de usuario
@@ -74,5 +98,142 @@ router.post('/login', passport.authenticate('local', {failureRedirect:'/users/lo
     }
     }
 );
+
+//para resetar el password por token
+
+router.post('/forgot', (req, res, next) => {
+    async.waterfall([
+        (done) => {
+            crypto.randomBytes(20, (err, buf) => {
+                let token = buf.toString('hex');
+                console.log(token);
+                done(err, token);
+            });
+        },
+        (token, done) => {
+            Users.findOne({ email: req.body.email })
+                .then(user => {
+                    console.log(user);
+                    if (!user) {
+                        req.flash('error_msg', 'El usuario no existe con este mail');
+                        return res.redirect('/users/forgot');
+                    }
+
+                    user.resetPasswordToken = token;
+                    user.resetPasswordExpires = Date.now() + 1800000; // 1/2 hours
+
+                    user.save()
+                        .then(() => {
+                            done(null, token, user);
+                        })
+                        .catch(err => {
+                            done(err);
+                        });
+                })
+                .catch(err => {
+                    done(err);
+                });
+        },
+        (token, user, done) => {
+            let smtpTransport = nodemailer.createTransport({
+                service: 'Hotmail',
+                auth: {
+                    user: 'nostragrupo7@hotmail.com',
+                    pass: 'hola1234'
+                }
+            });
+
+            let mailOptions = {
+                to: user.email,
+                from: 'Grupo 7 nostragrupo7@hotmail.com',
+                subject: 'Email de recuperacion para proyecto NOSTRA',
+                text: 'Por favor ingrese en el siguiente link para recuperar su password: \n\n' +
+                    'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
+                    'Si usted no solicitó esto entonces ignore este mail.'
+            };
+
+            smtpTransport.sendMail(mailOptions, err => {
+                if (err) {
+                    return done(err);
+                }
+                done(null);
+            });
+        }
+    ], (err) => {
+        if (err) {
+            console.log(err)
+            req.flash('error_msg', 'ERROR: ' + err);
+            res.redirect('/users/forgot');
+        } else {
+            req.flash('success_msg', 'Las instrucciones han sido enviadas a su correo. Por favor revise su bandeja de entrada.');
+            res.redirect('/users/forgot');
+        }
+    });
+});
+
+router.post('/reset/:token', (req, res) => {
+    async.waterfall([
+        (done) => {
+            Users.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } })
+                .then(user => {
+                    console.log(user)
+                    if (!user) {
+                        req.flash('error_msg', 'El token es invalido o ha expirado');
+                        return res.redirect('/users/forgot');
+                    }
+
+                    if (req.body.password !== req.body.confirmpassword) {
+                        req.flash('error_msg', "El password no coincide.");
+                        return res.redirect('/users/forgot');
+                    }
+
+                    user.setPassword(req.body.password);
+                    user.resetPasswordToken = undefined;
+                    user.resetPasswordExpires = undefined;
+
+                    user.save()
+                        .then(() => {
+                            done(null, user);
+                        })
+                        .catch(err => {
+                            done(err);
+                        });
+                })
+                .catch(err => {
+                    done(err);
+                });
+        },
+        (user, done) => {
+            let smtpTransport = nodemailer.createTransport({
+                service: 'Hotmail',
+                auth: {
+                    user: 'nostragrupo7@hotmail.com',
+                    pass: 'hola1234'
+                }
+            });
+
+            let mailOptions = {
+                to: user.email,
+                from: 'Grupo 7 nostragrupo7@hotmail.com',
+                subject: 'Su password ha sido modificado!',
+                text: `Hola, ${user.nombre}\n\n` +
+                    `Este es un mensaje de confirmación que su password ha sido modificado para ${user.email}.`
+            };
+
+            smtpTransport.sendMail(mailOptions, err => {
+                if (err) {
+                    req.flash('error_msg', 'ERROR: ' + err);
+                    res.redirect('/users/login');
+                } else {
+                    req.flash('success_msg', 'Su password ha sido modificado con éxito');
+                    res.redirect('/users/login');
+                }
+            });
+        }
+    ], err => {
+        req.flash('error_msg', 'ERROR: ' + err);
+        res.redirect('/users/login');
+    });
+});
   
 export default router
