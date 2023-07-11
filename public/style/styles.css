@@ -2133,7 +2133,7 @@ margin-left: 10px;
 /* ------------------------------------------------------------------ */
 
 
-.contenedor{
+.contenedor-g{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2144,9 +2144,9 @@ margin-left: 10px;
 /* PAGINA PRODUCTOS --------- */
 
 /* contenedor de toda la web  */
-.contenedor_catalogo{
+.contenedor_catalogo-g{
     display: flex;
-    width: 85%;
+    width: 65%;
   
 }
 
@@ -2155,7 +2155,7 @@ margin-left: 10px;
 
 
 /* menu seleccion productos */
-.menu{
+.menu-g{
     border-radius: 3%;  
     min-width: 14rem ;
     border: solid 2px var(--grisIcon);
@@ -2165,13 +2165,14 @@ margin-left: 10px;
 
 }
 
-.titulo_nav{
+.titulo_nav-g{
     
-    width: 85%;
+    width: 65%;
+  
    
   
 }
-.titulo_nav h4{
+.titulo_nav-g h4{
     padding-bottom: 1rem;
     padding-top: 1rem;
   
@@ -2181,7 +2182,7 @@ margin-left: 10px;
     
 }
 
-.titulo_nav h4 a{
+.titulo_nav-g h4 a{
    
     text-decoration: none;
 
@@ -2196,12 +2197,13 @@ margin-left: 10px;
    
 }
 
-.menu ul{
+.menu-g ul{
     list-style: none;     
     cursor: pointer;
+  
     
 }
-.menu > ul > li {
+.menu-g > ul > li {
     
     position: relative;
     border-bottom: solid var(--grisIcon);
@@ -2221,12 +2223,12 @@ margin-left: 10px;
 
 }
 
-.menu ul .submenu{
+.menu-g ul .submenu{
     display: none;
         
 }
   
-.menu ul .activo ul{
+.menu-g ul .activo ul{
     padding-left:1rem;
     display: block;
     
@@ -2262,7 +2264,7 @@ margin-left: 10px;
     grid-template-columns: 
         repeat(
             auto-fit,
-            minmax(250px, 1fr)
+            minmax(180px, 1fr)
         );
    
     align-content: flex-end;
@@ -2349,6 +2351,8 @@ margin-left: 10px;
  }
 
 /* mostrar productos paginacion ----------------- */
+
+
   
   #paginacion {
     display: flex;
@@ -2401,13 +2405,6 @@ margin-left: 10px;
   /* Estilo del tilde */
   .seleccion input[type="checkbox"]:checked:before {
     content: "\2714"; /* Código del símbolo de tilde (checkmark) */
-   /*  display: inline-block; */
- /*    font-size: 15px;
-    font-weight: 300;
-    line-height: 0;
-    width: 18px;
-    height: 18px; */
-  /*   text-align: center; */
     color: #000; /* Color del tilde */
     transition: color 0.3s ease-in-out;
   }
@@ -2415,9 +2412,22 @@ margin-left: 10px;
 
 /* fin mostrar productos paginacion ------------------ */
 
+/* ---------- IMG BANNER -------------- */
+
+.banner-g{
+    
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    overflow: hidden;
+    height: 150px;
+    margin-bottom: 2rem;
+}
+
+
 /* ------------- RESPONSIVE GUILLE ----------------- */
 @media (max-width: 500px) {
-    .contenedor_catalogo {
+    .contenedor_catalogo-g {
       flex-direction: column;
     }
   }

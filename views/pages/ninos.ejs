@@ -2,11 +2,81 @@
 
 <%- include('../../views/partials/header.ejs')%>
 
-<img src="../../images/bannerNinos.jpg" alt="imagen de niña">
+<!-- <img src="../../images/bannerNinos.jpg" alt="imagen de niña"> -->
 
 <% if (productos.length !== 0){ %>
+    <div class="contenedor-g">
+        <div class="banner-g">
+            <img src="../../images/bannerNinos.jpg" alt="imagen de niños"> 
+            <img src="../../images/bannerNinos.jpg" alt="imagen de niños"> 
+            <img src="../../images/bannerNinos.jpg" alt="imagen de niños"> 
+        </div>
+        <div class="titulo_nav-g">
+            <h4><a href="/products/catalog">Menu</></a><i class="bi bi-chevron-right"></i>Filtrar Productos<i class="bi bi-chevron-right"></i><strong>Niños</strong></h4>
+        </div>
+       <section class="contenedor_catalogo-g">
+            <div class="menu-g">
+                <ul>                 
+             
+                    <li class="opcion">Marcas<i class="bi bi-chevron-right"></i>
+                        <ul class="submenu">
+                            <li class="seleccion"><input type="checkbox" id="marca-adidas"> Adidas</li>
+                            <li class="seleccion"><input type="checkbox" id="marca-nike"> Nike</li>
+                            <li class="seleccion"><input type="checkbox" id="marca-generica"> Generica</li>
+                        </ul>
+                    </li>   
+    
+                    <li class="opcion">Precio <i class="bi bi-chevron-right"></i>
+                        <ul class="submenu">
+                            <li class="seleccion"><input type="checkbox" id="precio-0-20000"> $0-$20000</li>
+                            <li class="seleccion"><input type="checkbox" id="precio-20000-30000"> $20000-$30000</li>
+                            <li class="seleccion"><input type="checkbox" id="precio-30000-mas"> más de $30000</li>
+                        </ul>
+                    </li> 
+    
+                    <li class="opcion">Talle<i class="bi bi-chevron-right"></i>
+                        <ul class="submenu">
+                            <li class="seleccion"><input type="checkbox" id="talle-m"> M</li>
+                            <li class="seleccion"><input type="checkbox" id="talle-l"> L</li>
+                            <li class="seleccion"><input type="checkbox" id="talle-xl"> XL</li>
+                        </ul>
+                    </li>
+                
+                </ul>
+                
+            </div>
 
-    <h2>Marca</h2>
+            <div class="contenedor_facu">
+                <div class="filtros_busqueda">
+                    <div class="filtros_aplicados">
+                        <p>Mostrando resultados de su búsqueda</p>
+                       
+                    </div>
+        
+                    <!-- <div class="ordenar_por">
+                        <label for="">Ordenar por </label>
+                        <select class="select_ordenarpor" id="">
+                            <option value="">Popular</option>   
+                            <option value="">A - Z</option>
+                            <option value="">Z - A</option>
+                            <option value="">Menor Precio</option>
+                            <option value="">Mayor Precio</option>
+                        </select>  
+                    </div> -->
+                </div>
+                <div class="contenedor_productos" id="productosContainer">
+
+                </div>  
+
+              
+            </div>
+              
+        </section>
+
+    </div> 
+  <div id="paginacion">
+                </div>
+   <!--  <h2>Marca</h2>
     <ul>
         <li><input type="checkbox" id="marca-adidas"> Adidas</li>
         <li><input type="checkbox" id="marca-nike"> Nike</li>
@@ -42,7 +112,7 @@
                 </div>
             <% }) %>
         </div>
-    </section>
+    </section> -->
 
 <% }else{ %>
         <h1>NO HAY PRODUCTOS DE NIÑOS EN ESTE MOMENTO</h1>
