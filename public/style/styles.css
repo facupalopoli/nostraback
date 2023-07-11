@@ -672,8 +672,15 @@ font-weight: 600;
     gap: 30px;
     height: 25rem;
     margin-left: 27px;
+    overflow-x: visible;
+    scrollbar-width: none; /* Hide the scrollbar for modern browsers */
+    -ms-overflow-style: none; /* Hide the scrollbar for Internet Explorer and Microsoft Edge */
+  /* Additional styling for the product container */
     
 }
+.product-container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar for WebKit-based browsers */
+  }
 
 .cardProduct1{
     flex: 0 0 calc(35% - 50px);

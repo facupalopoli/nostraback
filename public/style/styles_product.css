@@ -29,9 +29,14 @@ html{
 .signUp{
     display: flex;
     background-color: var(--negro);
-    padding: 0.8rem 18vw;
+    padding: 0.1rem 18vw;
     justify-content: space-between;
     align-items: center;
+    
+}
+.signUp p{
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .signUp *{
@@ -51,9 +56,6 @@ html{
 .signUp i{
     cursor: pointer;
 }
-.signUp p{
-    margin-bottom: 0rem;
-}
 
 
 .hidden{
@@ -67,7 +69,7 @@ html{
     font-size: 2rem;
     font-weight: bold;
 }
-.header{
+/* .header{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -114,7 +116,7 @@ nav{
     margin-top: 5px;
     border-radius: 15px;
   }
-  .dropdown-menu li a{
+  .dropdown-menu li a{0.8rem 18vw
     font-size: 12px;
     color: white;
   }
@@ -124,8 +126,8 @@ nav{
 
   .menu-toggle {
     display: none;
-    cursor: pointer;
-  }
+    cursor: pointer;0.8rem 18vw
+  }0.8rem 18vw
   
   .hamburger {
     
@@ -171,8 +173,8 @@ nav{
   }
 
 .navDer{
-width: 25%;
-align-items: center; 
+    width: 25%;
+    align-items: center; 
 }
 
 .divBtnLupa input::placeholder {
@@ -194,7 +196,185 @@ align-items: center;
 .iconocarrito >i{
     margin-top: 5px;
     font-size: 25px;
+} */
+
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 18vw;
 }
+header>a{
+    color: var(--negro);
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+    gap: 35px;
+    
+}
+.navDer li{
+    list-style: none;
+}
+.navDer li{
+    list-style: none;
+}
+nav ul {
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px;
+}
+  
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+}
+.dropdown-menu li{
+  background-color: #000000;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+.dropdown-menu li a{
+  font-size: 12px;
+  color: white;
+}
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.menu-toggle.active .hamburger:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .hamburger:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .hamburger:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.menu {
+  display: flex;
+  height: 80px;
+  margin-top: 45px;
+  justify-content: center;
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  padding: 10px ;
+}
+
+.dropdown-menu {
+  display: none;
+  
+}
+  
+.dropdown.active .dropdown-menu {
+    display: block;
+}
+.dropdown-menu-logueado {
+    display: none;
+    
+  }
+    
+  .dropdown-logueado.active .dropdown-menu-logueado {
+      display: block;
+  }
+  
+.navDer{
+width: 25%;
+display: flex;
+align-items: center; 
+}
+.divBtnLupa{
+    display: flex;
+}
+.divBtnLupa input::placeholder {
+    color: var(--grisPlace);
+}
+.divBtnLupa{
+    background-color: var(--grisInput);
+    border: var(--grisIcon) 2px solid;
+    border-radius: 10px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divBtnLupa{
+    display: flex;
+    width: 100%;
+}
+.divBtnLupa input{
+    background-color: var(--grisInput);
+    color: var(--grisPlace);
+    border: 0;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    width: 200px;
+} 
+.divLupa button{
+    background-color: #fff;
+    border: 0;
+   
+}
+.navDer{
+    width: 33%;
+    gap: 35px;
+    justify-content: space-between;
+    display: flex;
+   align-items: center;
+}
+
+.navDer >a{
+    margin-top: 0px;
+    font-size: 25px;
+}
+.persona-logueada{
+    font-size: 25px;
+    position: relative;
+}
+.dropdown-menu-logueado>a{
+font-weight: 600;
+}
+.dropdown-logueado> ul>h2{
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.dropdown-logueado> ul{
+    position: absolute;
+    
+   right:18%;
+}
+
+
 
 
 
@@ -818,6 +998,158 @@ footer{
         padding: 1rem;
     } 
 }
+
+
+  /* ---------------HEADER Y NAVBAR------------------------testear----- */
+  @media (width<= 1560px){
+    .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    .menu-toggle{
+        display: block;
+    }
+    .dropdown a{
+        color: #ffffff;
+        background-color: black;
+        border-radius: 15px;
+        
+    }
+    .menu li{
+        color: #ffffff;
+        background-color: black;
+        border-radius: 15px;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        background-color: transparent;
+        position: absolute;
+        left: 17%;
+        top: 10%;
+        height:12rem;
+        width: 14rem;
+        
+        
+      }
+    
+      .menu.active {
+        display: block;
+      }
+    
+      .menu a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 10px 0;
+      }
+      .dropdown-menu {
+        display: none;
+        background-color: transparent;
+        margin-left: 13rem;
+        margin-top: -60px;
+        padding: 0px;
+      }
+      .dropdown-menu li{
+        background-color: #000000;
+        border-radius: 15px ;
+        height: 39px;
+        color: #ffffff;
+        
+      }
+      .dropdown-menu li a{
+        font-size: 16px;
+      }
+      .dropdown.active .dropdown-menu {
+        display: block;
+        width: 13rem;
+        
+      }
+    .navDer{
+        display: flex;
+
+        width: 25%;
+        height: 30px;
+       
+        
+        justify-content: space-between;
+    }
+    
+ .divBtnLupa{
+    display: flex;
+    position: relative;
+    padding: 5px;
+    border: 0;
+    
+
+}
+.divBtnLupa input{
+    width: 0px;
+    height: 25px;
+    padding: 0 15px;
+    font-size: 12px;
+    color: black; 
+    outline: none;
+    border: 0px solid transparent;
+    border-radius:15px;
+    transition: all 0.5s ease;
+}
+.divLupa{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #ffffff;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    border-radius: 10px ;
+    cursor: pointer;
+    border:solid 1px var(--grisPlace);
+    transition: all 1.3s ease-in-out;
+}
+
+.divBtnLupa:hover input{
+    
+    width: 180px;
+    margin-left: -80px;
+}
+.divBtnLupa input:focus{
+    border:solid 1px rgb(0, 0, 0);
+    width: 180px;
+    margin-left: -80px;
+}
+    .divBtnLupa:hover input{
+        transition: all .8s ease-in-out;
+        border:solid 1px var(--grisPlace) ;
+    }
+    .divLupa:hover{
+         border: solid 1px var(--grisPlace);
+         transition: all .5s ease-in-out;
+    }
+    .divBtnLupa{
+        display:flex; 
+        
+      
+    }
+    .iconocarrito>i{
+        margin-top: 0;
+    }
+    .iconocarrito{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+
+
 @media(max-width: 1510px){
 
     .Product1 div{
