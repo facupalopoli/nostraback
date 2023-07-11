@@ -702,7 +702,7 @@ footer{
 /* ------------------------------------------------------------------ */
 
 
-.contenedor{
+.contenedor-g{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -713,7 +713,7 @@ footer{
 /* PAGINA PRODUCTOS --------- */
 
 /* contenedor de toda la web  */
-.contenedor_catalogo{
+.contenedor_catalogo-g{
     display: flex;
     width: 85%;
   
@@ -724,7 +724,7 @@ footer{
 
 
 /* menu seleccion productos */
-.menu{
+.menu-g{
     border-radius: 3%;  
     min-width: 14rem ;
     border: solid 2px var(--grisIcon);
@@ -734,13 +734,13 @@ footer{
 
 }
 
-.titulo_nav{
+.titulo_nav-g{
     
     width: 85%;
    
   
 }
-.titulo_nav h4{
+.titulo_nav-g h4{
     padding-bottom: 1rem;
     padding-top: 1rem;
   
@@ -750,7 +750,7 @@ footer{
     
 }
 
-.titulo_nav h4 a{
+.titulo_nav-g h4 a{
    
     text-decoration: none;
 
@@ -765,12 +765,12 @@ footer{
    
 }
 
-.menu ul{
+.menu-g ul{
     list-style: none;     
     cursor: pointer;
     
 }
-.menu > ul > li {
+.menu-g > ul > li {
     
     position: relative;
     border-bottom: solid var(--grisIcon);
@@ -790,12 +790,12 @@ footer{
 
 }
 
-.menu ul .submenu{
+.menu-g ul .submenu{
     display: none;
         
 }
   
-.menu ul .activo ul{
+.menu-g ul .activo ul{
     padding-left:1rem;
     display: block;
     
@@ -986,7 +986,7 @@ footer{
 
 /* ------------- RESPONSIVE GUILLE ----------------- */
 @media (max-width: 500px) {
-    .contenedor_catalogo {
+    .contenedor_catalogo-g {
       flex-direction: column;
     }
   }

@@ -2,12 +2,84 @@
 
 <%- include('../../views/partials/header.ejs')%>
 
-<img src="../../images/bannerNinos.jpg" alt="imagen de niña">
-
+<!-- <img src="../../images/bannerNinos.jpg" alt="imagen de niña"> -->
+ <h2>NIÑOS BANNER</h2>
 <% if (productos.length !== 0){ %>
 
-    <h2>Marca</h2>
-    <ul>
+    <div class="contenedor-g">
+        <div class="titulo_nav-g">
+            <h4><a href="">Menu</></a><i class="bi bi-chevron-right"></i>Filtrar Productos</a><i class="bi bi-chevron-right"></i><strong>Niños</strong></h4>
+        </div>
+       <section class="contenedor_catalogo-g">
+            <nav class="menu-g">
+                <ul>                 
+               <!--      <li class="opcion">Categorias <i class="bi bi-chevron-right"></i>
+                        <ul class="submenu">
+                            <li class="seleccion"><input type="checkbox" id="categoria-mujer"> Mujer</li>
+                            <li class="seleccion"><input type="checkbox" id="categoria-hombre"> Hombre</li>
+                            <li class="seleccion"><input type="checkbox" id="categoria-kids"> Niños</li>
+                        </ul>
+                    </li> -->
+             
+                    <li class="opcion">Marcas<i class="bi bi-chevron-right"></i>
+                        <ul class="submenu">
+                            <li class="seleccion"><input type="checkbox" id="marca-adidas"> Adidas</li>
+                            <li class="seleccion"><input type="checkbox" id="marca-nike"> Nike</li>
+                            <li class="seleccion"><input type="checkbox" id="marca-generica"> Generica</li>
+                        </ul>
+                    </li>   
+    
+                    <li class="opcion">Precio <i class="bi bi-chevron-right"></i>
+                        <ul class="submenu">
+                            <li class="seleccion"><input type="checkbox" id="precio-0-20000"> $0-$20000</li>
+                            <li class="seleccion"><input type="checkbox" id="precio-20000-30000"> $20000-$30000</li>
+                            <li class="seleccion"><input type="checkbox" id="precio-30000-mas"> más de $30000</li>
+                        </ul>
+                    </li> 
+    
+                    <li class="opcion">Talle<i class="bi bi-chevron-right"></i>
+                        <ul class="submenu">
+                            <li class="seleccion"><input type="checkbox" id="talle-m"> M</li>
+                            <li class="seleccion"><input type="checkbox" id="talle-l"> L</li>
+                            <li class="seleccion"><input type="checkbox" id="talle-xl"> XL</li>
+                        </ul>
+                    </li>
+                
+                </ul>
+                
+            </nav>
+
+            <div class="contenedor_facu">
+                <div class="filtros_busqueda">
+                    <div class="filtros_aplicados">
+                        <p>Mostrando 9 resultados de un total de "<%= productos.length %>"</p>
+                       
+                    </div>
+        
+                    <!-- <div class="ordenar_por">
+                        <label for="">Ordenar por </label>
+                        <select class="select_ordenarpor" id="">
+                            <option value="">Popular</option>   
+                            <option value="">A - Z</option>
+                            <option value="">Z - A</option>
+                            <option value="">Menor Precio</option>
+                            <option value="">Mayor Precio</option>
+                        </select>  
+                    </div> -->
+                </div>
+                <div class="contenedor_productos" id="productosContainer">
+
+                </div>  
+
+              
+            </div>
+              
+        </section>
+
+    </div> 
+  <div id="paginacion">
+                </div>
+   <!--  <ul>
         <li><input type="checkbox" id="marca-adidas"> Adidas</li>
         <li><input type="checkbox" id="marca-nike"> Nike</li>
         <li><input type="checkbox" id="marca-generica"> Generica</li>
@@ -42,7 +114,7 @@
                 </div>
             <% }) %>
         </div>
-    </section>
+    </section> -->
 
 <% }else{ %>
         <h1>NO HAY PRODUCTOS DE NIÑOS EN ESTE MOMENTO</h1>
