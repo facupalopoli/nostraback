@@ -706,8 +706,9 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-  
    
+  
+  
 }
 
 /* PAGINA PRODUCTOS --------- */
@@ -715,7 +716,7 @@ footer{
 /* contenedor de toda la web  */
 .contenedor_catalogo-g{
     display: flex;
-    width: 85%;
+    width: 65%;
   
 }
 
@@ -736,7 +737,7 @@ footer{
 
 .titulo_nav-g{
     
-    width: 85%;
+    width: 65%;
    
   
 }
@@ -983,6 +984,18 @@ footer{
 
 
 /* fin mostrar productos paginacion ------------------ */
+
+/* ---------- IMG BANNER -------------- */
+
+.banner-g{
+    
+    display: flex;
+    justify-content: center;
+    width: 65%;
+    overflow: hidden;
+    height: 150px;
+    margin-bottom: 2rem;
+}
 
 /* ------------- RESPONSIVE GUILLE ----------------- */
 @media (max-width: 500px) {
