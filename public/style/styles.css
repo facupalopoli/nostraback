@@ -832,7 +832,7 @@ footer{
     grid-template-columns: 
         repeat(
             auto-fit,
-            minmax(250px, 1fr)
+            minmax(150px, 1fr)
         );
    
     align-content: flex-end;
@@ -840,7 +840,7 @@ footer{
 }
 
 .caja_producto{
-    margin: 0.5rem;
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
