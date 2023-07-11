@@ -26,18 +26,18 @@
 //   });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn1');
+  const nextBtn = document.querySelector('.next-btn1');
   const productContainer = document.querySelector('.product-container');
 
   let scrollAmount = 0;
-  const productWidth = 300; // Adjust this value as per your product card width
+  const productWidth = 400; // Adjust this value as per your product card width
   const visibleProducts = 3;
-  const totalProducts = document.querySelectorAll('.cardProduct').length;
+  const totalProducts = document.querySelectorAll('.cardProduct1').length;
   const totalGroups = Math.ceil(totalProducts / visibleProducts);
 
   nextBtn.addEventListener('click', () => {
-      scrollAmount += productWidth * visibleProducts;
+      scrollAmount += (productWidth+15) * (visibleProducts);
       productContainer.style.transform = `translateX(-${scrollAmount}px)`;
 
       if (scrollAmount >= (totalGroups - 1) * productWidth * visibleProducts) {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   prevBtn.addEventListener('click', () => {
-      scrollAmount -= productWidth * visibleProducts;
+      scrollAmount -= (productWidth+15) * visibleProducts;
       productContainer.style.transform = `translateX(-${scrollAmount}px)`;
 
       if (scrollAmount === 0) {
