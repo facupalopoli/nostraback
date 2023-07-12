@@ -655,7 +655,7 @@ font-weight: 600;
     gap: 17px; /*gap de 17px para que se vean bien los 8 divs*/
     
     width: 65%;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     
     
@@ -674,13 +674,16 @@ font-weight: 600;
     margin-left: 27px;
     overflow-x: visible;
     scrollbar-width: none; /* Hide the scrollbar for modern browsers */
+    scrollbar-color: transparent transparent; /* Hide the scrollbar for IE10+ */
+    
     -ms-overflow-style: none; /* Hide the scrollbar for Internet Explorer and Microsoft Edge */
   /* Additional styling for the product container */
     
 }
 .product-container::-webkit-scrollbar {
     display: none; /* Hide the scrollbar for WebKit-based browsers */
-  }
+    
+}
 
 .cardProduct1{
     flex: 0 0 calc(35% - 50px);
@@ -1042,12 +1045,14 @@ footer{
 /* -----------CARRITO---------------------- */
 .cart{
     display: flex;
+    /* width: 65%; */
     justify-content: center;
     
 }
 .contenedorCart{
     display: flex;
     width: 65%;
+    justify-content: center;
 }
 .cart-divProductos{
     width: 70%;
@@ -1195,6 +1200,7 @@ margin-right: auto;
 .cart-productos-vacios{
     display: block;
     margin-top: 50px;
+    width: 150%; /* verr como solucionar */
 }
 /* ------------COMPRA FINALIZADA----------- */
 .sectionCompraFinalizada{
