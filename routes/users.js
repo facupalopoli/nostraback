@@ -173,37 +173,37 @@ router.post('/forgot', (req, res, next) => {
 
 router.post('/reset/:token', (req, res) => {
     async.waterfall([
-        (done) => {
+        function(done) {
             Users.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } })
                 .then(user => {
-                    console.log(user)
                     if (!user) {
-                        req.flash('error_msg', 'El token es invalido o ha expirado');
+                        req.flash('error_msg', 'El token es inválido o ha expirado.');
                         return res.redirect('/users/forgot');
                     }
 
                     if (req.body.password !== req.body.confirmpassword) {
-                        req.flash('error_msg', "El password no coincide.");
+                        req.flash('error_msg', 'El password no coincide.');
                         return res.redirect('/users/forgot');
                     }
 
-                    user.setPassword(req.body.password);
-                    user.resetPasswordToken = undefined;
-                    user.resetPasswordExpires = undefined;
+                    user.setPassword(req.body.password, () => {
+                        user.resetPasswordToken = undefined;
+                        user.resetPasswordExpires = undefined;
 
-                    user.save()
-                        .then(() => {
-                            done(null, user);
-                        })
-                        .catch(err => {
-                            done(err);
-                        });
+                        user.save()
+                            .then(() => {
+                                done(null, user);
+                            })
+                            .catch(err => {
+                                done(err);
+                            });
+                    });
                 })
                 .catch(err => {
                     done(err);
                 });
         },
-        (user, done) => {
+        function(user, done) {
             let smtpTransport = nodemailer.createTransport({
                 service: 'Hotmail',
                 auth: {
@@ -228,6 +228,7 @@ router.post('/reset/:token', (req, res) => {
                     req.flash('success_msg', 'Su password ha sido modificado con éxito');
                     res.redirect('/users/login');
                 }
+                done(err);
             });
         }
     ], err => {
