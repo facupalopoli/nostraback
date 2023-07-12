@@ -100,6 +100,7 @@ nav ul li a {
 .dropdown-menu li{
   background-color: #000000;
   margin-top: 5px;
+  margin-left: 5px;
   border-radius: 15px;
 }
 .dropdown-menu li a{
@@ -152,7 +153,8 @@ nav ul li a {
 }
   
 .dropdown.active .dropdown-menu {
-    display: block;
+    display: flex;
+    margin-left: 5px;
 }
 .dropdown-menu-logueado {
     display: none;
