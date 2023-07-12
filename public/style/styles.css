@@ -2292,9 +2292,13 @@ margin-left: 10px;
     border-radius: 5%;
     box-shadow: 2px 2px 4px rgba(212, 212, 212, 0.5);
     margin-bottom: 1rem;
+   
 
 }
-
+.caja_img a{
+    display: contents;
+   
+}
 .img_producto {
     max-width: 100%; /* La imagen se ajustará al ancho máximo permitido */
     max-height: 100%; /* La imagen se ajustará a la altura máxima permitida */
