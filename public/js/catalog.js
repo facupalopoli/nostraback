@@ -83,7 +83,8 @@ function mostrarProductos(productos) {
     productosContainer.innerHTML += `
     <div class="caja_producto">
       <div class="caja_img">
-        <img class="img_producto"src=${productos.url_imagen[0]} alt="">
+      <a href="/products/${productos._id}">
+        <img class="img_producto"src=${productos.url_imagen[0]} alt=""></a>
       </div>
       <div  class="detalle_producto">
         <span>${productos.titulo}</span>

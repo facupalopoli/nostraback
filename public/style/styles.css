@@ -2264,7 +2264,7 @@ margin-left: 10px;
     grid-template-columns: 
         repeat(
             auto-fit,
-            minmax(180px, 1fr)
+            minmax(33%, 1fr)
         );
    
     align-content: flex-end;
