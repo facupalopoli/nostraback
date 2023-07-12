@@ -1,19 +1,19 @@
 <%- include('../../views/partials/head.ejs')%>
+<%- include('../../views/partials/header.ejs')%>
 
-<h1 class="text-center mt-5 mb-3">Forgot Password</h1>
-<div class="container w-25">
+<section class="forgot">
+<div class="divLogin">
     <%- include('../partials/messages') -%>
+    <h5 class="">Forgot Password</h5>
     <form action="/users/forgot" method="POST">
 
         <div class="form-group px-0">
             <input type="email" name="email" class="form-control" placeholder="Enter Email Address">
         </div>
-        <button type="submit" class="btn btn-danger btn-block">Send Email</button>
+        <button id="enviar-email-forgot" type="submit">Send Email</button>
     </form>
-    <a class="float-right" href="/users/login">Back to Login</a>
+    <a class="forgot-back" href="/users/login">Back to Login</a>
 </div>
-
-
-</div>
+</section>
 
 <%- include('../../views/partials/footer.ejs')%>
