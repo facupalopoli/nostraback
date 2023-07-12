@@ -3,8 +3,6 @@ const router=express.Router()
 
 import Products from '../models/Products.js'
 
-let cart = []
-
 //router de /products
 
 //---------------------GET
@@ -112,7 +110,7 @@ router.get('/cart', async (req,res)=>{
     try{
         //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
         const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
-        res.render('pages/cart', {cart:cart, productosDestacados:productosDestacados})
+        res.render('pages/cart', {cart:global.cart, productosDestacados:productosDestacados})
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
@@ -137,7 +135,7 @@ router.get('/cart/comprar', async (req,res)=>{
     try{
         if (req.isAuthenticated()){
             res.render('partials/success', {cart:cart})
-            cart = []
+            global.cart = []
         }else{
             req.flash('error_msg', 'Primero debe inicar sesion para comprar.')
             res.redirect('/users/login')       
@@ -172,11 +170,11 @@ router.post('/agregar-carro/:id', async (req,res)=>{
             return res.status(404).json({mensaje: 'Producto no encontrado'});
         }
         //se chequea si el producto existe en el carro
-        const exists = cart.some(item => item.id === producto.id)
+        const exists = global.cart.some(item => item.id === producto.id)
         if(exists){
             console.log('El producto ya está en el carrito')
         }else{
-            cart.push(producto)
+            global.cart.push(producto)
         }
         //le manda el estado al cliente y luego lo tomo desde el front
         res.sendStatus(200)
