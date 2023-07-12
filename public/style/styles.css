@@ -263,7 +263,7 @@ font-weight: 600;
     left: 15%;
     position: absolute;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #ffffff;
     letter-spacing: 2px;
     font-weight: 800;
@@ -329,6 +329,9 @@ font-weight: 600;
     margin-left: 5px;
     font-size: 20px;
     font-weight: bold;
+  }
+  .comprar-btn a{
+    text-decoration: none;
   }
   .comprar-btn{
     position: absolute;
@@ -680,7 +683,7 @@ align-items: center;
 margin-left: 5px;
 border: 0;
 
-}
+}comprar-btn
 .divInput input:active{
     border: 0;
 }
