@@ -38,7 +38,6 @@ router.get('/login', async (req,res)=>{
 
 router.get('/logout', (req,res)=>{
     req.logout(()=>{
-        global.cart = []
         req.flash('success_msg', 'Sesion cerrada correctamente')
         res.redirect('/users/login')
     })

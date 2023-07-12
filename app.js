@@ -48,6 +48,9 @@ passport.deserializeUser(Users.deserializeUser()) // Configura la función de de
 app.use(flash()) // La función app.use(flash()) se utiliza para habilitar el uso de mensajes flash. Los mensajes flash son mensajes temporales que se almacenan en la sesión del usuario y se muestran en la siguiente solicitud. Se utilizan comúnmente para mostrar mensajes de éxito, errores o información después de realizar una acción, como enviar un formulario o completar una operación. La línea app.use(flash()) debe colocarse después de la configuración de 'session'.
 
 app.use((req, res, next) => {
+    if (!req.session.cart) {
+        req.session.cart = []
+    }
     res.locals.success_msg = req.flash(('success_msg'))
     res.locals.error_msg = req.flash(('error_msg'))
     res.locals.error = req.flash(('error'))
@@ -57,8 +60,6 @@ app.use((req, res, next) => {
 
 //Middleware para method override
 app.use(methodOverride('_method')) //La función app.use(methodOverride('_method')) se utiliza para habilitar la capacidad de enviar solicitudes PUT y DELETE a través de formularios HTML, (ya que los formularios HTML solo admiten los métodos GET y POST) utilizando un campo oculto _method con el valor correspondiente (por ejemplo, <input type="hidden" name="_method" value="PUT">). El middleware method-override se encargará de reemplazar el método de la solicitud con el valor especificado antes de que llegue a tus rutas. La línea app.use(methodOverride('_method')) debe colocarse después de la configuración de body-parser, pero antes de la definición de rutas.
-
-global.cart = [] // Declaro una variable global cart para manejarla en las diferentes rutas
 
 // --------------------Rutas
 

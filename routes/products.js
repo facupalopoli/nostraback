@@ -110,7 +110,7 @@ router.get('/cart', async (req,res)=>{
     try{
         //me llevo 9 documentos de la base de datos para mostrar productos destacados por si no encontro nada 
         const productosDestacados = await Products.aggregate([{ $sample: { size: 9 } }])
-        res.render('pages/cart', {cart:global.cart, productosDestacados:productosDestacados})
+        res.render('pages/cart', {cart:req.session.cart, productosDestacados:productosDestacados})
     }catch(error){
         console.log(error)
         res.status(404).json({mensaje:'error interno del sistema'})
@@ -134,8 +134,8 @@ router.get('/:id', async (req,res)=>{
 router.get('/cart/comprar', async (req,res)=>{
     try{
         if (req.isAuthenticated()){
-            res.render('partials/success', {cart:cart})
-            global.cart = []
+            req.session.cart = []
+            res.render('partials/success')
         }else{
             req.flash('error_msg', 'Primero debe inicar sesion para comprar.')
             res.redirect('/users/login')       
@@ -170,11 +170,11 @@ router.post('/agregar-carro/:id', async (req,res)=>{
             return res.status(404).json({mensaje: 'Producto no encontrado'});
         }
         //se chequea si el producto existe en el carro
-        const exists = global.cart.some(item => item.id === producto.id)
+        const exists = req.session.cart.some(item => item.id === producto.id)
         if(exists){
             console.log('El producto ya está en el carrito')
         }else{
-            global.cart.push(producto)
+            req.session.cart.push(producto)
         }
         //le manda el estado al cliente y luego lo tomo desde el front
         res.sendStatus(200)
@@ -188,7 +188,8 @@ router.post('/agregar-carro/:id', async (req,res)=>{
 router.post('/eliminar-carro/:id', (req,res)=>{
     try{
         let idProduct = req.params.id
-        cart = cart.filter(producto=>producto.id !== idProduct)
+        console.log(req.session.cart)
+        req.session.cart = req.session.cart.filter(producto=>producto._id !== idProduct)
         res.redirect('/products/cart')
     }catch(error){
         console.log(error)

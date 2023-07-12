@@ -33,7 +33,7 @@
                     <div class="carta-derecha">
                         <div>
                         <button id="btnResta<%= producto.id %>" disabled>-</button><span id="stockCart<%= producto.id %>">1</span><button class="cart-btnSuma" id="btnSuma<%= producto.id %>">+</button>
-                        <form class="deleteToCartForm" action="/products/eliminar-carro/<%= producto.id %>" method="POST">
+                        <form class="deleteToCartForm" action="/products/eliminar-carro/<%= producto._id %>" method="POST">
                             <button type="submit"><a href=""><i class="bi bi-trash"></i></a>Remover</button>
                         </form>
                         </div>
