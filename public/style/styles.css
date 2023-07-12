@@ -517,6 +517,7 @@ border: 0;
 font-size: 18px;
 display: flex;
 align-items: center;
+cursor: pointer;
 }
 /* --------------SECCION DE PRODUCTOS-------------------------- */
 
@@ -850,11 +851,11 @@ align-items: center;
 margin-left: 5px;
 border: 0;
 
-}comprar-btn
+}
 .divInput input:active{
     border: 0;
 }
-.susForm button{
+.susForm>button{
     font-weight: 400;
     background-color: var(--negro);
     border-radius: 8px;
@@ -862,9 +863,9 @@ border: 0;
     border: 0;
     font-size: 1.1rem;
     color: white;
-    cursor: pointer;
+  cursor: pointer;
 }
-
+.btnShop
 .policy{
     display: flex;
     flex-direction: column;
