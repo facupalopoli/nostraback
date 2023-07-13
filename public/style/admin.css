@@ -1,0 +1,14 @@
+.tituloTabla{
+    font-weight: 700;
+}
+
+#nostraAdmin{
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+#avisoAdmin{
+    margin: 0;
+    line-height: 1rem;
+}

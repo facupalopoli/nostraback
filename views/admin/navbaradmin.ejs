@@ -1,7 +1,21 @@
 <%- include('../../views/partials/head.ejs')%>
 
+<% if(currentUser.esAdmin){ %>
+    <div id="signUp" class="signUp">
+        <i></i>
+        <div>
+            <p id="avisoAdmin">Sesión iniciada como ADMINISTRADOR. <a href="/">Ir a la página principal</a></p>
+        </div>
+        <i></i>
+    </div>   
+    <% } %>
+
+<head>
+    <link rel="stylesheet" href="/style/admin.css">
+</head>
+
 <header class="header header-admin">
-    <a href="/admin/dashboard"><h2>NOSTRA</h2></a>
+    <a href="/"><h2 id="nostraAdmin">NOSTRA</h2></a>
     <nav>
         <a href="/admin/addproduct">Agregar producto </a>
         <a href="/admin/editdelete">Editar/Eliminar</a>

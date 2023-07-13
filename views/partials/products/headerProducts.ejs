@@ -66,8 +66,14 @@
         </div>
         <i id="closeSignUp" class="bi bi-x-lg"></i>
     </div>    
-<% }else{ %>
-    
+<% }else if(currentUser.esAdmin){ %>
+    <div id="signUp" class="signUp">
+        <i></i>
+        <div>
+            <p>Sesión iniciada como ADMINISTRADOR. <a href="/admin/dashboard">Ir a la administración de productos</a></p>
+        </div>
+        <i></i>
+    </div>   
     <% } %>
 
 <header class="header">
@@ -109,17 +115,29 @@
         </form>
         <a id="btnCart" href="/products/cart"><i class="bi bi-cart2 carritocompra"></i></a>
         <% if(!currentUser) { %>
-        <a id="btnCart" href="/users/login"><i class="bi bi-person persona"></i></a>
-        <% }else{ %>
-            
-            <li class="dropdown-logueado">
+            <a id="btnCart" href="/users/login"><i class="bi bi-person persona"></i></a>
+            <% }else if(currentUser.esAdmin){ %>
+                <li class="dropdown-logueado">
+                    
+                    <a id="btnCart" href="/users/login"><i class="bi bi-person-lock persona-logueada"></i></a>
+                       <ul class="dropdown-menu-logueado">
+                        <h2>Hola, <%= currentUser.nombre %> !</h2>
+                        <a href="/users/logout">Cerrar sesión</a>
+                        <a href="/admin/dashboard">Administrar</a>
+                       </ul>
+                  </li>
+    
+    
+            <% }else{ %>
                 
-                <a id="btnCart" href="/users/login"><i class="bi bi-person-check persona-logueada"></i></a>
-                   <ul class="dropdown-menu-logueado">
-                    <h2>Hola, <%= currentUser.nombre %></h2>
-                    <a href="/users/logout">Cerrar sesion</a>
-                   </ul>
-              </li>
-            <% }%>
+                <li class="dropdown-logueado">
+                    
+                    <a id="btnCart" href="/users/login"><i class="bi bi-person-check persona-logueada"></i></a>
+                       <ul class="dropdown-menu-logueado">
+                        <h2>Hola, <%= currentUser.nombre %> !</h2>
+                        <a href="/users/logout">Cerrar sesión</a>
+                       </ul>
+                  </li>
+                <% }%>
     </div>
 </header>

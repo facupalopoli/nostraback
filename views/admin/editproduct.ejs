@@ -1,15 +1,16 @@
 <%- include('../../views/partials/head.ejs')%>
 
-<!-- BORRAR ESTE LINKEO DESPUES DE ESTILAR -->
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/admin.css">
 </head>
-<!-- ------------ -->
 
 <%- include('../../views/admin/navbaradmin.ejs')%>
 
 <form class="form-div-agregar-product" action="/admin/editproduct/<%= producto._id %>" method="POST">
     <h2>Modificar Producto</h2>
+
+    <%- include('../partials/messages') -%>
     
     <div class="form-group px-0">
         <label for="titulo">Titulo: </label>
@@ -78,8 +79,6 @@
 
     <button type="submit" class="btn btn-danger btn-block">Modificar producto</button>
 </form>
-
-<%- include('../partials/messages') -%>
 
 <script src="/js/addproduct.js" type="module"></script>
 

@@ -19,12 +19,12 @@ function isAuthenticatedUser(req, res, next) {
 //----------- RUTAS GET
 
 router.get('/dashboard', isAuthenticatedUser, (req, res) => {
-
-    Products.find({})
-        .then(products => {
-            res.render('admin/dashboard', { products: products });
-        });
-
+    try{
+        res.render('admin/dashboard')
+    }catch(error){
+        console.log(error)
+        res.status(404).json({mensaje:'error interno del sistema'})
+    }
 });
 
 router.get('/addproduct', isAuthenticatedUser, async (req,res)=>{
