@@ -1,78 +1,68 @@
 <%- include('../../views/partials/head.ejs')%>
 
-<!-- BORRAR ESTE LINKEO DESPUES DE ESTILAR -->
 <head>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style/editdelete.css">
 </head>
-<!-- ------------ -->
 
 <%- include('../../views/admin/navbaradmin.ejs')%>
 
 
 <div class="col-9">
     <h2>Editar Productos</h2>
-    <div class="container p-3 w-100">
+    <div class="table-responsive">
         <%- include('../partials/messages') -%>
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-            <thead>
+        <table class="table table-sm table-borderedless table-hover align-middle" id="dataTable" width="100%" cellspacing="0">
+            <thead class="table-light">
                 <tr>
-                    <th>Producto</th>
-                    <th>Stock</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
+                    <th class="tituloTabla">Producto</th>
+                    <th class="tituloTabla col-2">Stock</th>
+                    <th class="tituloTabla col-3">Acciones</th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                    <th>Producto</th>
-                    <th>Stock</th>
-                    <th>Precio</th>
-                    <th>Acciones</th>
-                </tr>
-            </tfoot>
-            <tbody>
-
+            <tbody class="table-group-divider">
                 <% productos.forEach((producto)=> { %>
                     <tr>
                         <td><%= producto.titulo %></td>
                         <td><%= producto.stock %></td>
-                        <td>$ <%= producto.precio %></td>
                         <td>
                             <a class="btn btn-primary" href="/admin/edit/<%= producto._id %>">Editar</a>
                             <button type="button" class="btn btn-danger ml-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= producto._id %>">Eliminar</button>
-                        </td>
-                        
+                        </td>                        
                     </tr>
-                    
+                    <!-- modal para cada producto -->
                     <div class="modal fade" id="staticBackdrop<%= producto._id %>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel<%= producto._id %>" aria-hidden="true">
                         <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Esta seguro de eliminar este producto?</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">¿Esta seguro de eliminar este producto?</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                Esta acción no podrá deshacerse
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar ventana</button>
+                                    <form action="/admin/delete/<%= producto._id %>" method="POST">
+                                        <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Eliminar</button>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                            Esta acción no podrá deshacerse
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar ventana</button>
-                            <form action="/admin/delete/<%= producto._id %>" method="POST">
-                                <button style="cursor: pointer;" type="submit" class="btn btn-danger ml-2">Eliminar</button>
-                            </form>
-                            </div>
-                        </div>
                         </div>
                     </div>
-                <% }) %>
-                
+
+                <% }) %>                
             </tbody>
+            <tfoot class="table-group-divider">
+                <tr>
+                    <th class="tituloTabla">Producto</th>
+                    <th class="tituloTabla">Stock</th>
+                    <th class="tituloTabla">Acciones</th>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>
-
-
- 
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
