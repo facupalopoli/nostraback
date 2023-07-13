@@ -358,6 +358,7 @@ align-items: center;
 }
 .persona-logueada{
     font-size: 25px;
+
     position: relative;
 }
 .dropdown-menu-logueado>a{
@@ -371,7 +372,7 @@ font-weight: 600;
 .dropdown-logueado> ul{
     position: absolute;
     
-   right:18%;
+    right:18%;
 }
 
 
@@ -805,6 +806,9 @@ font-weight: 600;
     max-height: 20rem;
     object-fit: cover;
     object-position: left;
+}   
+.cardProduct a{
+    height: 90%;
 }
 
 .cardFooter{
@@ -1039,6 +1043,7 @@ footer{
     
       .menu.active {
         display: block;
+        z-index: 1;
       }
     
       .menu a {
@@ -1508,6 +1513,7 @@ footer{
     }
     .cardProduct img{
         height: 12rem;
+
     }
     .divFooter{
         display: grid;
@@ -1578,6 +1584,7 @@ footer{
        display: grid;
        margin-bottom: 20px;
        grid-column: 1/ span 5;
+       font-size: 1rem;
       
    }
  /*   .list{
@@ -1588,7 +1595,7 @@ footer{
        font-size: 18px;
    }
    .hamburger{
-    font-size: 18px;
+    font-size: 22px;
    }
    .menu-toggle{
        display: grid;
@@ -1634,6 +1641,14 @@ footer{
     font-size: 8px;
 
 }
+.dropdown-menu{
+    background-color: transparent !important;
+    border: 0rem !important
+    
+}
+.dropdown-menu{
+    left: 1rem !important;
+}
 .dropdown a{
     font-size: 8px;
 
@@ -1655,11 +1670,37 @@ footer{
     margin-left: 7rem;
     
   }
+  .bi-cart2::before{
+    font-size: 18px;
+  }
+  .bi-person::before{
+    font-size: 18px;
+  }
+  .bi-person-check::before{
+    font-size: 18px;
+  }
+  .swiper-slide img {
+    height: 22rem;
+  }
+  .small-img{
+    height: 5rem;
+  }
+  .swiper-wrapper{
+    height: 60%;
+  }
+  #divSwiperChico{
+    height: 5rem;
+  }
+  .divHamburgesa{
+    width: 0%;
+    margin-top: 2px;
+  }
 }
 @media (width<=450px){
     .navDer{
         margin-left: 10%;
         width: 90%;
+        font-size: 17px !important;
     }
     
 }
@@ -1681,6 +1722,9 @@ footer{
     }
     .mitadHero h5{
         font-size: 0.95rem;
+    }
+    #ubicacionDonde{
+        font-size: 0.7rem;
     }
     .ubicacion{
         font-size: 0.6rem;
@@ -1722,6 +1766,7 @@ footer{
     }
     .cardProduct img{
         height: 8rem;
+        object-fit: contain;
     }
     .carritocompra{
         margin-left: 4rem;
