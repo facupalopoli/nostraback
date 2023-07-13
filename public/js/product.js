@@ -51,11 +51,11 @@ $(document).ready(function() {
     }).resize();
 
     $('.next-btn').click(function() {
-    cardContainer.animate({ scrollLeft: '+=' + scrollAmount }, 'slow');
+    cardContainer.animate({ scrollLeft: '+=' + scrollAmount }, 'fast');
     });
 
     $('.prev-btn').click(function() {
-    cardContainer.animate({ scrollLeft: '-=' + scrollAmount }, 'slow');
+    cardContainer.animate({ scrollLeft: '-=' + scrollAmount }, 'fast');
     });
 });
 
@@ -96,6 +96,24 @@ $(document).ready(function() {
 //     });
 //   });
 // });
+
+//cruz del signup
+//manejo el click en la cruz para que se me cierre el signup de arriba del navbar
+const closeSignUp = document.getElementById('closeSignUp')
+const signUp = document.getElementById('signUp')
+
+if (closeSignUp !== null){
+  closeSignUp.addEventListener('click', ()=>{
+   signUp.classList.add('hidden')
+  })
+}
+
+
+
+
+
+
+
 
 /* funcion menu hamburguesa */
 document.addEventListener('DOMContentLoaded', function() {

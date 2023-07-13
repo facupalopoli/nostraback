@@ -35,7 +35,7 @@
         <div thumbsSlider="" class="swiper mySwiper">
             <div class="swiper-wrapper">
                 <% producto.url_imagen.forEach(producto=>{ %>
-            <div class="swiper-slide">
+            <div class="swiper-slide" id="divSwiperChico">
                 <img src="<%= producto %>" width="100%" class="small-img" alt="">
             </div>
                 <% }) %>

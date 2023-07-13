@@ -154,10 +154,7 @@ nav ul li a {
   
 .dropdown.active .dropdown-menu {
     display: flex;
-<<<<<<< HEAD
     margin-left: 5px;
-=======
->>>>>>> ramaMarcos5
 }
 .dropdown-menu-logueado {
     display: none;
