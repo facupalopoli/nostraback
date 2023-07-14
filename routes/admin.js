@@ -1,7 +1,6 @@
 import express from 'express'
 const router=express.Router()
 
-import Users from '../models/Users.js'
 import Products from '../models/Products.js'
 
 //funcion que hace de middleware para comprobar si el usuario de la sesion es admin

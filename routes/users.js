@@ -6,6 +6,9 @@ import async from 'async'
 import crypto from 'crypto'
 import nodemailer from 'nodemailer'
 
+import dotenv from 'dotenv'
+dotenv.config({path : './config.env'})
+
 import Users from '../models/Users.js'
 
 //router de /users
@@ -139,7 +142,7 @@ router.post('/forgot', (req, res, next) => {
                 service: 'Hotmail',
                 auth: {
                     user: 'nostragrupo7@hotmail.com',
-                    pass: 'hola1234'
+                    pass: process.env.EMAIL_PASS
                 }
             });
 
@@ -208,7 +211,7 @@ router.post('/reset/:token', (req, res) => {
                 service: 'Hotmail',
                 auth: {
                     user: 'nostragrupo7@hotmail.com',
-                    pass: 'hola1234'
+                    pass: process.env.EMAIL_PASS
                 }
             });
 

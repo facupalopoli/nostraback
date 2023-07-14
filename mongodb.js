@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv'
+dotenv.config({path : './config.env'})
 
 mongoose
-.connect('mongodb://127.0.0.1:27017/nostraGuille')
-/*  .connect('mongodb+srv://tpfinalmongo:h3FlPOOR7ltruacL@tpfinaldb.g0hzp2c.mongodb.net/nostraDB')   */
-.then(()=>console.log('la db esta conectada'))
+.connect(process.env.MONGO_LOCAL)
+/* .connect(process.env.MONGO_ATLAS) */
+.then(()=>console.log('CONEXION ESTABLECIDA CON LA BASE DE DATOS'))
 .catch(error=>console.log(error))

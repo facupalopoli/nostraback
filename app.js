@@ -82,6 +82,6 @@ app.all('/*',(req,res)=>{
 
 // ----------------------Iniciar servidor
 
-app.listen(3030,()=>{
-    console.log('servidor ejecutado')
+app.listen(process.env.PORT,()=>{
+    console.log('SERVIDOR FUNCIONANDO')
 })

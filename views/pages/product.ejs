@@ -60,7 +60,7 @@
         <h3 class="weight">$<%= producto.precio %></h3>
         <div class="line pt-4" id="lineaPrecio"></div>
         <div class="size">
-            <h4>Available Size</h4>
+            <h4>Talles disponibles</h4>
             <div class="size-buttons">
                 <button class="size-btn selected" onclick="selectSize(this)">S</button>
                 <button class="size-btn" onclick="selectSize(this)">M</button>
@@ -71,7 +71,6 @@
         </div>
         <div class="line"></div>
         <div class="addToCart">
-            <h5>Last 1 left <span>- make it yours!</span></h5>
             <div class="d-flex">
                 <div class="counter">
                     <button class="minus-btn">-</button>
@@ -79,7 +78,7 @@
                     <button class="plus-btn">+</button>
                 </div> 
                 <form class="addToCartForm" action="/products/agregar-carro/<%= producto.id %>" method="POST">
-                    <button class="buy-btn">Add To Cart</button>
+                    <button type="submit" class="buy-btn">Agregar al carrito</button>
                 </form>
             </div>
         </div>
@@ -93,7 +92,7 @@
 
 <section class="losDetalles">
     <div class="col-lg-10 col-md-11 col-11 pt-5">
-        <h4 class="tituloDetalles">Los Detalles</h4>
+        <h4 class="tituloDetalles">Detalles</h4>
         <div class="line2" id="lineaDetalles"></div>
         <p class="pt-3"><%= producto.descripcion %></p>
         
@@ -120,7 +119,9 @@
                         <h3><%= producto.titulo %></h3>
                         <h3 class="price">$ <%= producto.precio %></h3>    
                     </div>  
-                    <i class="bi bi-cart-plus"></i>   
+                    <form class="addToCartForm" action="/products/agregar-carro/<%= producto._id %>" method="POST">
+                        <button type="submit" class="bi bi-cart-plus"></button>
+                    </form>
                 </div>
             </div>
             <!--test_1_div-->

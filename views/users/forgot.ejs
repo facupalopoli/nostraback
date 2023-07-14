@@ -3,16 +3,16 @@
 
 <section class="forgot">
 <div class="divLogin">
+    <h5 class="">Recuperar contraseña</h5>
     <%- include('../partials/messages') -%>
-    <h5 class="">Forgot Password</h5>
     <form action="/users/forgot" method="POST">
 
         <div class="form-group px-0">
-            <input type="email" name="email" class="form-control" placeholder="Enter Email Address">
+            <input type="email" name="email" class="form-control" placeholder="Ingrese su correo">
         </div>
-        <button id="enviar-email-forgot" type="submit">Send Email</button>
+        <button id="enviar-email-forgot" type="submit">Enviar correo de recuperación</button>
     </form>
-    <a class="forgot-back" href="/users/login">Back to Login</a>
+    <a class="forgot-back" href="/users/login">Volver al login</a>
 </div>
 </section>
 
