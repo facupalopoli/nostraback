@@ -3,7 +3,6 @@ import bodyParser from 'body-parser'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
 import flash from 'connect-flash'
-import methodOverride from 'method-override'
 import session from 'express-session'
 import passport from 'passport'
 import LocalStrategy from 'passport-local'
@@ -57,9 +56,6 @@ app.use((req, res, next) => {
     res.locals.currentUser = req.user
     next()
 }) // Este middleware se encarga de asignar mensajes flash y el usuario actual a variables locales en res.locals, lo que permite acceder a ellos fácilmente en las plantillas para mostrar mensajes de éxito o error y mostrar información del usuario autenticado.
-
-//Middleware para method override
-app.use(methodOverride('_method')) //La función app.use(methodOverride('_method')) se utiliza para habilitar la capacidad de enviar solicitudes PUT y DELETE a través de formularios HTML, (ya que los formularios HTML solo admiten los métodos GET y POST) utilizando un campo oculto _method con el valor correspondiente (por ejemplo, <input type="hidden" name="_method" value="PUT">). El middleware method-override se encargará de reemplazar el método de la solicitud con el valor especificado antes de que llegue a tus rutas. La línea app.use(methodOverride('_method')) debe colocarse después de la configuración de body-parser, pero antes de la definición de rutas.
 
 // --------------------Rutas
 
