@@ -492,6 +492,21 @@ font-weight: 600;
     border-radius: 10px;
 }
 
+#cardHombres{
+    background-image: url(../images/bannerHombres2.jpg);
+    background-position: right;
+}
+
+#cardMujeres{
+    background-image: url(../images/bannerMujeres2.jpg);
+    background-position: right;
+}
+
+#cardKids{
+    background-image: url(../images/bannerNinos.jpg);
+}
+
+
 .cardPicks a{
     display: flex;
     align-items: end;
