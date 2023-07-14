@@ -8,8 +8,8 @@
 <%- include('../../views/admin/navbaradmin.ejs')%>
 
 
-<div class="col-9">
-    <h2>Editar Productos</h2>
+<div class="col-9 editDelete">
+    <h2 id="tituloEditar">Editar Productos</h2>
     <div class="table-responsive">
         <%- include('../partials/messages') -%>
         <table class="table table-sm table-borderedless table-hover align-middle" id="dataTable" width="100%" cellspacing="0">
@@ -17,7 +17,7 @@
                 <tr>
                     <th class="tituloTabla">Producto</th>
                     <th class="tituloTabla col-2">Stock</th>
-                    <th class="tituloTabla col-3">Acciones</th>
+                    <th id="acciones" class="tituloTabla col-3">Acciones</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -25,7 +25,7 @@
                     <tr>
                         <td><%= producto.titulo %></td>
                         <td><%= producto.stock %></td>
-                        <td>
+                        <td id="botonera">
                             <a class="btn btn-primary" href="/admin/edit/<%= producto._id %>">Editar</a>
                             <button type="button" class="btn btn-danger ml-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop<%= producto._id %>">Eliminar</button>
                         </td>                        

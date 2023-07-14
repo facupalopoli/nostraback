@@ -12,3 +12,79 @@
     margin: 0;
     line-height: 1rem;
 }
+
+.header-admin a h2{
+    color: #000000;
+    text-decoration: none;
+}
+.header-admin nav a{
+    color: #000000;
+    text-decoration: none;
+}
+.header-admin div a{
+    color: #000000;
+    text-decoration: none;
+}
+#cerrarAdmin{
+    color: #000000;
+    text-decoration: none;
+}
+.header-admin{
+    display: flex;
+    justify-content: space-around;
+}
+#tituloEditar{
+    margin: 0.5rem auto 1.5rem;
+}
+#botonera{
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+}
+#acciones{
+    text-align: center;
+}
+
+@media(width<=800px){
+    .header-admin{
+        display: flex;
+        padding: 2rem 3rem;
+    }
+    #botonera{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media (width<=600px){
+    .header-admin{
+        display: flex;
+        flex-direction: column;
+    }
+    .header-admin nav a{
+        font-size: 0.8rem;
+    }
+    #cerrarAdmin{
+        font-size: 0.8rem;
+    }
+    #nostraAdmin{
+        font-size: 1.2rem;
+    }
+    .header-admin nav {
+        display: flex;
+    }
+    #tituloEditar{
+        font-size: 1.2rem;
+        border: 0;
+    }
+    .editDelete{
+        width: 85%;
+    }
+    #dataTable *{
+        font-size: 0.8rem;
+    }
+    #dataTable .btn{
+        padding: 0.2rem;
+    }
+}

@@ -1532,18 +1532,7 @@ margin-left: 10px;
     
 }
 
-/* ----------NAVBAR ADMIN------------------ */
-.header-admin a h2{
-    color: #000000;
-    text-decoration: none;
-}
-.header-admin nav a{
-    color: #000000;text-decoration: none;
-}
-.header-admin div a{
-    color: #000000;
-    text-decoration: none;
-}
+
 /* ---------------------------------------- */
 /* -------RESPONSIVE----------------------- */
 /* ---------------------------------------- */
