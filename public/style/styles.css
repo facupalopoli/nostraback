@@ -65,7 +65,6 @@ html{
     padding: 2.5rem 18vw;
 }
 header>a{
-    
     text-decoration: none;
 }
 nav{
@@ -841,6 +840,7 @@ cursor: pointer;
 }
 
 .suscribe h4{
+    max-width: 40%;
     color: var(--grisOscuro);
 }
 
@@ -1558,7 +1558,7 @@ margin-left: 10px;
     }
 }
     /* ---------------HEADER Y NAVBAR------------------------- */
-    @media (width<= 1560px){
+    @media (max-width: 1560px){
         .header{
             display: flex;
             justify-content: space-between;
@@ -1643,7 +1643,7 @@ margin-left: 10px;
             justify-content: space-between;
         }
     }
-    @media(width<=1100px){
+    @media(max-width:1100px){
        
         .menu{
             width: 8rem;
@@ -1680,7 +1680,7 @@ margin-left: 10px;
             width: 60%;
         }
     }
-    @media(width<= 1000) {
+    @media(max-width: 1000) {
         .navDer{
             width: 25%;
         }
@@ -1690,32 +1690,47 @@ margin-left: 10px;
             width: 100%;
         }
     }
-    @media(width<=800px){
-       
-        
+    @media(max-width:800px){
+        .divBrands{
+            width:90%
+        }
+        .divExp{
+            width: 90%;
+        }
+        .titleExp{
+            width: 90%;
+        }
         .menu{
             margin-top: 90px;
         }
-        
+        .divPicks{
+            width: 90%;
+        }
+        .picks h2{
+            width: 90%;
+        }
          .header{
              display: grid;
-             
-             grid-template-columns: 75px 75px 75px 75px 75px ;
-             grid-template-rows:auto auto;
+             padding: 2.5rem 1.5rem;
+             grid-template-columns: 75px 75px 75px 75px 75px 75px;
+             grid-template-rows:40px 40px;
              width: 100%;
              
          }
         
          .navDer{
             grid-row: 3/3;
-            grid-column: 2/4;
-            width: 90%;
-         }
-         .header a h2{
-            display: grid;
-            grid-column: 3/3;
-            margin-bottom: 20px;
+            grid-column: 4/6;
             
+            width: 70%;
+         }
+         .header >a{
+            display: grid;
+            grid-row: 1/3;
+            grid-column: 3/6;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
            
         }
       /*   .menu-toggle{
@@ -1737,54 +1752,87 @@ margin-left: 10px;
         .iconocarrito{
             gap: 10px;
         }
-    
+       /*  .dropdown.active .dropdown-menu {
+            display: block;
+            margin-top: -60px;
+            width: 8rem;
+            margin-right: 13rem;
+            
+        } */
+        .menu {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px;
+            background-color: transparent;
+            position: absolute;
+            left: 1.5rem;
+            top: 6.5rem;
+            height:12rem;
+            
+            
+            
+          }
     }
     
-    @media(width<=684px){
-        .menu{
-            margin-top: 100px;
-        }
-    }
-    @media(width<=631px){
-        .divBtnLupa input{
-            font-size: 0.6rem;
-            width: 110px;
-        } 
-        .divBtnLupa{
-            display: flex;
+    @media(max-width:730px){
+        .header{
+            display: grid;
+            
+            grid-template-columns:65px 25px 65px 55px 65px 65px;
+            grid-template-rows:40px 40px;
             width: 100%;
+            
         }
+        .navDer{
+            
+            grid-column: 4/6;
+                     }
     }
-    @media (width<=600px){
+    @media(max-width:670px){
+        .header{
+            display: grid;
+            
+            grid-template-columns:65px 25px 25px 55px 65px 65px;
+            grid-template-rows:40px 40px;
+            width: 100%;
+            
+        }
+        .navDer{
+            
+            grid-column: 4/6;
+                     }
+    }
+    @media (max-width:600px){
         .header{
             display: grid;
             height: 150px;
-            grid-template-columns: auto auto auto auto auto auto;
-            grid-template-rows:auto auto auto auto auto;
+            grid-template-columns:15px 15px 15px 15px 15px 15px 15px 15px 10px 10px 10px 15px 15px 15px;
+            grid-template-rows:40px 40px;
             width: 100%;
             
         }
        
-       /*  .navDer{
+        .navDer{
            grid-row: 3/3;
-           grid-column: 3/5;
-           width: 120%;
-        } */
-        .header h2{
+           grid-column: 8/9;
+          gap: 1.1rem;
+        }
+        .header >a{
            margin-bottom: 20px;
-           grid-column: 1/5;
+           grid-column: 5/10;
           
        }
-     /*   .list{
+     /* /*   .list{
            display: grid;
            grid-column: 1/2;
        } */
-       .iconocarrito >i{
+       /* .iconocarrito >i{
            font-size: 15px;
-       }
+       } */
        .hamburger{
-        font-size: 18px;
-       }
+        margin-top:  10px;
+       } 
        .menu-toggle{
         width: 50%;
            display: grid;
@@ -1793,16 +1841,16 @@ margin-left: 10px;
            font-size: 18px;
        } 
        .divBtnLupa{
-        padding-left: 5px;
+        padding-left: 15px;
        }
        .divBtnLupa input{
-        height: 15px;
-        font-size: 6px;
+        height: 30px;
+        font-size: 7.5px;
         width: 100px;
        }
        
         .divLupa{
-      width: 15px;
+      width: 25px;
         
        } 
        .divLupa button{
@@ -1826,6 +1874,12 @@ margin-left: 10px;
         font-size: 8px;
     
     }
+    .dropdown.active .dropdown-menu {
+        display: block;
+        margin-top: -55px;
+        width: 8rem;
+        margin-left: 7.5rem;
+    }
     .dropdown-menu li{
         height: 20px;
         margin-left: -30%;
@@ -1835,51 +1889,76 @@ margin-left: 10px;
         
         font-size: 8px;
     }
-    .dropdown.active .dropdown-menu {
-        display: block;
-        
-        margin-top: -55px;
-        width: 5rem;
-        margin-left: 7rem;
-        
-      }
+   
       .carritocompra{
-        font-size: 18px;
+        margin-top: 10px;
       }
       .persona{
-        font-size: 18px;
+        margin-top: 10px;
       }
     }
-    @media (width<=450px){
+    @media(max-width:500px){
         .header{
             display: grid;
             height: 150px;
-            grid-template-columns: 30px 30px 30px 30px 30px;
-            grid-template-rows:auto auto;
+            grid-template-columns:15px 15px 15px 15px 15px 15px 15px 15px 10px 10px 10px 15px 15px 15px;
+            grid-template-rows:40px 40px;
+            width: 100%;
+            
+        }
+        .navDer{
+            grid-column: 7/10;
+        }
+    }
+    @media (max-width:450px){
+        .header{
+            display: grid;
+            height: 150px;
+            grid-template-columns:15px 15px 15px 15px 15px 15px 15px 15px 15px 15px 15px 15px 45px ;
+            grid-template-rows:40px 40px;
             width: 100%;
             
         }
          .navDer{
            grid-row: 3/3;
-           grid-column: 2/4;
-          
+           grid-column: 6/10;
+        
         } 
-        .divBtnLupa input{
+        .header >a{
+            margin-bottom: 20px;
+            grid-column: 4/10;
+           
+        }
+       /*  .divBtnLupa input{
             font-size: 0.4rem;
             width: 90px;
         } 
         .divBtnLupa{
             display: flex;
             width: 130%;
+        } */
+        .dropdown.active .dropdown-menu {
+            display: block;
+            margin-top: -55px;
+            width: 8rem;
+            margin-left: 7.5rem;
+        }
+        .menu{
+            top: 7.3rem;
+        }
+        .dropdown-menu li{
+            height: 20px;
+            margin-left: -30%;
+            margin-top: 15px;
         }
     }
     /* ----------------SLIDER------------------------ */
-    @media(width<=1900px){
+    @media(max-width:1900px){
         .comprar-btn{
            left: 44%;
         }
        }
-       @media(width<=1700px){
+       @media(max-width:1700px){
            .slide h1{
                font-size: 3rem;
            width: 90%;   
@@ -1887,12 +1966,12 @@ margin-left: 10px;
            }
        
        }
-       @media(width<=1500px){
+       @media(max-width:1500px){
            .comprar-btn{
               left: 43%;
            }
           }
-          @media(width<=1300px){
+          @media(max-width:1300px){
            .comprar-btn{
               left: 42%;
            }
@@ -1900,22 +1979,22 @@ margin-left: 10px;
                font-size: 2.5rem;
            }
           }
-          @media(width<=1200px){
+          @media(max-width:1200px){
            .comprar-btn{
               left: 41%;
            }
           }
-          @media(width<=1100px){
+          @media(max-width:1100px){
            .comprar-btn{
               left: 41%;
            }
           }
-          @media(width<=1000px){
+          @media(max-width:1000px){
            .comprar-btn{
               left: 40%;
            }
           }
-          @media(width<=900px){
+          @media(max-width:900px){
            .comprar-btn{
               left: 39%;
            }
@@ -1923,17 +2002,23 @@ margin-left: 10px;
                font-size: 2rem;
            }
           }
-          @media(width<=800px){
+          @media(max-width:800px){
+            .slider{
+                width: 90%;
+            }
            .comprar-btn{
               left: 38%;
            }
           }
-          @media(width<=700px){
+          @media(max-width:700px){
            .comprar-btn{
                left: 36%;
            }
           }
-            @media(width<=600px){
+            @media(max-width:600px){
+            .hero{
+                margin-top: 50px;
+                }
            .slide h1{
                font-size: 1.5rem;
                line-height: 40px;
@@ -1943,18 +2028,28 @@ margin-left: 10px;
                left: 34%;
            }
           }
-          @media(width<=500px){
+          @media(max-width:500px){
            .slide h1{
                font-size: 1.4rem;
                line-height: 32px;
                top:29%;
            }
            .comprar-btn{
-               left: 27%;
+               left: 30%;
            }
           }
+          @media(max-width:420px){
+            .slide h1{
+                font-size: 1.4rem;
+                line-height: 32px;
+                top:29%;
+            }
+            .comprar-btn{
+                left: 29%;
+            }
+           }
     /* ---------------SECCION DE MARCAS------------------------- */
-    @media (width<=1200px){
+    @media (max-width:1200px){
         /* marcas */
         .logotipos{
             display: grid;
@@ -1967,7 +2062,7 @@ margin-left: 10px;
         }
     }
     
-    @media(width<=500px){
+    @media(max-width:500px){
         .logotipos{
             display: grid;
             grid-template-rows: 100px 100px 100px 100px;
@@ -1981,7 +2076,7 @@ margin-left: 10px;
         }
     }
     /* --------------SECCION DE EXPERIENCIA-------------------------- */
-    @media (width<=1000px){
+    @media (max-width:1000px){
         .titleExp{
             display: flex;
             justify-content: center;
@@ -2003,7 +2098,7 @@ margin-left: 10px;
             text-align: start;
         }
     }
-    @media(width<=1000px){
+    @media(max-width:1000px){
         .divExp{
             display: grid;
             grid-template-columns: 300px 300px;
@@ -2015,36 +2110,36 @@ margin-left: 10px;
         }
     
     }
-    @media(width<=1000px){
+    @media(max-width:1000px){
         .divExp{
             display: grid;
-            grid-template-columns: 250px 250px;
+            grid-template-columns: 45% 45%;
     
         }
     }
-    @media(width<=750px){
+ /*    @media(max-width:750px){
         .divExp{
             display: grid;
             grid-template-columns: 230px 230px;
     
         }
     }
-    @media(width<=650px){
+    @media(max-width:650px){
         .divExp{
             display: grid;
             grid-template-columns: 350px;
     
         }
     }
-    @media(width<=500px){
+    @media(max-width:500px){
         .divExp{
             display: grid;
             grid-template-columns: 250px;
     
         }
-    }
+    } */
     /* ----------------SECCION DE PICKS------------------------ */
-    @media(width<=1100px){
+    @media(max-width:1100px){
         .divPicks{
             display: grid;
             grid-template-columns: 45% 45%;
@@ -2053,7 +2148,7 @@ margin-left: 10px;
             width: 100%;
         }
     }
-    @media(width<=650px){
+    @media(max-width:650px){
         .divPicks{
             display: grid;
             grid-template-columns: 95%;
@@ -2071,43 +2166,67 @@ margin-left: 10px;
         width: 85%;
     }
     /* ---------------SECCION DE OFERTAS------------------------- */
-    @media(width<=1500px){
+    @media(max-width:1500px){
         .infoOffer h2{
             font-size: 2rem;
         }
     }
-    @media(width<=1100px){
+    @media(max-width:1100px){
         .infoOffer h2{
             font-size: 1.3rem;
         }
     }
-    @media(width<=850px){
+    @media(max-width:850px){
         .infoOffer h2{
             font-size: 1rem;
+            width: 90%;
+        }
+        .divOffer img{
+         width: 100%; 
+         border-top-left-radius: 10px;
+         border-top-right-radius: 10px;  
+         border-bottom-left-radius: 0px;
         }
         .divOffer{
             height: 200px;
+            width: 90%;
+            display: block;
         }
-      
-    }
-    @media(width<=700px){
-        .infoOffer h2 h3{
-            font-size: 0.8rem;
-        }
-        .infoOffer button{
-            
-    
-            font-size: 0.8rem;
-            border-radius: 4px;
-            height: 20px;
-        }
-        .divOffer img{
-            width: 35%;
-        }
-    }
-    @media(width<=700px){
         .infoOffer{
-            padding-left: 1rem;
+            width: 100%;
+            height: 250px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 0px;
+            margin-top: -10px;
+        }
+        .offer{
+            padding-bottom: 680px;
+        }
+    }
+    @media(max-width:800px){
+        .offer{
+            padding-bottom: 570px;
+        }
+    }
+    @media(max-width:700px){
+        .offer{
+            padding-bottom: 500px;
+        }
+    }
+    @media(max-width:600px){
+        .offer{
+            padding-bottom: 460px;
+        }
+    }
+    @media(max-width:500px){
+        .offer{
+            padding-bottom: 390px;
+        }
+    }
+    @media(max-width:450px){
+        .offer{
+            padding-bottom: 340px;
         }
     }
     /* ----------------SECCION DE SUSCRIPCION------------------------ */
@@ -2193,7 +2312,7 @@ margin-left: 10px;
             margin: 8px;
         }
     }
-    @media(width<=450px){
+    @media(max-width:450px){
         .divFooter{
             display: grid;
            grid-template-columns: 0;
