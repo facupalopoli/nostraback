@@ -1600,12 +1600,12 @@ margin-left: 10px;
             top: 10%;
             height:12rem;
             width: 14rem;
-            
-            
           }
         
           .menu.active {
             display: block;
+            position: absolute;
+            z-index: 100;
           }
         
           .menu a {
@@ -1761,13 +1761,6 @@ margin-left: 10px;
         .iconocarrito{
             gap: 10px;
         }
-       /*  .dropdown.active .dropdown-menu {
-            display: block;
-            margin-top: -60px;
-            width: 8rem;
-            margin-right: 13rem;
-            
-        } */
         .menu {
             display: none;
             flex-direction: column;
@@ -1778,9 +1771,9 @@ margin-left: 10px;
             left: 1.5rem;
             top: 6.5rem;
             height:12rem;
-            
-            
-            
+          }
+          .dropdown-logueado>ul{
+            right: 7%;
           }
     }
     
@@ -1797,6 +1790,9 @@ margin-left: 10px;
             
             grid-column: 4/6;
                      }
+                     .dropdown-logueado>ul{
+                        right: 5%;
+                      }
     }
     @media(max-width:670px){
         .header{
