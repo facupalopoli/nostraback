@@ -17,7 +17,7 @@
         <input type="text" name="titulo" placeholder="Titulo del producto" value="<%= producto.titulo %>">
     </div>
 
-    <div class="form-group px-0">
+    <div class="form-group px-0 divDescription">
         <label class="label-description" for="descripcion">Descripcion: </label>
         <textarea class="input-description-edit" name="descripcion" placeholder="Descripcion del producto"><%= producto.descripcion %></textarea>
     </div>
@@ -61,10 +61,12 @@
         <input type="number" name="precio" placeholder="Precio" value="<%= producto.precio %>">
     </div>
 
-    <div class="form-group px-0">
-        <label for="urlImagen">URL de imagen: </label>
-        <input type="text" id="urlInput" placeholder="URL de imagen">
-        <button type="button" id="agregarUrlBtn">Agregar URL</button>
+    <div class="form-group px-0 divUrlAgregar">
+        <div>
+            <label for="urlImagen">URL de imagen: </label>
+            <input type="text" id="urlInput" placeholder="URL de imagen">
+        </div>
+        <button class="agregarUrlBtn" type="button" id="agregarUrlBtn">Agregar URL</button>
       </div>
     
       <ul id="imageUrlList">

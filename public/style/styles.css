@@ -1435,11 +1435,17 @@ margin-right: auto;
     width: 300px;
     margin: 40px  auto;
 }
-.form-div-agregar-product div{
+.divDescription{
     padding-top: 20px;
     display: flex;
    justify-content: start;
    align-items: center;
+}
+.form-div-agregar-product div{
+    padding-top: 20px;
+    display: flex;
+   justify-content: start;
+   
 }
 .form-div-agregar-product h2{
     display: flex;
@@ -2075,6 +2081,98 @@ margin-left: 10px;
             gap: 30px;
         }
     }
+    /* ---------------LOGIN Y REGISTER---------------------------- */
+    @media (max-width:1400px){
+        .divLogin{
+            width: 30%;
+        }
+    }
+    
+    @media (max-width:1200px){
+        .divLogin{
+            width: 35%;
+        }
+    }
+    @media (max-width:900px){
+        .divLogin{
+            width: 45%;
+        }
+    }
+    @media (max-width:700px){
+        .divLogin{
+            width: 55%;
+        }
+    }
+    @media (max-width:600px){
+        .divLogin{
+            width: 65%;
+        }
+    }
+    @media (max-width:500px){
+        .divLogin{
+            width: 75%;
+        }
+    }
+    @media (max-width:450px){
+        .divLogin{
+            width: 85%;
+        }
+    }
+/* -------------------EDITAR/AGREGAR PRODUCTOS----------------------- */
+@media (max-width:1200px){
+    .form-div-agregar-product{
+        width: 35%;
+    }
+}
+@media (max-width:1000px){
+    .form-div-agregar-product{
+        width: 40%;
+    }
+}
+@media (max-width:900px){
+    .form-div-agregar-product{
+        width: 45%;
+    }
+}
+@media (max-width:800px){
+    .form-div-agregar-product{
+        width: 50%;
+    }
+}
+@media (max-width:700px){
+    .form-div-agregar-product{
+        width: 60%;
+    }
+
+}
+@media (max-width:600px){
+    .form-div-agregar-product{
+        width: 70%;
+    }
+    .divUrlAgregar{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-start;
+    }
+    .agregarUrlBtn{
+        width: 90%;
+        margin: 20px 20px;
+    }
+}
+@media (max-width:500px){
+    .form-div-agregar-product{
+        width: 80%;
+    }
+}
+@media (max-width:450px){
+    .form-div-agregar-product{
+        width: 85%;
+    }
+    .divUrlAgregar div>label{
+        width: 20%;
+    }
+}
     /* --------------SECCION DE EXPERIENCIA-------------------------- */
     @media (max-width:1000px){
         .titleExp{
@@ -2234,7 +2332,7 @@ margin-left: 10px;
         max-width: 60%;
     }
     /* -----------------FOOTER----------------------- */
-    @media (width <= 1150px) and (width >= 900px){
+    @media (max-width:1150px) and (min-width: 900px){
         .divFooter{
             display: grid;
             grid-template-columns: auto auto auto auto auto;
@@ -2269,7 +2367,7 @@ margin-left: 10px;
             grid-column: 4/5;
         }
     }
-    @media (width <= 899px){
+    @media (max-width: 899px){
         .divFooter{
             display: grid;
             grid-template-columns: auto auto auto auto auto;
