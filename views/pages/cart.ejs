@@ -41,9 +41,9 @@
                     </div>
 
                 </div>
-            
+        </div>    
         <% }) %>
-        </div>
+        
         <div class="cart-comprar-productos">
             <div>
                 <h2>Precio total</h2>
@@ -55,21 +55,17 @@
         </div>
     
     <% }else{ %>
-        
         <div class="cart-productos-vacios">
             <div>
-            <h1>NO HAY PRODUCTOS EN EL CARRO</h1>
-            <p>Lo siento! Parece que tu carrito está vacío en este momento. No te preocupes, estamos aquí para ayudarte a encontrar los productos perfectos para ti. Explora nuestra amplia selección y encuentra los artículos que deseas añadir a tu carrito. </p>
-            <a href="/">Volver al inicio</a>
-            </div>
-            <!-- muestro productos destacados por si no hay nada en el carro -->
+                <h1>NO HAY PRODUCTOS EN EL CARRO</h1>
+                <p>Lo siento! Parece que tu carrito está vacío en este momento. No te preocupes, estamos aquí para ayudarte a encontrar los productos perfectos para ti. Explora nuestra amplia selección y encuentra los artículos que deseas añadir a tu carrito. </p>
+                <a href="/">Volver al inicio</a>
+            </div>        
         </div>   
-      
-        
-    </section>
-    <%- include('../../views/partials/featured.ejs')%>
-
+        <%- include('../../views/partials/featured.ejs')%>
 <% } %>
+    
+</section>
 
 <%- include('../partials/messages') -%>
 
