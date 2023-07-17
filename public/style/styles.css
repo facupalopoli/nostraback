@@ -620,6 +620,7 @@ cursor: pointer;
     display: flex;
     flex-direction: row;
     align-self: flex-end;
+    
 }
 
 .botonesHero1 button{
@@ -635,13 +636,13 @@ cursor: pointer;
     
   }
 
-.botonesHero1 .prev-btn{
+.botonesHero1 .prev-btn1{
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     left: 0;
 }
 
-.botonesHero1 .next-btn{
+.botonesHero1 .next-btn1{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     right: 0;
@@ -735,6 +736,10 @@ cursor: pointer;
     height: 18rem;
     object-fit: contain;
     object-position: center;
+}
+ .aDestacados{
+    background-color: transparent !important;
+    border: transparent !important;
 }
 .cardFooter{
     display: flex;
@@ -1642,6 +1647,17 @@ margin-left: 10px;
             width: 100%;
             justify-content: space-between;
         }
+        .cardProduct1{
+            flex: 0 0 calc(50% - 30px);
+            width: 50%;
+        }
+        .cardProduct1 a{
+            width: 50%;
+        }
+        .cardProduct1 img{
+            width: 12rem;
+            
+        }
     }
     @media(width<=1100px){
        
@@ -1678,6 +1694,9 @@ margin-left: 10px;
         .divBtnLupa{
             display: flex;
             width: 60%;
+        }
+        .titleProducts1 h2{
+            width: 65%;
         }
     }
     @media(width<= 1000) {
@@ -1743,6 +1762,21 @@ margin-left: 10px;
     @media(width<=684px){
         .menu{
             margin-top: 100px;
+        }
+        .cardProduct1{
+            flex: 0 0 calc(110% - 60px);
+            width: 100%;
+        }
+        .cardProduct1 a{
+            width: 100%;
+        }
+        .cardProduct1 img{
+            width: 11rem;
+            height: 17rem;
+            
+        }
+        .titleProducts1 h2{
+            font-size: 1.5rem;
         }
     }
     @media(width<=631px){
@@ -1871,6 +1905,9 @@ margin-left: 10px;
         .divBtnLupa{
             display: flex;
             width: 130%;
+        }
+        .titleProducts1 h2{
+            font-size: 1.2rem;
         }
     }
     /* ----------------SLIDER------------------------ */

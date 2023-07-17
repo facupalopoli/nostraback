@@ -834,6 +834,18 @@ font-weight: 600;
     
     
 }
+/* arreglando boton de agregar al carrito  */
+
+.cardFooter button{
+    color: white;
+    font-size: 1.3rem;
+    padding: 0.8rem 1rem;
+    background-color: var(--negro);
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
 
 .price{
     font-size: 1.5rem;
@@ -1563,7 +1575,12 @@ footer{
     .menu{
         margin-top: 75px;
     }
-}
+    .cardFooter button{
+        font-size: 0.7rem;
+    }
+
+    }
+
 @media (width<=600px){
     .header{
         display: grid;
@@ -1701,6 +1718,16 @@ footer{
         margin-left: 10%;
         width: 90%;
         font-size: 17px !important;
+    }
+    .cardFooter button{
+        font-size: 0.6rem;
+        
+    }
+    .cardFooter div{
+        gap: 5px;
+    }
+    .cardFooter{
+        gap: 5px;
     }
     
 }

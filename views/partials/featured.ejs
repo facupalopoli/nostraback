@@ -38,7 +38,7 @@
         <div class="product-container">
             <% productosDestacados.forEach((producto) => { %>
                 <div class="cardProduct1">
-                    <a href="/products/<%= producto._id %>">
+                    <a class="aDestacados" href="/products/<%= producto._id %>">
                         <img src="<%= producto.url_imagen[0] %>" alt="imagen del producto">
                     </a>
                     <div class="cardFooter">
