@@ -55,6 +55,7 @@
         </div>
     
     <% }else{ %>
+        
         <div class="cart-productos-vacios">
             <div>
             <h1>NO HAY PRODUCTOS EN EL CARRO</h1>
@@ -62,12 +63,13 @@
             <a href="/">Volver al inicio</a>
             </div>
             <!-- muestro productos destacados por si no hay nada en el carro -->
-           
         </div>   
-        <%- include('../../views/partials/featured.ejs')%>
+      
+        
+    </section>
+    <%- include('../../views/partials/featured.ejs')%>
+
 <% } %>
-    
-</section>
 
 <%- include('../partials/messages') -%>
 
