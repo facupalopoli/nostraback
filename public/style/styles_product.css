@@ -205,6 +205,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 2.5rem 18vw;
+    margin-bottom: 50px;
 }
 header>a{
     color: var(--negro);
@@ -238,6 +239,7 @@ nav ul li a {
   display: none;
   position: absolute;
   background-color: transparent;
+  border: 0px !important;
 }
 .dropdown-menu li{
   background-color: #000000;
@@ -1055,7 +1057,8 @@ footer{
     
       .menu.active {
         display: block;
-        z-index: 1;
+        position:absolute;
+        z-index: 100;
       }
     
       .menu a {
@@ -1067,7 +1070,7 @@ footer{
       .dropdown-menu {
         display: none;
         background-color: transparent;
-        margin-left: 13rem;
+        
         margin-top: -60px;
         padding: 0px;
       }
@@ -1084,76 +1087,17 @@ footer{
       .dropdown.active .dropdown-menu {
         display: block;
         width: 13rem;
+        margin-left: 13rem;
         
       }
     .navDer{
         display: flex;
 
-        width: 25%;
+        width: 55%;
         height: 30px;
        
         
         justify-content: space-between;
-    }
-    
- .divBtnLupa{
-    display: flex;
-    position: relative;
-    padding: 5px;
-    border: 0;
-    
-
-}
-.divBtnLupa input{
-    width: 0px;
-    height: 25px;
-    padding: 0 15px;
-    font-size: 12px;
-    color: black; 
-    outline: none;
-    border: 0px solid transparent;
-    border-radius:15px;
-    transition: all 0.5s ease;
-}
-.divLupa{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background-color: #ffffff;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 12px;
-    border-radius: 10px ;
-    cursor: pointer;
-    border:solid 1px var(--grisPlace);
-    transition: all 1.3s ease-in-out;
-}
-
-.divBtnLupa:hover input{
-    
-    width: 180px;
-    margin-left: -80px;
-}
-.divBtnLupa input:focus{
-    border:solid 1px rgb(0, 0, 0);
-    width: 180px;
-    margin-left: -80px;
-}
-    .divBtnLupa:hover input{
-        transition: all .8s ease-in-out;
-        border:solid 1px var(--grisPlace) ;
-    }
-    .divLupa:hover{
-         border: solid 1px var(--grisPlace);
-         transition: all .5s ease-in-out;
-    }
-    .divBtnLupa{
-        display:flex; 
-        
-      
     }
     .iconocarrito>i{
         margin-top: 0;
@@ -1163,8 +1107,9 @@ footer{
         width: 100%;
         justify-content: space-between;
     }
+    
+    
 }
-
 
 
 @media(max-width: 1510px){
@@ -1189,7 +1134,7 @@ footer{
         font-size: 1.35rem;
         gap: 0.4rem;
     }
-    .header{
+    /* .header{
         display: flex;
         justify-content: space-between;
         text-align: center;
@@ -1293,8 +1238,8 @@ footer{
     border: 0px solid transparent;
     border-radius:15px;
     transition: all 0.5s ease;
-}
-.divLupa{
+} */
+/* .divLupa{
     position: absolute;
     top: 0px;
     right: 0px;
@@ -1309,9 +1254,9 @@ footer{
     cursor: pointer;
     border:solid 1px var(--grisPlace);
     transition: all 1.3s ease-in-out;
-}
+} */
 
-.divBtnLupa:hover input{
+/* .divBtnLupa:hover input{
     
     width: 180px;
     margin-left: -80px;
@@ -1325,10 +1270,11 @@ footer{
         transition: all .8s ease-in-out;
         border:solid 1px var(--grisPlace) ;
     }
-    .divLupa:hover{
+    /* .divLupa:hover{
          border: solid 1px var(--grisPlace);
          transition: all .5s ease-in-out;
-    }
+    } */
+/*     
     .divBtnLupa{
         display:flex; 
         
@@ -1342,6 +1288,7 @@ footer{
         width: 100%;
         justify-content: space-between;
     }
+}  */
 }
 @media(max-width: 1200px){
     #contenedorFotos{
@@ -1374,12 +1321,12 @@ footer{
     }
 }
 @media(width<=1100px){
-    .navDer{
+    /* .navDer{
         width: 35%;
-    }
-    .menu{
+    } */
+    /* .menu{
         width: 8rem;
-    }
+    } */
     .menu li a{
         font-size: 12px;
 
@@ -1399,10 +1346,21 @@ footer{
     .dropdown.active .dropdown-menu {
         display: block;
         margin-top: -70px;
-        width: 8rem;
+        /* width: 8rem;
         margin-left: 7rem;
-        
+         */
       }
+      .divBtnLupa input{
+        font-size: 0.8rem;
+        width: 180px;
+    } 
+    .divBtnLupa{
+        display: flex;
+        width: 70%;
+    }
+    .titleProducts1 h2{
+        width: 65%;
+    }
 }
 
 @media(max-width: 1024px){
@@ -1433,6 +1391,7 @@ footer{
     }
     .small-img{
         margin-bottom: 0.5rem;
+        max-height: 80% !important;
     }
     
 }
@@ -1455,28 +1414,34 @@ footer{
     }
     
     .header{
-         display: grid;
-         height: 150px;
-         grid-template-columns: auto auto auto;
-         grid-template-rows:auto auto auto auto auto;
-         width: 100%;
-         
-     }
-    
+        display: grid;
+        padding: 2.5rem 1.5rem;
+        grid-template-columns: 75px 75px 75px 75px 75px 75px;
+        grid-template-rows:40px 40px;
+        width: 100%;
+        
+    }
+   
     .navDer{
-        grid-row: 3/3;
-        grid-column: 3/5;
-        width: 120%;
-     }
-    .header h2{
+       grid-row: 3/3;
+       grid-column: 4/6;
+       
+       width: 70%;
+    }
+    .header >a{
+        display: grid;
+        grid-row: 1/3;
+        grid-column: 3/6;
+        font-size: 1.5rem;
         margin-bottom: 20px;
-        grid-column: 1/ span 5;
+        letter-spacing: 5px;
        
     }
     .menu-toggle{
         display: grid;
-        grid-column: 1/2;
-    }
+        grid-column: 1/1 ;
+        grid-row:3/3 ;
+    } 
     .iconocarrito{
         display: flex;
     }
@@ -1486,19 +1451,26 @@ footer{
         grid-row:3/3 ;
     } 
    .divBtnLupa{
-      width: 150px;  
+      width: 200px;  
     } 
-    .divBtnLupa:hover input{
-        margin-left: -80px;
-
-    }
-    .divBtnLupa:focus input{
-        margin-left: -80px;
-
-    }
+  
     .iconocarrito{
         gap: 10px;
     }
+    .menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        background-color: transparent;
+        position: absolute;
+        left: 1.5rem;
+        top: 6.5rem;
+        height:12rem;
+      }
+      .dropdown-logueado>ul{
+        right: 7%;
+      }
 
 }
 @media(max-width: 780px){
@@ -1569,11 +1541,25 @@ footer{
         margin: 8px;
     }
 }
+@media(max-width:670px){
+    .header{
+        display: grid;
+        
+        grid-template-columns:15px 15px 15px 15px 15px 15px 15px 15px 10px 10px 10px 15px 15px 15px;
+        grid-template-rows:40px 40px;
+        width: 100%;
+        
+    }
+    .navDer{
+        
+        grid-column: 6/13;
+                 }
+}
 
     
 @media(width<=684px){
     .menu{
-        margin-top: 75px;
+        margin-top: 100px;
     }
     .cardFooter button{
         font-size: 0.7rem;
@@ -1585,29 +1571,26 @@ footer{
     .header{
         display: grid;
         height: 150px;
-        grid-template-columns: auto auto auto;
-        grid-template-rows:auto auto auto auto auto;
+        grid-template-columns:15px 15px 15px 15px 15px 15px 15px 15px 10px 10px 10px 15px 15px 15px;
+        grid-template-rows:40px 40px;
         width: 100%;
         
     }
    
     .navDer{
-       grid-row: 3/3;
-       grid-column: 3/5;
-       width: 120%;
+        grid-row: 3/3;
+        grid-column: 6/13;
+       gap: 1.1rem;
+     }
+     .header >a{
+        margin-bottom: 20px;
+        grid-column: 5/10;
+       
     }
-    .header h2{
-        
-       display: grid;
-       margin-bottom: 20px;
-       grid-column: 1/ span 5;
-       font-size: 1rem;
-      
-   }
  /*   .list{
        display: grid;
        grid-column: 1/2;
-   } */
+   } 
    .iconocarrito >i{
        font-size: 18px;
    }
@@ -1620,25 +1603,28 @@ footer{
        grid-row:3/3 ;
        font-size: 18px;
    } 
-   .divBtnLupa input{
+   /* .divBtnLupa input{
     height: 15px;
     font-size: 10px;
    }
    .divBtnLupa:hover input{
     width: 100px;
+   } 
+   .divLupa button{
+    font-size: 10px;
    }
-   .divLupa{
+   /* .divLupa{
     width: 25px;
     height: 25px;
     border-radius: 10px;
-   }
-   .divLupa i{
+   } */
+   /* .divLupa i{
     display: flex;
     justify-content: center;
     text-align: center;
     margin-top: 7px;
     font-size: 10px;
-   }
+   } 
    .divBtnLupa:hover input{
     margin-left: -80px;
 }
@@ -1696,6 +1682,7 @@ footer{
   .bi-person-check::before{
     font-size: 18px;
   }
+  */
   .swiper-slide img {
     height: 22rem;
   }
@@ -1708,17 +1695,116 @@ footer{
   #divSwiperChico{
     height: 5rem;
   }
+  /*
   .divHamburgesa{
     width: 0%;
     margin-top: 2px;
   }
+  */
+  .hamburger{
+    margin-top:  10px;
+   } 
+   .menu-toggle{
+    width: 50%;
+       display: grid;
+       grid-column: 1/1 ;
+       grid-row:3/3 ;
+       font-size: 18px;
+   } 
+  /*  .divBtnLupa{
+    padding-left: 15px;
+   }
+   .divBtnLupa input{
+    height: 30px;
+    font-size: 7.5px;
+    width: 100px;
+   }
+   
+    .divLupa{
+  width: 25px;
+    
+   }  */
+   .divLupa button{
+    
+    
+    
+    font-size: 10px;
+   }
+
+  .menu{
+    width: 10rem;
+}
+.menu li{
+    width: 10rem;
+}
+.menu li a{
+    font-size: 8px;
+
+}
+.dropdown a{
+    font-size: 8px;
+
+}
+.dropdown.active .dropdown-menu {
+    display: block;
+    margin-top: -65px;
+    width: 8rem;
+    margin-left: 10rem;
+}
+.dropdown-menu li{
+    height: 20px;
+   
+}
+.dropdown-menu li a{
+    
+    font-size: 8px;
+}
+
+  .carritocompra{
+    margin-top: 10px;
+  }
+  .persona{
+    margin-top: 10px;
+  }
+
+}
+
+@media(max-width:500px){
+    .header{
+        display: grid;
+        height: 150px;
+        grid-template-columns:15px 15px 15px 15px 15px 15px 15px 15px 10px 10px 10px 15px 15px 15px;
+        grid-template-rows:40px 40px;
+        width: 100%;
+        
+    }
+    .navDer{
+        grid-column: 5/13;
+    }
 }
 @media (width<=450px){
-    .navDer{
-        margin-left: 10%;
-        width: 90%;
-        font-size: 17px !important;
+    .header{
+        display: grid;
+        height: 150px;
+        grid-template-columns:15px 15px 15px 15px 15px 15px 15px 15px 15px 15px 15px 15px 45px ;
+        grid-template-rows:40px 40px;
+        width: 100%;
+        
     }
+     .navDer{
+       grid-row: 3/3;
+       grid-column: 4/13;
+    
+    } 
+    .header >a{
+        margin-bottom: 20px;
+        grid-column: 4/10;
+    }
+
+
+
+
+
     .cardFooter button{
         font-size: 0.6rem;
         
@@ -1795,11 +1881,16 @@ footer{
         height: 8rem;
         object-fit: contain;
     }
-    .carritocompra{
+    .navDer{
+
+        
+        grid-column: 3/13;
+    }
+    /* .carritocompra{
         margin-left: 4rem;
     }
     .iconocarrito{
         
         margin-left: 2.5rem;
-    }
+    } */
 }
