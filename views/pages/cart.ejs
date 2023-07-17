@@ -13,14 +13,14 @@
                 <div>
                 <p>PRODUCTOS</p>
                 </div>
-                <p>CANTIDADES</p>
+                <p class="parrafo-cantitades">CANTIDADES</p>
                 <p class="parrafo-precio">PRECIO</p>
                   
             </div>
      
     
         <% cart.forEach(producto=>{ %>
-            <div class="cart-sombra">
+            
                 <div class="cart-cartas">
                     <div class="carta-izquierda">
                   <img src="<%= producto.url_imagen[0] %>" alt="">  
@@ -41,7 +41,7 @@
                     </div>
 
                 </div>
-            </div>
+            
         <% }) %>
         </div>
         <div class="cart-comprar-productos">
@@ -62,8 +62,9 @@
             <a href="/">Volver al inicio</a>
             </div>
             <!-- muestro productos destacados por si no hay nada en el carro -->
-            <%- include('../../views/partials/featured.ejs')%>
+           
         </div>   
+        <%- include('../../views/partials/featured.ejs')%>
 <% } %>
     
 </section>

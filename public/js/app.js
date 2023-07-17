@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* funcion para abrir la seccion de shop */
+
 document.addEventListener('DOMContentLoaded', function() {
   const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -120,21 +121,24 @@ document.addEventListener('DOMContentLoaded', function() {
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
       dropdowns.forEach(function(dropdown) {
-        dropdown.classList.remove('active');
-        
+        if (dropdown !== e.currentTarget.parentNode) {
+          dropdown.classList.remove('active');
+        }
       });
-      dropdown.classList.add('active');
+      dropdown.classList.toggle('active');
     });
 
     document.addEventListener('click', function(e) {
       if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove('active');
+        dropdowns.forEach(function(dropdown) {
+          dropdown.classList.remove('active');
+        });
       }
     });
   });
 });
-
 /* funcionalidad del menu logueado */
+
 document.addEventListener('DOMContentLoaded', function() {
   const dropdowns = document.querySelectorAll('.dropdown-logueado');
 
@@ -144,11 +148,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
-      dropdowns.forEach(function(dropdown) {
+      if (dropdown.classList.contains('active')) {
         dropdown.classList.remove('active');
-        
-      });
-      dropdown.classList.add('active');
+      } else {
+        dropdowns.forEach(function(dropdown) {
+          dropdown.classList.remove('active');
+        });
+        dropdown.classList.add('active');
+      }
     });
 
     document.addEventListener('click', function(e) {
