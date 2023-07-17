@@ -170,7 +170,8 @@ router.post('/agregar-carro/:id', async (req,res)=>{
             return res.status(404).json({mensaje: 'Producto no encontrado'});
         }
         //se chequea si el producto existe en el carro
-        const exists = req.session.cart.some(item => item.id === producto.id)
+        const exists = req.session.cart.some(item => item._id === producto.id)
+        console.log(exists)
         if(exists){
             console.log('El producto ya está en el carrito')
         }else{

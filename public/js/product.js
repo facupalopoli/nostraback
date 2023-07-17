@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
       fetch(url,{method: 'POST'})
       .then(response => {
         if (response.ok){
-          console.log('Producto agregado al carrito')
+          //si la respuesta es ok se agrega producto al carrito
           //deshabilito el boton y le doy opacidad para dar esa sensacion y le quito el cursor pointer
           const boton = form.childNodes[1]
           boton.disabled = true
