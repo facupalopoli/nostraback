@@ -14,6 +14,4 @@ Este proyecto se trata de un trabajo práctico correspondiente a la última part
 
 # Demo
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7090127559899672577" height="747" width="504" frameborder="0" allowfullscreen="" title="Publicación integrada"></iframe>
-
-<video controls="" autoplay="" name="media"><source src="https://dms.licdn.com/playlist/vid/D4D05AQE40yCxYgTRUw/mp4-640p-30fp-crf28/0/1690418234043?e=1692640800&amp;v=beta&amp;t=bGb9eG_FGgdUdeqfsv5rek2IdRfmIBkkY7rNkxih7jY" type="video/mp4"></video>
+<a href="https://dms.licdn.com/playlist/vid/D4D05AQE40yCxYgTRUw/mp4-720p-30fp-crf28/0/1690418235109?e=1692640800&v=beta&t=-e_S3EIAOsua9-7V7pgA13otiBwN7YyW0fH0gSut1EM">Ver Video</a>
