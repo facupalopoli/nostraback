@@ -11,3 +11,7 @@ Este proyecto se trata de un trabajo práctico correspondiente a la última part
 * Passport y local-passport
 * Base de datos en MongoDB
 * Gestion de base de datos con Mongoose
+
+* # Demo
+<video src="https://dms.licdn.com/playlist/vid/D4D05AQE40yCxYgTRUw/mp4-720p-30fp-crf28/0/1690418235109?e=1692640800&v=beta&t=-e_S3EIAOsua9-7V7pgA13otiBwN7YyW0fH0gSut1EM">
+</video>
